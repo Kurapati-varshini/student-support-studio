@@ -1003,7 +1003,11 @@
         await withTimeout(fetch(UTR_REGISTRY_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain' },
-          body: JSON.stringify({ utr, orderId })
+          body: JSON.stringify({
+            orderId: orderId,
+            utr: utr,
+            photoHash: selectedPaymentScreenshotName || 'None'
+          })
         }), 8000, null);
       } catch (e) {}
     }
@@ -1517,10 +1521,8 @@
       }
     }
 
-    // Preserve Step 2 state when user returns from UPI App (visibilitychange / focus event)
     document.addEventListener('visibilitychange', function() {
       if (!document.hidden && currentOrderPayload) {
-        // User came back from PhonePe/GPay app to browser. Ensure Step 2 stays visible with active QR code & UTR inputs.
         const step2 = document.getElementById('step2Container');
         if (step2 && !step2.classList.contains('hidden')) {
           const upiUri = `upi://pay?pa=${encodeURIComponent(currentOrderPayload.assignedUpiId)}&pn=${encodeURIComponent('Student Support Studio')}&am=${currentOrderPayload.advanceAmount.toFixed(2)}&cu=INR&tn=${encodeURIComponent('Order ' + currentOrderPayload.orderId)}`;
