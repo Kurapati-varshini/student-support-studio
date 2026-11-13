@@ -21,6 +21,9 @@
   <!-- QRCode.js for NPCI Static UPI QR Generation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
+  <!-- Tesseract.js for Automatic Receipt Photo Amount, Order ID & UTR Detection -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
   <!-- jsPDF for Mandatory Automatic PDF Receipt & Form Download -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
@@ -76,7 +79,6 @@
   <header class="sticky top-0 z-50 glass-nav border-b border-slate-200/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3.5 group">
-        <!-- Exact Uncropped Circular Logo -->
         <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 overflow-hidden bg-transparent">
           <img
             src="logo.png"
@@ -121,7 +123,6 @@
   <section id="top" class="relative overflow-hidden pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-slate-200/70">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        <!-- Left Content -->
         <div class="lg:col-span-7 space-y-6">
           <div class="inline-flex flex-wrap items-center gap-2 bg-white border border-slate-200 px-3.5 py-1.5 rounded-full shadow-sm">
             <span class="w-2 h-2 rounded-full bg-tealAccent"></span>
@@ -167,7 +168,6 @@
           </div>
         </div>
 
-        <!-- Right Column: Exact Uncropped Circular Brand Logo Showcase -->
         <div class="lg:col-span-5 flex flex-col items-center justify-center">
           <div class="relative flex flex-col items-center">
             <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full flex items-center justify-center overflow-hidden bg-transparent drop-shadow-md">
@@ -198,7 +198,7 @@
     </div>
   </section>
 
-  <!-- Services & Pricing Grid (All 9 Poster Services) -->
+  <!-- Services & Pricing Grid -->
   <section id="services" class="py-16 sm:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-12">
@@ -211,9 +211,8 @@
         </p>
       </div>
 
-      <!-- 9 Services Grid -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- 1. Handwritten Records -->
+        <!-- 1 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -237,7 +236,7 @@
           </div>
         </div>
 
-        <!-- 2. Handwritten Assignments -->
+        <!-- 2 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -261,7 +260,7 @@
           </div>
         </div>
 
-        <!-- 3. Theory + Diagram Page -->
+        <!-- 3 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -283,7 +282,7 @@
           </div>
         </div>
 
-        <!-- 4. Online Assignments -->
+        <!-- 4 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -307,7 +306,7 @@
           </div>
         </div>
 
-        <!-- 5. B.Tech Mini Projects -->
+        <!-- 5 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -331,7 +330,7 @@
           </div>
         </div>
 
-        <!-- 6. IEEE Paper Formatting -->
+        <!-- 6 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -355,7 +354,7 @@
           </div>
         </div>
 
-        <!-- 7. PPT -->
+        <!-- 7 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -379,7 +378,7 @@
           </div>
         </div>
 
-        <!-- 8. Word Documentation -->
+        <!-- 8 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -403,7 +402,7 @@
           </div>
         </div>
 
-        <!-- 9. PDF Formatting & Editing -->
+        <!-- 9 -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -428,7 +427,6 @@
         </div>
       </div>
 
-      <!-- Footnote -->
       <div class="mt-8 bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 shadow-card">
         <i class="fa-solid fa-circle-info text-tealAccent text-lg mt-0.5"></i>
         <p class="text-xs sm:text-sm text-slateSoft leading-relaxed">
@@ -561,17 +559,17 @@
 
         <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-card">
           <span class="w-9 h-9 rounded-full bg-navy text-white font-heading font-bold text-sm flex items-center justify-center mb-4">2</span>
-          <h3 class="font-heading font-bold text-base text-navy">Pay Advance via BHIM UPI</h3>
+          <h3 class="font-heading font-bold text-base text-navy">Pay Advance &amp; Upload Receipt</h3>
           <p class="text-xs text-slateSoft mt-2 leading-relaxed">
-            Scan the assigned QR code and enter your 12-digit UPI Transaction ID (UTR) &amp; payment receipt to confirm.
+            Scan the assigned QR code, enter your 12-digit UPI Transaction ID (UTR), and upload your payment receipt photo.
           </p>
         </div>
 
         <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-card">
           <span class="w-9 h-9 rounded-full bg-navy text-white font-heading font-bold text-sm flex items-center justify-center mb-4">3</span>
-          <h3 class="font-heading font-bold text-base text-navy">Auto PDF Receipt &amp; Alert</h3>
+          <h3 class="font-heading font-bold text-base text-navy">Auto PDF Receipt &amp; Email</h3>
           <p class="text-xs text-slateSoft mt-2 leading-relaxed">
-            Once paid, our team receives your confirmed order alert and your Order Form &amp; Receipt downloads automatically as a PDF.
+            Your payment receipt photo is sent directly to our email and your Order Form &amp; Receipt downloads automatically as a PDF.
           </p>
         </div>
 
@@ -618,7 +616,7 @@
             <span class="w-10 h-10 rounded-xl bg-tealLight text-tealDark flex items-center justify-center">
               <i class="fa-solid fa-shield-halved"></i>
             </span>
-            <h3 class="font-heading font-bold text-lg text-navy">Advance Payment &amp; Mandatory PDF Receipt</h3>
+            <h3 class="font-heading font-bold text-lg text-navy">Advance Payment &amp; Receipt Verification Policy</h3>
           </div>
           <ul class="space-y-2.5 text-xs sm:text-sm text-slateSoft leading-relaxed">
             <li class="flex items-start gap-2">
@@ -627,7 +625,7 @@
             </li>
             <li class="flex items-start gap-2">
               <i class="fa-solid fa-check text-tealAccent mt-1"></i>
-              <span><strong>Post-Payment Confirmation &amp; PDF:</strong> After completing UPI payment, entering your 12-digit UTR, and uploading your payment receipt, our team is notified immediately and your mandatory <strong>Order Form &amp; Payment Receipt PDF</strong> downloads automatically.</span>
+              <span><strong>Receipt Photo Verification:</strong> Every uploaded payment receipt photo is verified directly by our team. If a lesser amount than the required advance is paid, the order stays <strong>ON HOLD</strong> until the remaining advance is cleared.</span>
             </li>
             <li class="flex items-start gap-2">
               <i class="fa-solid fa-check text-tealAccent mt-1"></i>
@@ -648,7 +646,7 @@
           Place Your Order &amp; Download PDF Receipt
         </h2>
         <p class="text-sm text-slateSoft mt-2">
-          Step 1: Enter Order Details → Step 2: Complete UPI Advance Payment → Step 3: Auto-Download Order Form PDF
+          Step 1: Enter Order Details → Step 2: Pay Advance &amp; Upload Receipt Photo → Step 3: Auto-Download Order Form PDF
         </p>
       </div>
 
@@ -670,9 +668,8 @@
         </div>
       </div>
 
-      <!-- STEP 1: PROGRESSIVE ORDER FORM -->
+      <!-- STEP 1: ORDER FORM -->
       <div id="step1Container" class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-soft">
-        <!-- Top Quick Navigation Bar -->
         <div id="step1TopNavBar" class="hidden mb-6 flex flex-wrap items-center justify-between gap-3 bg-ivory border border-slate-200 rounded-2xl px-4 py-3">
           <span class="text-xs font-semibold text-slateSoft">
             <i class="fa-solid fa-pen-to-square text-tealAccent mr-1.5"></i> Editing Order Details (<strong id="step1PendingId" class="font-mono text-navy">SSS-000000</strong>)
@@ -687,7 +684,6 @@
           </button>
         </div>
 
-        <!-- Strict Validation Banner -->
         <div id="formValidationBanner" class="hidden mb-6 bg-red-50 border-2 border-red-300 text-red-900 rounded-2xl p-4">
           <div class="flex items-start gap-3">
             <i class="fa-solid fa-triangle-exclamation text-red-600 text-lg mt-0.5"></i>
@@ -699,7 +695,7 @@
         </div>
 
         <form id="orderForm" novalidate class="space-y-8">
-          <!-- SECTION A: SERVICE TYPE & PRICING -->
+          <!-- SECTION A -->
           <div class="space-y-5">
             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
               <div class="flex items-center gap-2.5">
@@ -732,7 +728,6 @@
                 </select>
               </div>
 
-              <!-- Offline Page Count + "Count Not Known Yet (₹200 Advance)" Toggle -->
               <div id="orderPagesWrapper">
                 <div class="flex items-center justify-between mb-2">
                   <label for="orderPages" class="block text-xs font-bold uppercase tracking-wider text-navy">
@@ -772,7 +767,6 @@
                   <i class="fa-solid fa-circle-exclamation mr-1"></i> Minimum 10 pages required — cannot proceed with less than 10 pages.
                 </p>
 
-                <!-- Unknown Page Count Toggle (₹200 Advance) -->
                 <label class="mt-2.5 flex items-center gap-2 cursor-pointer select-none">
                   <input
                     type="checkbox"
@@ -785,7 +779,6 @@
               </div>
             </div>
 
-            <!-- Unknown Page Count Info Notice -->
             <div id="unknownCountNotice" class="hidden bg-sky-50 border border-sky-200 rounded-2xl p-4 text-xs text-sky-950 leading-relaxed">
               <p class="font-bold flex items-center gap-1.5">
                 <i class="fa-solid fa-calculator text-sky-700"></i>
@@ -796,7 +789,6 @@
               </p>
             </div>
 
-            <!-- No-Guess Diagram Toggle (Offline Handwritten Services) -->
             <div id="orderDiagramSection" class="bg-ivory rounded-2xl p-4 sm:p-5 border border-slate-200">
               <label class="block text-xs font-bold uppercase tracking-wider text-navy mb-2">
                 Diagrams Included? <span class="text-slateSoft font-normal normal-case">(No need to guess exact diagram pages)</span>
@@ -814,7 +806,7 @@
               </p>
             </div>
 
-            <!-- Online / Digital Assignment Materials (PDF/Doc up to 500MB OR .txt Description) -->
+            <!-- Online / Digital Materials -->
             <div id="onlineMaterialsSection" class="hidden bg-sky-50/70 rounded-2xl p-5 border border-sky-200 space-y-5">
               <div>
                 <div class="flex flex-wrap items-center justify-between gap-2">
@@ -894,7 +886,7 @@
               </div>
             </div>
 
-            <!-- Mandatory Two-Date Schedule -->
+            <!-- Schedule Dates -->
             <div class="bg-ivory rounded-2xl p-4 sm:p-5 border border-slate-200 space-y-4">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-calendar-check text-tealAccent"></i>
@@ -936,7 +928,7 @@
             </div>
           </div>
 
-          <!-- SECTION B: STUDENT DETAILS -->
+          <!-- SECTION B -->
           <div class="space-y-5">
             <div class="flex items-center gap-2.5 border-b border-slate-200 pb-3">
               <span class="w-7 h-7 rounded-lg bg-navy text-white font-heading font-bold text-xs flex items-center justify-center">B</span>
@@ -1002,7 +994,7 @@
             </div>
           </div>
 
-          <!-- SECTION C: ADDRESS / OFFLINE PICKUP DETAILS -->
+          <!-- SECTION C -->
           <div id="offlineLocationSection" class="space-y-4">
             <div class="flex items-center gap-2.5 border-b border-slate-200 pb-3">
               <span class="w-7 h-7 rounded-lg bg-navy text-white font-heading font-bold text-xs flex items-center justify-center">C</span>
@@ -1081,7 +1073,7 @@
               <span class="text-[11px] uppercase tracking-wider text-teal-300 font-bold block">Order Summary</span>
               <p id="summaryServiceLabel" class="font-heading font-bold text-base mt-0.5">Handwritten Records • 10 Pages</p>
               <p id="summaryUpiPreview" class="text-xs text-slate-300 mt-1">
-                Assigned UPI: <span class="font-mono font-bold text-white">kurapati084@upi</span>
+                Payment Mode: <span class="font-bold text-white">Verified UPI QR Code</span>
               </p>
             </div>
             <div class="sm:text-right">
@@ -1090,19 +1082,17 @@
             </div>
           </div>
 
-          <div class="flex flex-col sm:flex-row items-center gap-3">
-            <button
-              type="submit"
-              class="w-full bg-tealAccent hover:bg-tealDark text-white font-heading font-bold text-base py-4 rounded-2xl shadow-soft transition flex items-center justify-center gap-2.5"
-            >
-              <span>Save &amp; Forward to UPI Payment</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
+          <button
+            type="submit"
+            class="w-full bg-tealAccent hover:bg-tealDark text-white font-heading font-bold text-base py-4 rounded-2xl shadow-soft transition flex items-center justify-center gap-2.5"
+          >
+            <span>Save &amp; Forward to UPI Payment</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </form>
       </div>
 
-      <!-- STEP 2: DYNAMIC BHIM UPI QR PAYMENT & MANDATORY UTR CONFIRMATION -->
+      <!-- STEP 2: DYNAMIC BHIM UPI QR PAYMENT, UTR & RECEIPT PHOTO UPLOAD -->
       <div id="step2Container" class="hidden bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-soft">
         <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-200">
           <div>
@@ -1120,7 +1110,7 @@
               </span>
             </div>
             <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-navy mt-2.5">
-              Pay Advance &amp; Verify Transaction
+              Pay Advance &amp; Upload Payment Receipt
             </h3>
           </div>
           <div class="bg-ivory border border-slate-200 px-4 py-2 rounded-xl text-right">
@@ -1137,28 +1127,18 @@
             <span id="receiptSchedule" class="text-slateSoft block mt-1">—</span>
           </div>
           <div class="sm:text-right">
-            <span class="text-slateSoft block">Service &amp; Advance Due Now</span>
+            <span class="text-slateSoft block">Service &amp; Advance Required</span>
             <strong id="receiptService" class="text-navy text-sm block mt-0.5">—</strong>
             <span id="receiptAdvance" class="font-heading font-extrabold text-xl text-tealAccent block mt-0.5">₹50</span>
           </div>
         </div>
 
-        <!-- Dynamic QR Code & UPI ID Card -->
+        <!-- Dynamic QR Code Card (QR-Only so Order ID embeds automatically) -->
         <div class="flex flex-col items-center text-center bg-ivory/70 border border-slate-200 rounded-3xl p-6 sm:p-8">
-          <span id="upiRoutingBadge" class="text-xs font-bold px-3.5 py-1 rounded-full bg-navy text-white mb-3">
-            Guntur Offline Account (kurapati084@upi)
+          <span id="upiRoutingBadge" class="text-xs font-bold px-3.5 py-1 rounded-full bg-navy text-white mb-4">
+            Guntur Offline Account • Scan QR to Pay
           </span>
 
-          <!-- Prominent UPI ID Display Above QR -->
-          <div class="mb-4 flex flex-wrap items-center justify-center gap-2 bg-white border-2 border-tealAccent/40 px-4 py-2.5 rounded-2xl shadow-sm">
-            <span class="text-xs font-bold text-slateSoft uppercase tracking-wider">UPI ID:</span>
-            <code id="activeUpiIdText" class="font-mono font-extrabold text-base sm:text-lg text-navy select-all">kurapati084@upi</code>
-            <button type="button" onclick="copyActiveUpiId()" class="ml-1 bg-tealAccent hover:bg-tealDark text-white text-xs font-bold px-3.5 py-1.5 rounded-xl transition">
-              <i class="fa-regular fa-copy mr-1"></i> <span id="copyBtnLabel">Copy UPI ID</span>
-            </button>
-          </div>
-
-          <!-- Reliable QR Display Container -->
           <div class="w-56 h-56 bg-white p-3 rounded-2xl border-2 border-slate-200 shadow-sm flex items-center justify-center overflow-hidden">
             <img
               id="dynamicQrImage"
@@ -1169,10 +1149,10 @@
           </div>
 
           <p class="text-xs text-slateSoft mt-3">
-            Scan with <strong>BHIM, Google Pay, PhonePe, or Paytm</strong> — <strong id="qrAmountHint" class="text-navy">₹50</strong> pre-fills automatically
+            Scan with <strong>BHIM, Google Pay, PhonePe, or Paytm</strong> — <strong id="qrAmountHint" class="text-navy">₹50</strong> &amp; your Order ID pre-fill automatically
           </p>
           <p class="text-[11px] text-slateSoft mt-1">
-            (Note: Amount auto-fills when scanning the QR or tapping the button below; typing the UPI ID manually requires entering the amount.)
+            (Note: Pay only by scanning this QR code or tapping the button below so your Order ID is included in the payment receipt.)
           </p>
 
           <a
@@ -1190,10 +1170,10 @@
           <div>
             <h4 class="font-heading font-bold text-base text-navy flex items-center gap-2">
               <i class="fa-solid fa-shield-check text-tealAccent"></i>
-              <span>Verify Payment to Complete Order &amp; Download Mandatory PDF</span>
+              <span>Verify Payment &amp; Upload Receipt Photo to Complete Order</span>
             </h4>
             <p class="text-xs text-slateSoft mt-1">
-              After paying via UPI, enter your genuine <strong>12-digit UPI Transaction ID / UTR Number</strong> and upload your <strong>Payment Receipt</strong> below. Once confirmed, our studio receives your <strong>"Payment Successful - Please Complete Order"</strong> notification and your official Order Form PDF downloads automatically.
+              After paying via UPI, enter your genuine <strong>12-digit UPI Transaction ID / UTR Number</strong> and upload your <strong>Payment Receipt Screenshot / Photo</strong> below. Order ID, UTR ID, and Paid Amount are strictly verified against your uploaded photo.
             </p>
           </div>
 
@@ -1202,6 +1182,26 @@
           </div>
 
           <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="verifyOrderIdInput" class="block text-xs font-bold text-navy">
+                  Confirm Order Number <span class="text-red-500">*</span>
+                </label>
+                <span class="text-[11px] font-semibold text-slateSoft">Format: SSS-XXXXXX</span>
+              </div>
+              <input
+                type="text"
+                id="verifyOrderIdInput"
+                maxlength="10"
+                placeholder="e.g., SSS-123456"
+                oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9-]/g, ''); this.classList.remove('input-error'); document.getElementById('utrErrorBanner').classList.add('hidden');"
+                class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-mono font-bold text-navy focus:outline-none focus:border-tealAccent"
+              />
+              <p class="text-[11px] text-slateSoft mt-1">
+                Enter your Pending Order ID shown above (<strong><span id="expectedOrderIdHint">SSS-000000</span></strong>).
+              </p>
+            </div>
+
             <div>
               <div class="flex items-center justify-between mb-1.5">
                 <label for="upiUtrInput" class="block text-xs font-bold text-navy">
@@ -1219,14 +1219,14 @@
                 class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-mono font-bold text-navy focus:outline-none focus:border-tealAccent"
               />
               <p class="text-[11px] text-slateSoft mt-1">
-                12-digit UPI Ref / UTR number from GPay, PhonePe, Paytm, or BHIM.
+                Found in GPay / PhonePe / Paytm / BHIM under "UPI Ref ID" or "UTR".
               </p>
             </div>
 
-            <div>
+            <div class="sm:col-span-2">
               <div class="flex items-center justify-between mb-1.5">
                 <label for="paymentScreenshotInput" class="block text-xs font-bold text-navy">
-                  Upload Payment Receipt / Screenshot <span class="text-red-500">*</span>
+                  Payment Receipt Photo / Screenshot <span class="text-red-500">*</span>
                 </label>
                 <span class="text-[11px] font-bold text-red-600">Mandatory</span>
               </div>
@@ -1234,36 +1234,26 @@
                 type="file"
                 id="paymentScreenshotInput"
                 required
-                accept="image/jpeg,image/png,image/webp,application/pdf,.jpg,.jpeg,.png,.webp,.pdf"
+                accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"
                 onchange="handlePaymentScreenshotSelect(this)"
                 class="block w-full text-xs text-slateSoft bg-white rounded-xl border border-slate-300 p-2 file:mr-2.5 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-navy file:text-white cursor-pointer"
               />
               <p id="paymentScreenshotStatus" class="text-[11px] text-slateSoft mt-1">
-              Mandatory: Upload payment receipt image (JPG/PNG/WEBP) or PDF (Max 20 MB).
-            </p>
+                Upload payment receipt photo (JPG/PNG/WEBP) — attached directly to our email.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <!-- Mandatory Full Advance Amount Confirmation & Short-Payment Policy -->
-        <div class="bg-white border border-amber-300 rounded-xl p-3.5 space-y-2">
-          <label class="flex items-start gap-2.5 cursor-pointer select-none">
-            <input
-              type="checkbox"
-              id="confirmFullAdvanceCheckbox"
-              onchange="document.getElementById('utrErrorBanner').classList.add('hidden')"
-              class="mt-0.5 w-4 h-4 rounded border-slate-300 text-tealAccent focus:ring-tealAccent"
-            />
-            <span class="text-xs font-bold text-navy leading-snug">
-              I confirm that I have paid the exact full advance amount of <span id="confirmExactAmountLabel" class="text-tealDark underline">₹50</span> shown above (and my uploaded receipt clearly shows this amount).
-            </span>
-          </label>
-          <p class="text-[11px] text-amber-900 pl-6 leading-relaxed">
-            <i class="fa-solid fa-circle-info mr-1 text-amber-700"></i> <strong>Verification Policy:</strong> Our team verifies the paid amount on your receipt before starting work. If a lesser amount is paid, the order remains <strong>ON HOLD</strong> until the remaining advance balance is cleared.
-          </p>
-        </div>
+          <div class="bg-white border border-amber-300 rounded-xl p-3.5 text-[11px] text-amber-900 leading-relaxed">
+            <i class="fa-solid fa-circle-info mr-1 text-amber-700"></i> <strong>Advance &amp; UTR Verification Policy:</strong> Your Order ID and 12-digit UTR must match the uploaded receipt photo. If you pay less than the required advance (<span id="policyRequiredAdvanceSpan" class="font-bold">₹50</span>), your order will be placed <strong>ON HOLD</strong> until you contact us on Instagram (<strong>@student__support_studio</strong>) or email (<strong>studentsupportstudio@gmail.com</strong>) and settle the remaining advance.
+          </div>
 
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
-            <button type="button" onclick="goToStep1()" class="inline-flex items-center gap-1.5 text-xs font-bold text-navy bg-white hover:bg-slate-100 border border-slate-300 px-4 py-2.5 rounded-full transition">
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+            <button
+              type="button"
+              onclick="goToStep1()"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-navy border border-slate-300 font-bold text-xs px-5 py-3.5 rounded-2xl transition"
+            >
               <i class="fa-solid fa-arrow-left text-tealAccent"></i>
               <span>Back to Order Details</span>
             </button>
@@ -1272,28 +1262,28 @@
               type="button"
               id="confirmPaymentBtn"
               onclick="finalizePaymentAndDownloadPdf()"
-              class="w-full sm:w-auto bg-navy hover:bg-slate-800 text-white font-heading font-bold text-sm px-7 py-4 rounded-2xl shadow-soft transition flex items-center justify-center gap-2.5"
+              class="w-full sm:flex-1 bg-tealAccent hover:bg-tealDark text-white font-heading font-bold text-sm sm:text-base py-3.5 px-6 rounded-2xl shadow-soft transition flex items-center justify-center gap-2"
             >
-              <span>Confirm Payment &amp; Forward to PDF Receipt</span>
-              <i class="fa-solid fa-arrow-right text-teal-300"></i>
+              <i class="fa-solid fa-file-pdf"></i>
+              <span>Confirm Payment &amp; Download PDF Receipt</span>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- STEP 3: PAYMENT SUCCESSFUL + MANDATORY PDF DOWNLOADED -->
+      <!-- STEP 3: CONFIRMED RECEIPT / ON HOLD / FAILED SCREEN -->
       <div id="step3Container" class="hidden bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-soft text-center space-y-6">
-        <div class="w-16 h-16 rounded-full bg-tealLight text-tealDark flex items-center justify-center text-3xl mx-auto shadow-sm">
+        <div id="step3StatusIcon" class="w-16 h-16 rounded-full bg-tealLight text-tealDark flex items-center justify-center text-3xl mx-auto shadow-sm">
           <i class="fa-solid fa-circle-check"></i>
         </div>
 
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-tealAccent">Payment Confirmed &amp; Studio Notified</span>
-          <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-navy mt-1">
-            Payment Successful! Order Confirmed
+          <span id="step3StatusBadge" class="text-xs font-bold uppercase tracking-widest text-tealAccent">Payment Confirmed &amp; Receipt Sent</span>
+          <h3 id="step3StatusTitle" class="font-heading font-extrabold text-2xl sm:text-3xl text-navy mt-1">
+            Your Order is Confirmed!
           </h3>
-          <p class="text-sm text-slateSoft mt-2 max-w-xl mx-auto leading-relaxed">
-            Our team has received your <strong>"Payment Successful - Please Complete Order"</strong> notification, and your official <strong>Order Form &amp; Payment Receipt PDF</strong> has been downloaded automatically.
+          <p id="step3StatusDesc" class="text-sm text-slateSoft mt-2 max-w-xl mx-auto leading-relaxed">
+            Our team has received your payment confirmation along with your uploaded payment receipt photo, and your official <strong>Order Form &amp; Payment Receipt PDF</strong> has been downloaded automatically.
           </p>
         </div>
 
@@ -1307,22 +1297,23 @@
             <strong id="finalUtrText" class="font-mono text-navy">000000000000</strong>
           </div>
           <div class="flex justify-between">
-            <span class="text-slateSoft">Advance Paid:</span>
+            <span class="text-slateSoft">Advance Status:</span>
             <strong id="finalPaidText" class="text-tealDark">₹50</strong>
           </div>
           <div class="flex justify-between">
-            <span class="text-slateSoft">Uploaded Receipt:</span>
+            <span class="text-slateSoft">Receipt Photo Sent:</span>
             <strong id="finalReceiptFileText" class="font-mono text-navy">receipt.png</strong>
           </div>
-          <div class="flex justify-between">
+          <div id="finalPdfRow" class="flex justify-between">
             <span class="text-slateSoft">Downloaded PDF:</span>
             <strong id="finalPdfFilenameText" class="font-mono text-navy">Student_Support_Studio_Order.pdf</strong>
           </div>
         </div>
 
-        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        <div id="step3ActionButtons" class="flex flex-wrap items-center justify-center gap-3 pt-2">
           <button
             type="button"
+            id="downloadPdfAgainBtn"
             onclick="triggerMandatoryPdfDownload()"
             class="inline-flex items-center gap-2 bg-tealAccent hover:bg-tealDark text-white text-xs font-bold px-6 py-3.5 rounded-full shadow-soft transition"
           >
@@ -1336,7 +1327,14 @@
             class="inline-flex items-center gap-2 bg-navy hover:bg-slate-800 text-white text-xs font-bold px-6 py-3.5 rounded-full transition"
           >
             <i class="fa-brands fa-instagram text-pink-400"></i>
-            <span>Share on @student__support_studio</span>
+            <span>Contact on @student__support_studio</span>
+          </a>
+          <a
+            href="mailto:studentsupportstudio@gmail.com"
+            class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-navy border border-slate-300 text-xs font-bold px-5 py-3.5 rounded-full transition"
+          >
+            <i class="fa-solid fa-envelope text-tealAccent"></i>
+            <span>studentsupportstudio@gmail.com</span>
           </a>
         </div>
 
@@ -1409,230 +1407,142 @@
     let orderHasDiagrams = false;
     let isUnknownPageCount = false;
     let selectedDocFile = null;
+    let selectedTxtFileObj = null;
     let selectedTxtFileContent = '';
     let selectedTxtFileName = '';
     let selectedPaymentReceiptFile = null;
     let selectedPaymentScreenshotName = '';
+    let detectedReceiptAmount = null;
+    let detectedReceiptUtrs = [];
+    let detectedReceiptOrderNumbers = [];
     let activeUpiId = 'kurapati084@upi';
     let currentOrderPayload = null;
+    const USED_UTR_STORAGE_KEY = 'sss_used_utr_registry_v1';
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const todayStr = new Date().toISOString().split('T')[0];
-      const handoverInput = document.getElementById('handoverDate');
-      const submissionInput = document.getElementById('submissionDate');
-      if (handoverInput) handoverInput.min = todayStr;
-      if (submissionInput) submissionInput.min = todayStr;
+    function getLocallyUsedUtrs() {
+      try {
+        const raw = localStorage.getItem(USED_UTR_STORAGE_KEY);
+        const parsed = raw ? JSON.parse(raw) : {};
+        return (parsed && typeof parsed === 'object') ? parsed : {};
+      } catch (e) {
+        return {};
+      }
+    }
 
+    function markUtrAsUsed(utrNumber, orderId) {
+      try {
+        const registry = getLocallyUsedUtrs();
+        registry[utrNumber] = {
+          orderId: orderId,
+          usedAt: new Date().toISOString()
+        };
+        localStorage.setItem(USED_UTR_STORAGE_KEY, JSON.stringify(registry));
+      } catch (e) {}
+    }
+
+    function selectServiceFromCard(serviceName) {
+      const orderSelect = document.getElementById('orderService');
+      const estSelect = document.getElementById('estService');
+      if (orderSelect) orderSelect.value = serviceName;
+      if (estSelect) estSelect.value = serviceName;
       updateEstimator();
       handleServiceChange();
-    });
-
-    function syncSubmissionMinDate() {
-      const todayStr = new Date().toISOString().split('T')[0];
-      const handoverVal = document.getElementById('handoverDate').value;
-      const submissionInput = document.getElementById('submissionDate');
-      submissionInput.min = handoverVal && handoverVal > todayStr ? handoverVal : todayStr;
-      if (submissionInput.value && submissionInput.value < submissionInput.min) {
-        submissionInput.value = submissionInput.min;
-      }
-    }
-
-    function isValidIndianUpiUtr(utr) {
-      if (!/^[0-9]{12}$/.test(utr)) {
-        return { valid: false, reason: 'Transaction ID / UTR must be exactly 12 numeric digits.' };
-      }
-      if (/^(\d)\1{11}$/.test(utr)) {
-        return { valid: false, reason: 'Invalid Transaction ID: Repeating single-digit numbers are not valid UPI UTRs.' };
-      }
-      const dummyPatterns = [
-        '123456789012', '012345678901', '123456123456',
-        '987654321098', '112233445566', '121212121212'
-      ];
-      if (dummyPatterns.includes(utr)) {
-        return { valid: false, reason: 'Invalid Transaction ID: Please enter the genuine 12-digit UPI UTR from your payment app.' };
-      }
-      if (utr.startsWith('0')) {
-        return { valid: false, reason: 'Invalid UPI UTR: NPCI UPI Reference numbers never start with 0.' };
-      }
-      const uniqueDigits = new Set(utr.split('')).size;
-      if (uniqueDigits < 4) {
-        return { valid: false, reason: 'Invalid Transaction ID: Please check and enter your actual 12-digit UPI Reference / UTR number.' };
-      }
-      return { valid: true };
-    }
-
-    function handleUtrInput(el) {
-      el.value = el.value.replace(/[^0-9]/g, '').slice(0, 12);
-      const counter = document.getElementById('utrDigitCounter');
-      const check = isValidIndianUpiUtr(el.value);
-      counter.textContent = `${el.value.length}/12 digits`;
-      counter.className = check.valid
-        ? 'text-[11px] font-bold text-tealDark'
-        : 'text-[11px] font-semibold text-slateSoft';
-      el.classList.remove('input-error');
-      document.getElementById('utrErrorBanner').classList.add('hidden');
-    }
-
-    function handlePaymentScreenshotSelect(input) {
-      const statusEl = document.getElementById('paymentScreenshotStatus');
-      const file = input.files && input.files[0];
-      input.classList.remove('input-error');
-      document.getElementById('utrErrorBanner').classList.add('hidden');
-
-      if (!file) {
-        selectedPaymentReceiptFile = null;
-        selectedPaymentScreenshotName = '';
-        statusEl.textContent = 'Mandatory: Upload payment receipt image (JPG/PNG/WEBP) or PDF (Max 20 MB).';
-        statusEl.className = 'text-[11px] text-slateSoft mt-1';
-        return;
-      }
-
-      const ext = file.name.split('.').pop().toLowerCase();
-      if (!['jpg', 'jpeg', 'png', 'webp', 'pdf'].includes(ext)) {
-        input.value = '';
-        selectedPaymentReceiptFile = null;
-        selectedPaymentScreenshotName = '';
-        statusEl.textContent = 'Invalid file format. Please upload JPG, PNG, WEBP, or PDF receipt.';
-        statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1';
-        return;
-      }
-
-      if (file.size > 20 * 1024 * 1024 || file.size < 1024) {
-        input.value = '';
-        selectedPaymentReceiptFile = null;
-        selectedPaymentScreenshotName = '';
-        statusEl.textContent = 'Please upload a valid payment receipt file between 1 KB and 20 MB.';
-        statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1';
-        return;
-      }
-
-      selectedPaymentReceiptFile = file;
-      selectedPaymentScreenshotName = file.name;
-      const sizeKB = Math.round(file.size / 1024);
-      statusEl.innerHTML = `<i class="fa-solid fa-circle-check text-tealAccent mr-1"></i> Verified Receipt Attached: <strong>${file.name}</strong> (${sizeKB} KB)`;
-      statusEl.className = 'text-[11px] text-navy mt-1';
-    }
-
-    // Strict 10-Page Minimum Floor + Inline Warning
-    function showMinPageWarning(context, show) {
-      const warnEl = document.getElementById(context === 'est' ? 'estMinWarning' : 'orderMinWarning');
-      if (!warnEl) return;
-      if (show) {
-        warnEl.classList.remove('hidden');
-      } else {
-        warnEl.classList.add('hidden');
-      }
-    }
-
-    function guardMinPagesKeydown(e, context) {
-      if (['-', '+', '.', 'e', 'E'].includes(e.key)) {
-        e.preventDefault();
-        return;
-      }
-      const input = e.target;
-      const val = parseInt(input.value, 10) || 10;
-      if (e.key === 'ArrowDown' && val <= 10) {
-        e.preventDefault();
-        input.value = '10';
-        showMinPageWarning(context, true);
-      }
-    }
-
-    function guardMinPagesInput(input, context) {
-      const digitsOnly = input.value.replace(/[^0-9]/g, '');
-      if (digitsOnly === '') {
-        input.value = '10';
-        showMinPageWarning(context, true);
-        if (context === 'est') updateEstimator(); else updateOrderSummary();
-        return;
-      }
-      let num = parseInt(digitsOnly, 10);
-      if (num < 10) {
-        input.value = '10';
-        showMinPageWarning(context, true);
-      } else {
-        if (num > 500) num = 500;
-        input.value = String(num);
-        showMinPageWarning(context, false);
-      }
-      if (context === 'est') updateEstimator(); else updateOrderSummary();
-    }
-
-    function enforceMinPagesBlur(input, context) {
-      let num = parseInt(input.value, 10);
-      if (isNaN(num) || num < 10) {
-        input.value = '10';
-        showMinPageWarning(context, true);
-      } else if (num > 500) {
-        input.value = '500';
-      }
-      if (context === 'est') updateEstimator(); else updateOrderSummary();
     }
 
     function stepEstimatorPages(delta) {
       const input = document.getElementById('estPages');
-      const current = parseInt(input.value, 10) || 10;
-      if (delta < 0 && current <= 10) {
-        input.value = '10';
-        showMinPageWarning('est', true);
-        return;
+      const warn = document.getElementById('estMinWarning');
+      let val = parseInt(input.value, 10) || 10;
+      if (val + delta < 10) {
+        input.value = 10;
+        warn.classList.remove('hidden');
+      } else {
+        input.value = val + delta;
+        warn.classList.add('hidden');
       }
-      const next = Math.min(500, Math.max(10, current + delta));
-      input.value = String(next);
-      showMinPageWarning('est', false);
       updateEstimator();
     }
 
     function stepOrderPages(delta) {
       const input = document.getElementById('orderPages');
-      const current = parseInt(input.value, 10) || 10;
-      if (delta < 0 && current <= 10) {
-        input.value = '10';
-        showMinPageWarning('order', true);
-        return;
+      const warn = document.getElementById('orderMinWarning');
+      let val = parseInt(input.value, 10) || 10;
+      if (val + delta < 10) {
+        input.value = 10;
+        warn.classList.remove('hidden');
+      } else {
+        input.value = val + delta;
+        warn.classList.add('hidden');
       }
-      const next = Math.min(500, Math.max(10, current + delta));
-      input.value = String(next);
-      showMinPageWarning('order', false);
       updateOrderSummary();
     }
 
-    // Estimator Logic
+    function guardMinPagesKeydown(e, source) {
+      if (e.key === '-' || e.key === 'e' || e.key === 'E' || e.key === '.') {
+        e.preventDefault();
+      }
+    }
+
+    function guardMinPagesInput(input, source) {
+      const warn = document.getElementById(source === 'est' ? 'estMinWarning' : 'orderMinWarning');
+      const raw = input.value.replace(/[^0-9]/g, '');
+      input.value = raw;
+      const num = parseInt(raw, 10);
+      if (!isNaN(num) && num < 10) {
+        warn.classList.remove('hidden');
+      } else {
+        warn.classList.add('hidden');
+      }
+      if (source === 'est') updateEstimator();
+      else updateOrderSummary();
+    }
+
+    function enforceMinPagesBlur(input, source) {
+      const warn = document.getElementById(source === 'est' ? 'estMinWarning' : 'orderMinWarning');
+      let num = parseInt(input.value, 10);
+      if (isNaN(num) || num < 10) {
+        input.value = 10;
+        warn.classList.remove('hidden');
+      } else {
+        warn.classList.add('hidden');
+      }
+      if (source === 'est') updateEstimator();
+      else updateOrderSummary();
+    }
+
     function setEstDiagram(hasDiag) {
       estHasDiagrams = hasDiag;
-      const btnNo = document.getElementById('estDiagNo');
-      const btnYes = document.getElementById('estDiagYes');
+      const noBtn = document.getElementById('estDiagNo');
+      const yesBtn = document.getElementById('estDiagYes');
       const note = document.getElementById('estDiagramNote');
-
       if (hasDiag) {
-        btnYes.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-tealLight/40 text-navy text-xs font-bold transition';
-        btnNo.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
+        yesBtn.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-tealLight/40 text-navy text-xs font-bold transition';
+        noBtn.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
         note.classList.remove('hidden');
       } else {
-        btnNo.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-tealLight/40 text-navy text-xs font-bold transition';
-        btnYes.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
+        noBtn.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-tealLight/40 text-navy text-xs font-bold transition';
+        yesBtn.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
         note.classList.add('hidden');
       }
       updateEstimator();
     }
 
     function updateEstimator() {
-      const service = document.getElementById('estService').value;
-      const cfg = SERVICE_CONFIG[service];
+      const svc = document.getElementById('estService').value;
+      const cfg = SERVICE_CONFIG[svc] || SERVICE_CONFIG['Handwritten Records'];
       const pagesGroup = document.getElementById('estPagesGroup');
       const diagGroup = document.getElementById('estDiagramGroup');
-      const minusBtn = document.getElementById('estMinusBtn');
+      let total = 0;
 
-      let total = cfg.rate;
       if (cfg.type === 'offline') {
         pagesGroup.classList.remove('hidden');
         diagGroup.classList.remove('hidden');
         const pages = Math.max(10, parseInt(document.getElementById('estPages').value, 10) || 10);
         total = pages * cfg.rate;
-        minusBtn.classList.toggle('opacity-50', pages <= 10);
       } else {
         pagesGroup.classList.add('hidden');
         diagGroup.classList.add('hidden');
+        total = cfg.rate;
       }
 
       const advance = Math.ceil(total * 0.5);
@@ -1641,239 +1551,199 @@
     }
 
     function applyEstimateToOrder() {
-      const service = document.getElementById('estService').value;
-      const pages = Math.max(10, parseInt(document.getElementById('estPages').value, 10) || 10);
-      document.getElementById('orderService').value = service;
-      document.getElementById('orderPages').value = String(pages);
-      document.getElementById('unknownPageCountCheckbox').checked = false;
-      toggleUnknownPageCount(false);
+      const estSvc = document.getElementById('estService').value;
+      const estPages = Math.max(10, parseInt(document.getElementById('estPages').value, 10) || 10);
+      document.getElementById('orderService').value = estSvc;
+      document.getElementById('orderPages').value = estPages;
       setOrderDiagram(estHasDiagrams);
       handleServiceChange();
       document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
     }
 
-    function selectServiceFromCard(serviceName) {
-      document.getElementById('orderService').value = serviceName;
-      handleServiceChange();
-    }
-
-    // Unknown Page Count Toggle (₹200 Flat Advance)
-    function toggleUnknownPageCount(checked) {
-      isUnknownPageCount = checked;
-      const knownGroup = document.getElementById('knownPagesInputGroup');
-      const notice = document.getElementById('unknownCountNotice');
-      const minWarn = document.getElementById('orderMinWarning');
-
-      if (checked) {
-        knownGroup.classList.add('opacity-40', 'pointer-events-none');
-        notice.classList.remove('hidden');
-        minWarn.classList.add('hidden');
-      } else {
-        knownGroup.classList.remove('opacity-40', 'pointer-events-none');
-        notice.classList.add('hidden');
-      }
-      updateOrderSummary();
-    }
-
     function setOrderDiagram(hasDiag) {
       orderHasDiagrams = hasDiag;
-      const btnNo = document.getElementById('ordDiagNo');
-      const btnYes = document.getElementById('ordDiagYes');
+      const noBtn = document.getElementById('ordDiagNo');
+      const yesBtn = document.getElementById('ordDiagYes');
       const banner = document.getElementById('orderDiagramBanner');
-
       if (hasDiag) {
-        btnYes.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-white text-navy text-xs font-bold transition shadow-sm';
-        btnNo.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
+        yesBtn.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-white text-navy text-xs font-bold transition shadow-sm';
+        noBtn.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
         banner.classList.remove('hidden');
       } else {
-        btnNo.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-white text-navy text-xs font-bold transition shadow-sm';
-        btnYes.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
+        noBtn.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-white text-navy text-xs font-bold transition shadow-sm';
+        yesBtn.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
         banner.classList.add('hidden');
       }
       updateOrderSummary();
     }
 
-    function handleServiceChange() {
-      const service = document.getElementById('orderService').value;
-      const cfg = SERVICE_CONFIG[service];
-      const pagesWrapper = document.getElementById('orderPagesWrapper');
-      const diagramSection = document.getElementById('orderDiagramSection');
+    function toggleUnknownPageCount(checked) {
+      isUnknownPageCount = checked;
+      const knownGroup = document.getElementById('knownPagesInputGroup');
       const unknownNotice = document.getElementById('unknownCountNotice');
-      const offlineSection = document.getElementById('offlineLocationSection');
-      const onlineSection = document.getElementById('onlineMaterialsSection');
-      const handoverHint = document.getElementById('handoverDateHint');
-      const ratePill = document.getElementById('serviceRatePill');
+      const warn = document.getElementById('orderMinWarning');
+      if (checked) {
+        knownGroup.classList.add('opacity-50', 'pointer-events-none');
+        unknownNotice.classList.remove('hidden');
+        warn.classList.add('hidden');
+      } else {
+        knownGroup.classList.remove('opacity-50', 'pointer-events-none');
+        unknownNotice.classList.add('hidden');
+      }
+      updateOrderSummary();
+    }
 
-      ratePill.textContent = cfg.badgeText;
+    function handleServiceChange() {
+      const svc = document.getElementById('orderService').value;
+      const cfg = SERVICE_CONFIG[svc] || SERVICE_CONFIG['Handwritten Records'];
+      document.getElementById('serviceRatePill').textContent = cfg.badgeText;
+
+      const pagesWrap = document.getElementById('orderPagesWrapper');
+      const diagSec = document.getElementById('orderDiagramSection');
+      const offlineSec = document.getElementById('offlineLocationSection');
+      const onlineSec = document.getElementById('onlineMaterialsSection');
+      const handoverHint = document.getElementById('handoverDateHint');
 
       if (cfg.type === 'offline') {
-        pagesWrapper.classList.remove('hidden');
-        diagramSection.classList.remove('hidden');
-        offlineSection.classList.remove('hidden');
-        onlineSection.classList.add('hidden');
-        if (isUnknownPageCount) unknownNotice.classList.remove('hidden');
+        pagesWrap.classList.remove('hidden');
+        diagSec.classList.remove('hidden');
+        offlineSec.classList.remove('hidden');
+        onlineSec.classList.add('hidden');
         handoverHint.textContent = 'Date you hand over blank record books / sheets at Guntur or Kadapa pickup point.';
       } else {
-        pagesWrapper.classList.add('hidden');
-        diagramSection.classList.add('hidden');
-        unknownNotice.classList.add('hidden');
-        offlineSection.classList.add('hidden');
-        onlineSection.classList.remove('hidden');
-        handoverHint.textContent = 'Date you share assignment syllabus, reference files, or topic details with us.';
+        pagesWrap.classList.add('hidden');
+        diagSec.classList.add('hidden');
+        offlineSec.classList.add('hidden');
+        onlineSec.classList.remove('hidden');
+        handoverHint.textContent = 'Date you submit your assignment topic, syllabus, or reference files to us.';
       }
-
       updateOrderSummary();
     }
 
     function handleCityChange() {
       const city = document.getElementById('offlineCity').value;
-      const areaInput = document.getElementById('offlineArea');
-      const pinInput = document.getElementById('offlinePincode');
-      const cityHint = document.getElementById('cityHintText');
-
-      if (city === 'Guntur') {
-        areaInput.placeholder = 'e.g., Brodipet, Lakshmipuram, Arundelpet';
-        pinInput.placeholder = '522002';
-        cityHint.innerHTML = '<i class="fa-solid fa-circle-info mr-1"></i> Guntur orders require a valid Guntur area and 6-digit Pin Code starting with <strong>522</strong> (e.g., 522002).';
+      const pinEl = document.getElementById('offlinePincode');
+      const hintEl = document.getElementById('cityHintText');
+      if (city === 'Kadapa') {
+        pinEl.placeholder = '516001';
+        hintEl.innerHTML = '<i class="fa-solid fa-circle-info mr-1"></i> Kadapa orders require a valid Kadapa area and 6-digit Pin Code starting with <strong>516</strong> (e.g., 516001).';
       } else {
-        areaInput.placeholder = 'e.g., NGO Colony, Yerramukkapalli, RIMS Road';
-        pinInput.placeholder = '516001';
-        cityHint.innerHTML = '<i class="fa-solid fa-circle-info mr-1"></i> Kadapa orders require a valid Kadapa area and 6-digit Pin Code starting with <strong>516</strong> (e.g., 516001).';
+        pinEl.placeholder = '522002';
+        hintEl.innerHTML = '<i class="fa-solid fa-circle-info mr-1"></i> Guntur orders require a valid Guntur area and 6-digit Pin Code starting with <strong>522</strong> (e.g., 522002).';
       }
       updateOrderSummary();
     }
 
-    function getPaymentRouting(service, city) {
-      const cfg = SERVICE_CONFIG[service];
-      if (cfg.type === 'offline' && city === 'Guntur') {
-        return {
-          upiId: 'kurapati084@upi',
-          qrFile: 'qr.png',
-          badge: 'Guntur Offline Account (kurapati084@upi)'
-        };
+    function getAssignedUpiId() {
+      const svc = document.getElementById('orderService').value;
+      const cfg = SERVICE_CONFIG[svc] || SERVICE_CONFIG['Handwritten Records'];
+      if (cfg.type === 'offline') {
+        const city = document.getElementById('offlineCity').value;
+        return city === 'Kadapa' ? 'muppala03@upi' : 'kurapati084@upi';
       }
-      if (cfg.type === 'offline' && city === 'Kadapa') {
-        return {
-          upiId: 'muppala03@upi',
-          qrFile: 'qr_kadapa.png',
-          badge: 'Kadapa Offline Account (muppala03@upi)'
-        };
-      }
-      return {
-        upiId: 'muppala03@upi',
-        qrFile: 'qr_kadapa.png',
-        badge: 'Online / Digital Services Account (muppala03@upi)'
-      };
+      return 'kurapati084@upi';
     }
 
     function updateOrderSummary() {
-      const service = document.getElementById('orderService').value;
-      const city = document.getElementById('offlineCity').value;
-      const cfg = SERVICE_CONFIG[service];
-      const minusBtn = document.getElementById('orderMinusBtn');
-      const routing = getPaymentRouting(service, city);
+      const svc = document.getElementById('orderService').value;
+      const cfg = SERVICE_CONFIG[svc] || SERVICE_CONFIG['Handwritten Records'];
+      activeUpiId = getAssignedUpiId();
 
-      let advance = 0;
-      let label = '';
+      let serviceLabel = svc;
+      let totalText = '';
+      let advanceAmount = 50;
 
       if (cfg.type === 'offline') {
         if (isUnknownPageCount) {
-          advance = 200;
-          label = `${service} • Exact Page Count TBD (${orderHasDiagrams ? 'Includes Diagrams' : 'Theory Only'})`;
-          document.getElementById('summaryTotalLine').innerHTML = `Final Total: <strong class="text-white">Counted after completion (₹200 advance deducted)</strong>`;
+          serviceLabel = `${svc} • Page Count Unknown`;
+          totalText = 'Calculated after completion';
+          advanceAmount = 200;
         } else {
           const pages = Math.max(10, parseInt(document.getElementById('orderPages').value, 10) || 10);
-          minusBtn.classList.toggle('opacity-50', pages <= 10);
           const total = pages * cfg.rate;
-          advance = Math.ceil(total * 0.5);
-          label = `${service} • ${pages} Pages (${orderHasDiagrams ? 'Includes Diagrams' : 'Theory Only'})`;
-          document.getElementById('summaryTotalLine').innerHTML = `Estimated Total: <strong class="text-white">₹${total}</strong>`;
+          advanceAmount = Math.ceil(total * 0.5);
+          serviceLabel = `${svc} • ${pages} Pages${orderHasDiagrams ? ' (+ Diagrams)' : ''}`;
+          totalText = `₹${total}`;
         }
       } else {
         const total = cfg.rate;
-        advance = Math.ceil(total * 0.5);
-        label = `${service} • ₹${total}`;
-        document.getElementById('summaryTotalLine').innerHTML = `Service Price: <strong class="text-white">₹${total}</strong>`;
+        advanceAmount = Math.ceil(total * 0.5);
+        totalText = `₹${total}`;
       }
 
-      document.getElementById('summaryServiceLabel').textContent = label;
-      document.getElementById('summaryAdvanceAmount').textContent = `₹${advance}`;
-      document.getElementById('summaryUpiPreview').innerHTML = `Assigned UPI: <span class="font-mono font-bold text-white">${routing.upiId}</span>`;
+      document.getElementById('summaryServiceLabel').textContent = serviceLabel;
+      document.getElementById('summaryUpiPreview').innerHTML = `Payment Mode: <span class="font-bold text-white">Verified UPI QR Code</span>`;
+      document.getElementById('summaryTotalAmount').textContent = totalText;
+      document.getElementById('summaryAdvanceAmount').textContent = `₹${advanceAmount}`;
     }
 
-    function handleNameInput(el) {
-      if (el.value.length > 50) {
-        el.value = el.value.slice(0, 50);
-      }
-      const counter = document.getElementById('nameCharCounter');
-      counter.textContent = `${el.value.length}/50 chars`;
-      counter.className = el.value.length >= 2 && el.value.length <= 50
-        ? 'text-[11px] font-bold text-tealDark'
-        : 'text-[11px] font-semibold text-slateSoft';
+    function handleNameInput(input) {
+      input.classList.remove('input-error');
+      document.getElementById('nameCharCounter').textContent = `${input.value.length}/50 chars`;
     }
 
-    function handlePhoneInput(el) {
-      el.value = el.value.replace(/[^0-9]/g, '').slice(0, 10);
-      const counter = document.getElementById('phoneDigitCounter');
-      counter.textContent = `${el.value.length}/10 digits`;
-      counter.className = el.value.length === 10
-        ? 'text-[11px] font-bold text-tealDark'
-        : 'text-[11px] font-semibold text-slateSoft';
+    function handlePhoneInput(input) {
+      input.classList.remove('input-error');
+      input.value = input.value.replace(/[^0-9]/g, '').slice(0, 10);
+      document.getElementById('phoneDigitCounter').textContent = `${input.value.length}/10 digits`;
     }
 
     function isValidGmailAddress(email) {
       return /^[a-zA-Z0-9._%+-]+@gmail\.com$/i.test(email.trim());
     }
 
-    function handleEmailInput(el) {
+    function handleEmailInput(input) {
+      input.classList.remove('input-error');
       const badge = document.getElementById('emailStatusBadge');
-      const val = el.value.trim();
+      const val = input.value.trim();
       if (!val) {
         badge.textContent = 'Must end with @gmail.com';
         badge.className = 'text-[11px] font-semibold text-slateSoft';
       } else if (isValidGmailAddress(val)) {
-        badge.innerHTML = '<i class="fa-solid fa-circle-check text-tealAccent mr-1"></i> Valid @gmail.com';
+        badge.textContent = 'Valid @gmail.com';
         badge.className = 'text-[11px] font-bold text-tealDark';
-        el.classList.remove('input-error');
       } else {
-        badge.textContent = 'Only @gmail.com is allowed';
-        badge.className = 'text-[11px] font-semibold text-red-600';
+        badge.textContent = 'Only @gmail.com allowed';
+        badge.className = 'text-[11px] font-bold text-red-600';
       }
     }
 
-    // Online Document Upload (PDF/DOC/DOCX up to 500MB)
+    function handleUtrInput(input) {
+      input.classList.remove('input-error');
+      document.getElementById('utrErrorBanner').classList.add('hidden');
+      input.value = input.value.replace(/[^0-9]/g, '').slice(0, 12);
+      document.getElementById('utrDigitCounter').textContent = `${input.value.length}/12 digits`;
+    }
+
+    function syncSubmissionMinDate() {
+      const handoverEl = document.getElementById('handoverDate');
+      const subEl = document.getElementById('submissionDate');
+      if (handoverEl.value) {
+        subEl.min = handoverEl.value;
+        if (subEl.value && subEl.value < handoverEl.value) {
+          subEl.value = handoverEl.value;
+        }
+      }
+    }
+
     function handleOnlineDocSelect(input) {
+      const file = input.files && input.files[0];
       const statusEl = document.getElementById('onlineDocStatus');
       const clearBtn = document.getElementById('clearDocBtn');
-      const file = input.files && input.files[0];
-
       if (!file) {
         selectedDocFile = null;
         statusEl.textContent = 'No PDF/Document selected yet (Max allowed size: 500 MB).';
-        statusEl.className = 'text-[11px] text-slateSoft mt-1.5';
         clearBtn.classList.add('hidden');
         return;
       }
-
-      const ext = file.name.split('.').pop().toLowerCase();
-      if (!['pdf', 'doc', 'docx'].includes(ext)) {
-        input.value = '';
-        selectedDocFile = null;
-        statusEl.textContent = 'Invalid file format. Only .pdf, .doc, or .docx files are allowed.';
-        statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1.5';
-        clearBtn.classList.add('hidden');
-        return;
-      }
-
       if (file.size > MAX_DOC_BYTES) {
         input.value = '';
         selectedDocFile = null;
-        statusEl.textContent = 'File exceeds 500 MB limit. Please select a file under 500 MB.';
+        statusEl.textContent = 'File exceeds 500 MB limit. Please select a smaller PDF/Document.';
         statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1.5';
         clearBtn.classList.add('hidden');
         return;
       }
-
       selectedDocFile = file;
       const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
       statusEl.innerHTML = `<i class="fa-solid fa-circle-check text-tealAccent mr-1"></i> Attached: <strong>${file.name}</strong> (${sizeMB} MB)`;
@@ -1882,258 +1752,264 @@
     }
 
     function clearOnlineDoc() {
-      const input = document.getElementById('onlineDocFile');
-      input.value = '';
-      handleOnlineDocSelect(input);
+      document.getElementById('onlineDocFile').value = '';
+      selectedDocFile = null;
+      document.getElementById('onlineDocStatus').textContent = 'No PDF/Document selected yet (Max allowed size: 500 MB).';
+      document.getElementById('clearDocBtn').classList.add('hidden');
     }
 
-    // Online .txt File Upload
     function handleOnlineTxtFileSelect(input) {
+      const file = input.files && input.files[0];
       const statusEl = document.getElementById('onlineTxtFileStatus');
       const clearBtn = document.getElementById('clearTxtBtn');
+      if (!file) {
+        selectedTxtFileObj = null;
+        selectedTxtFileName = '';
+        selectedTxtFileContent = '';
+        statusEl.innerHTML = 'Either upload a <code>.txt</code> file OR type your description below (both are not required — anyone is enough):';
+        clearBtn.classList.add('hidden');
+        return;
+      }
+      selectedTxtFileObj = file;
+      selectedTxtFileName = file.name;
+      const reader = new FileReader();
+      reader.onload = function (ev) {
+        selectedTxtFileContent = String(ev.target.result || '');
+      };
+      reader.readAsText(file);
+      statusEl.innerHTML = `<i class="fa-solid fa-circle-check text-tealAccent mr-1"></i> Attached .txt file: <strong>${file.name}</strong>`;
+      clearBtn.classList.remove('hidden');
+    }
+
+    function clearOnlineTxtFile() {
+      document.getElementById('onlineTxtFile').value = '';
+      selectedTxtFileObj = null;
+      selectedTxtFileName = '';
+      selectedTxtFileContent = '';
+      document.getElementById('onlineTxtFileStatus').innerHTML = 'Either upload a <code>.txt</code> file OR type your description below (both are not required — anyone is enough):';
+      document.getElementById('clearTxtBtn').classList.add('hidden');
+    }
+
+    function preprocessReceiptForOcr(file) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        const url = URL.createObjectURL(file);
+        img.onload = function () {
+          try {
+            const scale = Math.min(2.4, Math.max(1.4, 1400 / Math.max(img.width, 1)));
+            const w = Math.round(img.width * scale);
+            const h = Math.round(img.height * scale);
+            const canvas = document.createElement('canvas');
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, w, h);
+
+            const imgData = ctx.getImageData(0, 0, w, h);
+            const data = imgData.data;
+            let brightnessSum = 0;
+            for (let i = 0; i < data.length; i += 16) {
+              brightnessSum += (data[i] + data[i + 1] + data[i + 2]) / 3;
+            }
+            const avgBrightness = brightnessSum / (data.length / 16);
+            const isDarkTheme = avgBrightness < 110;
+
+            for (let i = 0; i < data.length; i += 4) {
+              let lum = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+              if (isDarkTheme) lum = 255 - lum;
+              const enhanced = lum > 175 ? 255 : (lum < 105 ? 0 : lum);
+              data[i] = enhanced;
+              data[i + 1] = enhanced;
+              data[i + 2] = enhanced;
+            }
+            ctx.putImageData(imgData, 0, 0);
+            URL.revokeObjectURL(url);
+            resolve(canvas);
+          } catch (e) {
+            URL.revokeObjectURL(url);
+            resolve(file);
+          }
+        };
+        img.onerror = function () {
+          URL.revokeObjectURL(url);
+          resolve(file);
+        };
+        img.src = url;
+      });
+    }
+
+    // Extract paid amount (₹50, ₹100, etc.), 12-digit UTR, AND 6-digit Order Number from uploaded receipt photo
+    async function extractReceiptDataFromImage(file, expectedAdvance) {
+      if (!window.Tesseract || !file) return { amount: null, utrs: [], orderNumbers: [] };
+      try {
+        const processedCanvas = await preprocessReceiptForOcr(file);
+        const result = await Tesseract.recognize(processedCanvas, 'eng');
+        const rawText = (result && result.data && result.data.text) ? result.data.text : '';
+        const cleaned = rawText.replace(/,/g, '');
+
+        // 1. Extract any 6-digit Order Number printed inside GPay/PhonePe note (handles "Order SSS-626167", "SSS 626167", "555-626167", "Order 626167")
+        const orderNumbersFound = new Set();
+        const orderMatches = [...cleaned.toUpperCase().matchAll(/(?:ORDER\s*(?:SSS|555|S55)?|SSS|555)[-\s:]*([0-9]{6})\b/g)];
+        orderMatches.forEach(m => orderNumbersFound.add(m[1]));
+
+        // 2. Extract 12-digit UTRs
+        const utrsFound = new Set();
+        const utrLabelMatches = [...cleaned.matchAll(/(?:UTR|UPI\s*Ref(?:\s*No|\s*ID)?|Ref(?:erence)?\s*(?:No|ID)?)[:\s#-]*([0-9]{12})\b/gi)];
+        utrLabelMatches.forEach(m => utrsFound.add(m[1]));
+
+        const standalone12Matches = [...cleaned.matchAll(/(?<![0-9])([1-9][0-9]{11})(?![0-9])/g)];
+        standalone12Matches.forEach(m => utrsFound.add(m[1]));
+
+        // 3. Strip transaction IDs, Order IDs, dates ("13 Nov 2026"), times ("12:08 pm"), and bank last-4 digits before reading rupee amount
+        const textWithoutNoise = cleaned
+          .replace(/T[0-9]{15,25}/gi, ' ')
+          .replace(/(?:ORDER\s*(?:SSS|555|S55)?|SSS|555)[-\s:]*[0-9]{6}\b/gi, ' ')
+          .replace(/(?<![0-9])[0-9]{10,16}(?![0-9])/g, ' ')
+          .replace(/\b[0-3]?[0-9]\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+20[2-3][0-9]\b/gi, ' ')
+          .replace(/\b[0-9]{1,2}:[0-9]{2}\s*(?:am|pm)?\b/gi, ' ')
+          .replace(/(?:Bank\s+of\s+India|Bank|Account|A\/c|XXXX+)\s*[0-9]{4}\b/gi, ' ');
+
+        const symbolMatches = [...textWithoutNoise.matchAll(/(?:₹|Rs\.?|INR)\s*([0-9]{1,5})(?:\.[0-9]{1,2})?/gi)];
+        const validSymVals = symbolMatches
+          .map(m => parseInt(m[1], 10))
+          .filter(v => !isNaN(v) && v >= 5 && v <= 50000);
+
+        const lineCandidates = [];
+        const lines = textWithoutNoise.split('\n');
+        for (const line of lines) {
+          if (/(?:Nov|Dec|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Bank|Union|HDFC|SBI|ICICI|Axis|CUB|Order)/i.test(line)) continue;
+          const nums = [...line.matchAll(/\b([0-9]{2,5})\b/g)].map(m => parseInt(m[1], 10));
+          for (const n of nums) {
+            if (n >= 10 && n <= 50000 && n !== 2025 && n !== 2026 && n !== 2027) {
+              lineCandidates.push(n);
+            }
+          }
+        }
+
+        let detectedAmount = null;
+        if (validSymVals.length > 0) {
+          if (validSymVals.includes(expectedAdvance)) {
+            detectedAmount = expectedAdvance;
+          } else {
+            detectedAmount = validSymVals[0];
+          }
+        } else if (lineCandidates.length > 0) {
+          if (lineCandidates.includes(expectedAdvance)) {
+            detectedAmount = expectedAdvance;
+          } else {
+            detectedAmount = lineCandidates[0];
+          }
+        }
+
+        return {
+          amount: detectedAmount,
+          utrs: Array.from(utrsFound),
+          orderNumbers: Array.from(orderNumbersFound)
+        };
+      } catch (err) {
+        return { amount: null, utrs: [], orderNumbers: [] };
+      }
+    }
+
+    async function handlePaymentScreenshotSelect(input) {
       const file = input.files && input.files[0];
+      const statusEl = document.getElementById('paymentScreenshotStatus');
+      input.classList.remove('input-error');
+      document.getElementById('utrErrorBanner').classList.add('hidden');
+      detectedReceiptAmount = null;
+      detectedReceiptUtrs = [];
+      detectedReceiptOrderNumbers = [];
 
       if (!file) {
-        selectedTxtFileContent = '';
-        selectedTxtFileName = '';
-        statusEl.innerHTML = 'Either upload a <code>.txt</code> file OR type your description below (both are not required — anyone is enough):';
+        selectedPaymentReceiptFile = null;
+        selectedPaymentScreenshotName = '';
+        statusEl.textContent = 'Upload payment receipt photo (JPG/PNG/WEBP) — attached directly to our email.';
         statusEl.className = 'text-[11px] text-slateSoft mt-1';
-        clearBtn.classList.add('hidden');
         return;
       }
 
       const ext = file.name.split('.').pop().toLowerCase();
-      if (ext !== 'txt') {
+      if (!['jpg', 'jpeg', 'png', 'webp'].includes(ext)) {
         input.value = '';
-        selectedTxtFileContent = '';
-        selectedTxtFileName = '';
-        statusEl.textContent = 'Only .txt plain text files are accepted here.';
+        selectedPaymentReceiptFile = null;
+        selectedPaymentScreenshotName = '';
+        statusEl.textContent = 'Please upload a payment receipt photo (JPG, PNG, or WEBP).';
         statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1';
-        clearBtn.classList.add('hidden');
         return;
       }
 
-      selectedTxtFileName = file.name;
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        selectedTxtFileContent = (e.target.result || '').toString().trim();
-        statusEl.innerHTML = `<i class="fa-solid fa-circle-check text-tealAccent mr-1"></i> Attached <code>.txt</code> file: <strong>${file.name}</strong> (typing below is optional)`;
-        statusEl.className = 'text-[11px] text-navy mt-1';
-        clearBtn.classList.remove('hidden');
-      };
-      reader.readAsText(file);
-    }
-
-    function clearOnlineTxtFile() {
-      const input = document.getElementById('onlineTxtFile');
-      input.value = '';
-      handleOnlineTxtFileSelect(input);
-    }
-
-    function clearValidationHighlights() {
-      document.querySelectorAll('.input-error').forEach((el) => el.classList.remove('input-error'));
-      document.getElementById('formValidationBanner').classList.add('hidden');
-    }
-
-    function showValidationError(element, reason) {
-      if (element) {
-        element.classList.add('input-error');
-        element.focus();
+      if (file.size > 10 * 1024 * 1024 || file.size < 1024) {
+        input.value = '';
+        selectedPaymentReceiptFile = null;
+        selectedPaymentScreenshotName = '';
+        statusEl.textContent = 'Receipt photo must be between 1 KB and 10 MB so it attaches to email.';
+        statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1';
+        return;
       }
+
+      selectedPaymentReceiptFile = file;
+      selectedPaymentScreenshotName = file.name;
+      const sizeKB = Math.round(file.size / 1024);
+      statusEl.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-tealAccent mr-1"></i> Reading Order ID, UTR &amp; amount from <strong>${file.name}</strong>...`;
+      statusEl.className = 'text-[11px] text-navy mt-1';
+
+      const expected = currentOrderPayload ? currentOrderPayload.advanceAmount : 50;
+      const extracted = await extractReceiptDataFromImage(file, expected);
+      detectedReceiptAmount = extracted.amount;
+      detectedReceiptUtrs = extracted.utrs;
+      detectedReceiptOrderNumbers = extracted.orderNumbers;
+
+      const detectedSummary = detectedReceiptAmount !== null ? ` • Detected Amount: ₹${detectedReceiptAmount}` : '';
+      statusEl.innerHTML = `<i class="fa-solid fa-circle-check text-tealAccent mr-1"></i> Receipt photo ready: <strong>${file.name}</strong> (${sizeKB} KB${detectedSummary})`;
+    }
+
+    function showFormValidationError(message, fieldIds) {
       const banner = document.getElementById('formValidationBanner');
-      document.getElementById('formValidationReason').textContent = reason;
+      const reason = document.getElementById('formValidationReason');
+      reason.textContent = message;
       banner.classList.remove('hidden');
+      fieldIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('input-error');
+      });
       banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    // STEP 1 SUBMIT: Validate Details & Proceed to Step 2 Payment (NO Email Sent Yet)
-    document.getElementById('orderForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      clearValidationHighlights();
-
-      const serviceEl = document.getElementById('orderService');
-      const pagesEl = document.getElementById('orderPages');
-      const handoverEl = document.getElementById('handoverDate');
-      const submissionEl = document.getElementById('submissionDate');
-      const nameEl = document.getElementById('studentName');
-      const phoneEl = document.getElementById('studentPhone');
-      const emailEl = document.getElementById('studentEmail');
-
-      const serviceVal = serviceEl.value;
-      const cfg = SERVICE_CONFIG[serviceVal];
-      const todayStr = new Date().toISOString().split('T')[0];
-
-      // 1. Validate Pages (if offline and count is known)
-      let pagesCount = null;
-      if (cfg.type === 'offline' && !isUnknownPageCount) {
-        const pagesNum = parseInt(pagesEl.value, 10);
-        if (isNaN(pagesNum) || pagesNum < 10 || pagesNum > 500) {
-          showMinPageWarning('order', true);
-          return showValidationError(pagesEl, 'Minimum 10 pages required — cannot proceed with less than 10 pages.');
-        }
-        pagesCount = pagesNum;
+    function goToStep1() {
+      document.getElementById('step2Container').classList.add('hidden');
+      document.getElementById('step3Container').classList.add('hidden');
+      document.getElementById('step1Container').classList.remove('hidden');
+      document.getElementById('stepBadge1').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm transition';
+      document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-white text-slateSoft border border-slate-300 px-4 py-2 rounded-full text-xs font-bold transition';
+      if (currentOrderPayload) {
+        document.getElementById('step1TopNavBar').classList.remove('hidden');
+        document.getElementById('step1PendingId').textContent = currentOrderPayload.orderId;
       }
-
-      // 2. Validate Online Materials (Either PDF/Doc <= 500MB OR .txt description/file)
-      const txtBoxEl = document.getElementById('onlineTxtDescription');
-      const typedTxt = txtBoxEl.value.trim();
-      if (cfg.type === 'online') {
-        const hasValidDoc = Boolean(selectedDocFile);
-        const hasValidTxt = Boolean(selectedTxtFileName || selectedTxtFileContent || typedTxt.length > 0);
-        if (!hasValidDoc && !hasValidTxt) {
-          return showValidationError(txtBoxEl, 'For Online / Digital orders, please provide either a PDF/Document (max 500 MB) OR Option 2 (upload a .txt file OR type your description).');
-        }
-      }
-
-      // 3. Validate Both Mandatory Dates
-      if (!handoverEl.value || handoverEl.value < todayStr) {
-        return showValidationError(handoverEl, 'Please select a valid Date of Giving Materials / Books to Us (today or future date).');
-      }
-      if (!submissionEl.value || submissionEl.value < handoverEl.value) {
-        return showValidationError(submissionEl, 'Final Submission / Delivery Date must be on or after the Date of Giving Materials / Books.');
-      }
-
-      // 4. Validate Student Details
-      const nameVal = nameEl.value.trim();
-      const phoneVal = phoneEl.value.trim();
-      const emailVal = emailEl.value.trim();
-
-      if (nameVal.length < 2 || nameVal.length > 50) {
-        return showValidationError(nameEl, 'Please enter a valid full name (between 2 and 50 characters).');
-      }
-      if (!/^[6-9][0-9]{9}$/.test(phoneVal)) {
-        return showValidationError(phoneEl, 'Please enter a valid 10-digit WhatsApp / mobile number (e.g., 9876543210).');
-      }
-      if (!isValidGmailAddress(emailVal)) {
-        return showValidationError(emailEl, 'Please enter a valid @gmail.com email address (e.g., abcd@gmail.com). Other email domains cannot proceed.');
-      }
-
-      // 5. Validate Offline Guntur / Kadapa City + Area + Pincode
-      const cityVal = document.getElementById('offlineCity').value;
-      const areaEl = document.getElementById('offlineArea');
-      const pinEl = document.getElementById('offlinePincode');
-      const areaVal = areaEl.value.trim();
-      const pinVal = pinEl.value.trim();
-
-      if (cfg.type === 'offline') {
-        if (areaVal.length < 3 || /^[0-9]+$/.test(areaVal)) {
-          return showValidationError(areaEl, `Please enter a valid Area / Locality in ${cityVal}.`);
-        }
-        if (cityVal === 'Guntur') {
-          if (!/^522[0-9]{3}$/.test(pinVal)) {
-            return showValidationError(pinEl, 'Guntur selected: Please enter a valid 6-digit Guntur Pin Code starting with 522 (e.g., 522002).');
-          }
-          if (/kadapa|cuddapah|proddatur|pulivendula|rayachoti|rajampet/i.test(areaVal)) {
-            return showValidationError(areaEl, 'City is set to Guntur, but the locality entered belongs to Kadapa. Please match City and Area.');
-          }
-        } else if (cityVal === 'Kadapa') {
-          if (!/^516[0-9]{3}$/.test(pinVal)) {
-            return showValidationError(pinEl, 'Kadapa selected: Please enter a valid 6-digit Kadapa Pin Code starting with 516 (e.g., 516001).');
-          }
-          if (/guntur|brodipet|arundelpet|lakshmipuram|mangalagiri|tenali|narasaraopet/i.test(areaVal)) {
-            return showValidationError(areaEl, 'City is set to Kadapa, but the locality entered belongs to Guntur. Please match City and Area.');
-          }
-        }
-      }
-
-      // Calculate Pricing & Store Payload in Memory Until Payment Is Confirmed
-      const orderId = 'SSS-' + Math.floor(100000 + Math.random() * 900000);
-      const routing = getPaymentRouting(serviceVal, cityVal);
-      activeUpiId = routing.upiId;
-
-      let totalEstimateDisplay = '';
-      let advanceAmount = 0;
-
-      if (cfg.type === 'offline') {
-        if (isUnknownPageCount) {
-          totalEstimateDisplay = 'Exact page count TBD after completion (₹10/pg theory, ₹15/pg diagram)';
-          advanceAmount = 200;
-        } else {
-          const total = pagesCount * cfg.rate;
-          totalEstimateDisplay = `₹${total} (${pagesCount} pages @ ₹10/page base)`;
-          advanceAmount = Math.ceil(total * 0.5);
-        }
-      } else {
-        totalEstimateDisplay = `₹${cfg.rate}`;
-        advanceAmount = Math.ceil(cfg.rate * 0.5);
-      }
-
-      currentOrderPayload = {
-        orderId,
-        serviceVal,
-        serviceType: cfg.type,
-        pagesDisplay: cfg.type === 'offline'
-          ? (isUnknownPageCount ? 'Exact count unknown (₹200 advance)' : `${pagesCount} pages`)
-          : 'Digital / Online Service',
-        diagramsDisplay: cfg.type === 'offline'
-          ? (orderHasDiagrams ? 'Yes (Verify ₹15/pg after syllabus review)' : 'No (Theory Only)')
-          : 'N/A',
-        handoverDate: handoverEl.value,
-        submissionDate: submissionEl.value,
-        nameVal,
-        phoneVal,
-        emailVal,
-        cityVal: cfg.type === 'offline' ? cityVal : 'Online (Pan-India)',
-        areaVal: cfg.type === 'offline' ? areaVal : 'N/A',
-        pinVal: cfg.type === 'offline' ? pinVal : 'N/A',
-        docSummary: cfg.type === 'online'
-          ? (selectedDocFile ? `${selectedDocFile.name} (${(selectedDocFile.size / (1024 * 1024)).toFixed(2)} MB)` : 'Not uploaded')
-          : 'N/A',
-        txtContent: cfg.type === 'online'
-          ? (typedTxt || selectedTxtFileContent || (selectedTxtFileName ? `Attached .txt file: ${selectedTxtFileName}` : 'Not provided'))
-          : 'N/A',
-        notesVal: document.getElementById('orderNotes').value.trim() || 'None',
-        totalEstimateDisplay,
-        advanceAmount,
-        routing,
-        utrNumber: '',
-        receiptFileName: ''
-      };
-
-      // Move to Step 2 (Payment Screen)
-      document.getElementById('step1Container').classList.add('hidden');
-      document.getElementById('step2Container').classList.remove('hidden');
-      document.getElementById('step1TopNavBar').classList.remove('hidden');
-      document.getElementById('step1PendingId').textContent = orderId;
-
-      document.getElementById('stepBadge1').className = 'flex items-center gap-2 bg-tealLight/70 hover:bg-tealLight text-tealDark px-4 py-2 rounded-full text-xs font-bold cursor-pointer transition';
-      document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm cursor-pointer transition';
-
-      document.getElementById('receiptOrderId').textContent = orderId;
-      document.getElementById('receiptStudent').textContent = `${nameVal} (${phoneVal})`;
-      document.getElementById('receiptSchedule').textContent = `Materials: ${handoverEl.value} → Delivery: ${submissionEl.value}`;
-      document.getElementById('receiptService').textContent = `${serviceVal} (${currentOrderPayload.pagesDisplay})`;
-      document.getElementById('receiptAdvance').textContent = `₹${advanceAmount}`;
-      document.getElementById('qrAmountHint').textContent = `₹${advanceAmount}`;
-      document.getElementById('confirmExactAmountLabel').textContent = `₹${advanceAmount}`;
-      document.getElementById('confirmFullAdvanceCheckbox').checked = false;
-      document.getElementById('upiRoutingBadge').textContent = routing.badge;
-      document.getElementById('activeUpiIdText').textContent = routing.upiId;
-
-      const formattedAmount = Number(advanceAmount).toFixed(2);
-      document.getElementById('directUpiPayLink').href = `upi://pay?pa=${encodeURIComponent(routing.upiId)}&pn=${encodeURIComponent('Student Support Studio')}&am=${encodeURIComponent(formattedAmount)}&cu=INR&tn=${encodeURIComponent('Order ' + orderId)}`;
-
-      // Render dynamic UPI QR with exact advance amount pre-filled
-      renderDynamicOrLocalQr(routing.upiId, advanceAmount, orderId);
-
       document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
-    });
+    }
 
-    function renderDynamicOrLocalQr(upiId, amount, orderId) {
+    function goToStep2IfReady() {
+      if (currentOrderPayload) {
+        document.getElementById('step1Container').classList.add('hidden');
+        document.getElementById('step3Container').classList.add('hidden');
+        document.getElementById('step2Container').classList.remove('hidden');
+        document.getElementById('stepBadge1').className = 'flex items-center gap-2 bg-tealLight/60 text-tealDark px-4 py-2 rounded-full text-xs font-bold transition';
+        document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm transition';
+      } else {
+        document.getElementById('orderForm').requestSubmit();
+      }
+    }
+
+    function renderDynamicOrLocalQr(upiUri) {
       const qrImg = document.getElementById('dynamicQrImage');
       const fallbackCanvas = document.getElementById('fallbackQrCanvas');
-
       qrImg.classList.add('hidden');
-      fallbackCanvas.classList.remove('hidden');
       fallbackCanvas.innerHTML = '';
-
-      const formattedAmount = Number(amount).toFixed(2);
-      const upiUri = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent('Student Support Studio')}&am=${encodeURIComponent(formattedAmount)}&cu=INR&tn=${encodeURIComponent('Order ' + orderId)}`;
       if (window.QRCode) {
         new QRCode(fallbackCanvas, {
           text: upiUri,
-          width: 196,
-          height: 196,
+          width: 192,
+          height: 192,
           colorDark: '#0F172A',
           colorLight: '#FFFFFF',
           correctLevel: QRCode.CorrectLevel.M
@@ -2141,316 +2017,633 @@
       }
     }
 
-    function fallbackCopyText(text) {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-    }
+    document.getElementById('orderForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('formValidationBanner').classList.add('hidden');
+      document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
 
-    function copyActiveUpiId() {
-      const label = document.getElementById('copyBtnLabel');
-      const showCopied = () => {
-        label.textContent = 'Copied!';
-        setTimeout(() => {
-          label.textContent = 'Copy UPI ID';
-        }, 2000);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(activeUpiId).then(showCopied).catch(() => {
-          fallbackCopyText(activeUpiId);
-          showCopied();
-        });
-      } else {
-        fallbackCopyText(activeUpiId);
-        showCopied();
+      const svc = document.getElementById('orderService').value;
+      const cfg = SERVICE_CONFIG[svc] || SERVICE_CONFIG['Handwritten Records'];
+      const handoverDate = document.getElementById('handoverDate').value;
+      const submissionDate = document.getElementById('submissionDate').value;
+      const nameVal = document.getElementById('studentName').value.trim();
+      const phoneVal = document.getElementById('studentPhone').value.trim();
+      const emailVal = document.getElementById('studentEmail').value.trim();
+      const notesVal = document.getElementById('orderNotes').value.trim();
+
+      if (cfg.type === 'offline' && !isUnknownPageCount) {
+        const pages = parseInt(document.getElementById('orderPages').value, 10);
+        if (isNaN(pages) || pages < 10) {
+          showFormValidationError('Minimum 10 pages are required for Handwritten Records & Assignments (or check "I don\'t know the exact page count yet").', ['orderPages']);
+          return;
+        }
       }
-    }
 
-    function goToStep1() {
-      document.getElementById('step2Container').classList.add('hidden');
+      if (cfg.type === 'online') {
+        const typedDesc = document.getElementById('onlineTxtDescription').value.trim();
+        if (!selectedDocFile && !selectedTxtFileObj && !typedDesc) {
+          showFormValidationError('For Online / Digital services, please either upload a PDF/Document OR upload/type your description in .txt format.', ['onlineDocFile', 'onlineTxtDescription']);
+          return;
+        }
+      }
+
+      if (!handoverDate || !submissionDate) {
+        showFormValidationError('Please select both the Handover/Material Date and the Final Submission/Delivery Date.', ['handoverDate', 'submissionDate']);
+        return;
+      }
+
+      if (!nameVal || nameVal.length < 2) {
+        showFormValidationError('Please enter your full name.', ['studentName']);
+        return;
+      }
+
+      if (!/^[6-9][0-9]{9}$/.test(phoneVal)) {
+        showFormValidationError('Please enter a valid 10-digit Indian WhatsApp/mobile number.', ['studentPhone']);
+        return;
+      }
+
+      if (!isValidGmailAddress(emailVal)) {
+        showFormValidationError('Please enter a valid @gmail.com email address (e.g., abcd@gmail.com).', ['studentEmail']);
+        return;
+      }
+
+      let city = 'Online / Pan-India';
+      let area = 'Digital Delivery';
+      let pincode = 'N/A';
+
+      if (cfg.type === 'offline') {
+        city = document.getElementById('offlineCity').value;
+        area = document.getElementById('offlineArea').value.trim();
+        pincode = document.getElementById('offlinePincode').value.trim();
+
+        if (!area || area.length < 3) {
+          showFormValidationError(`Please enter your Area / Locality in ${city}.`, ['offlineArea']);
+          return;
+        }
+
+        if (city === 'Guntur' && !/^522[0-9]{3}$/.test(pincode)) {
+          showFormValidationError('Please enter a valid 6-digit Guntur Pin Code starting with 522 (e.g., 522002).', ['offlinePincode']);
+          return;
+        }
+
+        if (city === 'Kadapa' && !/^516[0-9]{3}$/.test(pincode)) {
+          showFormValidationError('Please enter a valid 6-digit Kadapa Pin Code starting with 516 (e.g., 516001).', ['offlinePincode']);
+          return;
+        }
+      }
+
+      activeUpiId = getAssignedUpiId();
+      let pageCountLabel = 'Digital Package';
+      let knownTotalAmount = cfg.rate;
+      let advanceAmount = Math.ceil(cfg.rate * 0.5);
+
+      if (cfg.type === 'offline') {
+        if (isUnknownPageCount) {
+          pageCountLabel = 'Unknown (Flat ₹200 Advance)';
+          knownTotalAmount = null;
+          advanceAmount = 200;
+        } else {
+          const pages = Math.max(10, parseInt(document.getElementById('orderPages').value, 10) || 10);
+          pageCountLabel = `${pages} Pages${orderHasDiagrams ? ' (+ Diagrams)' : ' (Theory)'}`;
+          knownTotalAmount = pages * cfg.rate;
+          advanceAmount = Math.ceil(knownTotalAmount * 0.5);
+        }
+      }
+
+      const existingId = currentOrderPayload ? currentOrderPayload.orderId : `SSS-${Math.floor(100000 + Math.random() * 900000)}`;
+      const typedDescFinal = document.getElementById('onlineTxtDescription').value.trim();
+
+      currentOrderPayload = {
+        orderId: existingId,
+        service: svc,
+        serviceType: cfg.type,
+        pageCountLabel,
+        knownTotalAmount,
+        advanceAmount,
+        handoverDate,
+        submissionDate,
+        nameVal,
+        phoneVal,
+        emailVal,
+        city,
+        area,
+        pincode,
+        notesVal,
+        assignedUpiId: activeUpiId,
+        docFileName: selectedDocFile ? selectedDocFile.name : 'None',
+        txtFileName: selectedTxtFileName || (typedDescFinal ? 'Typed_Description.txt' : 'None'),
+        txtContent: selectedTxtFileContent || typedDescFinal || ''
+      };
+
+      document.getElementById('receiptOrderId').textContent = existingId;
+      document.getElementById('expectedOrderIdHint').textContent = existingId;
+      document.getElementById('verifyOrderIdInput').value = existingId;
+      document.getElementById('receiptStudent').textContent = `${nameVal} (+91 ${phoneVal})`;
+      document.getElementById('receiptSchedule').textContent = `Handover: ${handoverDate} • Delivery: ${submissionDate}`;
+      document.getElementById('receiptService').textContent = `${svc} (${pageCountLabel})`;
+      document.getElementById('receiptAdvance').textContent = `₹${advanceAmount}`;
+      document.getElementById('policyRequiredAdvanceSpan').textContent = `₹${advanceAmount}`;
+      document.getElementById('qrAmountHint').textContent = `₹${advanceAmount}`;
+
+      const badgeText = cfg.type === 'offline'
+        ? `${city} Offline Account • Scan QR to Pay`
+        : `Online Services Account • Scan QR to Pay`;
+      document.getElementById('upiRoutingBadge').textContent = badgeText;
+
+      const upiUri = `upi://pay?pa=${encodeURIComponent(activeUpiId)}&pn=${encodeURIComponent('Student Support Studio')}&am=${advanceAmount.toFixed(2)}&cu=INR&tn=${encodeURIComponent('Order ' + existingId)}`;
+      document.getElementById('directUpiPayLink').href = upiUri;
+      renderDynamicOrLocalQr(upiUri);
+
+      document.getElementById('step1Container').classList.add('hidden');
       document.getElementById('step3Container').classList.add('hidden');
-      document.getElementById('step1Container').classList.remove('hidden');
-      document.getElementById('stepBadge1').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm cursor-pointer transition';
-      document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-white text-slateSoft border border-slate-300 px-4 py-2 rounded-full text-xs font-bold cursor-pointer transition';
+      document.getElementById('step2Container').classList.remove('hidden');
+      document.getElementById('stepBadge1').className = 'flex items-center gap-2 bg-tealLight/60 text-tealDark px-4 py-2 rounded-full text-xs font-bold transition';
+      document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm transition';
       document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
-    }
+    });
 
-    function goToStep2IfReady() {
-      if (!document.getElementById('step3Container').classList.contains('hidden')) return;
-      if (!document.getElementById('step2Container').classList.contains('hidden')) return;
-      document.getElementById('orderForm').requestSubmit();
-    }
+    // Upload file to ad-free direct raw file host (opens/downloads directly with zero ads)
+    async function uploadFileForDirectAdFreeLink(fileObj, fallbackLabel) {
+      if (!fileObj) return fallbackLabel || 'None';
 
-    // STEP 2 -> STEP 3: Verify Payment UTR & Receipt -> Send Email -> Auto-Download Mandatory PDF
-    async function finalizePaymentAndDownloadPdf() {
-      if (!currentOrderPayload) return;
-
-      const utrInput = document.getElementById('upiUtrInput');
-      const receiptInput = document.getElementById('paymentScreenshotInput');
-      const fullAdvanceCheckbox = document.getElementById('confirmFullAdvanceCheckbox');
-      const utrBanner = document.getElementById('utrErrorBanner');
-      const utrErrorText = document.getElementById('utrErrorText');
-      const utrVal = utrInput.value.trim();
-
-      const utrValidation = isValidIndianUpiUtr(utrVal);
-      if (!utrValidation.valid) {
-        utrInput.classList.add('input-error');
-        utrInput.focus();
-        utrErrorText.textContent = utrValidation.reason;
-        utrBanner.classList.remove('hidden');
-        return;
-      }
-
-      if (!selectedPaymentReceiptFile || !selectedPaymentScreenshotName) {
-        receiptInput.classList.add('input-error');
-        receiptInput.focus();
-        utrErrorText.textContent = 'Payment receipt upload is mandatory. Please attach your UPI payment screenshot or PDF receipt.';
-        utrBanner.classList.remove('hidden');
-        return;
-      }
-
-      if (!fullAdvanceCheckbox.checked) {
-        fullAdvanceCheckbox.focus();
-        utrErrorText.textContent = `Please tick the confirmation box verifying that you paid the full ₹${currentOrderPayload.advanceAmount} advance amount.`;
-        utrBanner.classList.remove('hidden');
-        return;
-      }
-
-      utrInput.classList.remove('input-error');
-      receiptInput.classList.remove('input-error');
-      utrBanner.classList.add('hidden');
-      currentOrderPayload.utrNumber = utrVal;
-      currentOrderPayload.receiptFileName = selectedPaymentScreenshotName;
-
-      const confirmBtn = document.getElementById('confirmPaymentBtn');
-      const origHtml = confirmBtn.innerHTML;
-      confirmBtn.disabled = true;
-      confirmBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Confirming Order &amp; Sending Email...</span>';
-
-      // Build clean JSON payload for instant, reliable Web3Forms email delivery
-      const emailPayload = {
-        access_key: '5eb37e08-5cb2-4141-b524-03a0d790bfc4',
-        subject: `Payment Successful - Please Complete Order | ${currentOrderPayload.orderId} - ${currentOrderPayload.serviceVal}`,
-        from_name: 'Student Support Studio Website',
-        replyto: currentOrderPayload.emailVal,
-        Payment_Status: 'Payment Successful - Please Complete Order',
-        Order_ID: currentOrderPayload.orderId,
-        UPI_Transaction_ID_UTR: utrVal,
-        Assigned_UPI_ID_Paid_To: currentOrderPayload.routing.upiId,
-        Advance_Amount_Paid: `₹${currentOrderPayload.advanceAmount}`,
-        Total_Estimate_Details: currentOrderPayload.totalEstimateDisplay,
-        Student_Name: currentOrderPayload.nameVal,
-        WhatsApp_Phone: currentOrderPayload.phoneVal,
-        Student_Email: currentOrderPayload.emailVal,
-        Service_Selected: currentOrderPayload.serviceVal,
-        Pages_Or_Package: currentOrderPayload.pagesDisplay,
-        Diagrams_Included: currentOrderPayload.diagramsDisplay,
-        Date_Giving_Materials_To_Studio: currentOrderPayload.handoverDate,
-        Final_Submission_Date_Needed: currentOrderPayload.submissionDate,
-        Payment_Receipt_Uploaded_By_Student: selectedPaymentScreenshotName,
-        Additional_Notes: currentOrderPayload.notesVal
-      };
-
-      if (currentOrderPayload.serviceType === 'offline') {
-        emailPayload.Offline_City = currentOrderPayload.cityVal;
-        emailPayload.Offline_Area_Locality = currentOrderPayload.areaVal;
-        emailPayload.Offline_Pin_Code = currentOrderPayload.pinVal;
-        emailPayload.Pickup_Policy = 'Share exact pickup point personally; Rapido delivery charges borne by customer.';
-      } else {
-        emailPayload.Uploaded_PDF_Or_Doc = currentOrderPayload.docSummary;
-        emailPayload.Assignment_TXT_Description = currentOrderPayload.txtContent;
-      }
-
-      let emailDelivered = false;
+      // Provider 1: tmpfiles.org direct /dl/ raw download link (zero ads, instant direct file)
       try {
-        const response = await fetch('https://api.web3forms.com/submit', {
+        const fd1 = new FormData();
+        fd1.append('file', fileObj);
+        const res1 = await fetch('https://tmpfiles.org/api/v1/upload', {
+          method: 'POST',
+          body: fd1
+        });
+        if (res1.ok) {
+          const json1 = await res1.json();
+          if (json1 && json1.data && json1.data.url) {
+            const rawDirectUrl = json1.data.url.replace('tmpfiles.org/', 'tmpfiles.org/dl/');
+            return rawDirectUrl;
+          }
+        }
+      } catch (e1) {}
+
+      // Provider 2: 0x0.st direct raw URL (zero ads)
+      try {
+        const fd2 = new FormData();
+        fd2.append('file', fileObj);
+        const res2 = await fetch('https://0x0.st', {
+          method: 'POST',
+          body: fd2
+        });
+        if (res2.ok) {
+          const url2 = (await res2.text()).trim();
+          if (url2.startsWith('http')) return url2;
+        }
+      } catch (e2) {}
+
+      // Provider 3: catbox.moe direct raw URL (files.catbox.moe - zero ads)
+      try {
+        const fd3 = new FormData();
+        fd3.append('reqtype', 'fileupload');
+        fd3.append('fileToUpload', fileObj);
+        const res3 = await fetch('https://catbox.moe/user/api.php', {
+          method: 'POST',
+          body: fd3
+        });
+        if (res3.ok) {
+          const url3 = (await res3.text()).trim();
+          if (url3.startsWith('http')) return url3;
+        }
+      } catch (e3) {}
+
+      return `${fileObj.name} (Uploaded file)`;
+    }
+
+    // Send email reliably to studentsupportstudio@gmail.com via dual endpoints (Web3Forms + FormSubmit.co)
+    async function sendOrderEmailToStudio(emailSubject, emailPayload) {
+      const requests = [];
+
+      // Channel 1: Web3Forms JSON API
+      requests.push(
+        fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          body: JSON.stringify(emailPayload)
-        });
-        const result = await response.json();
-        emailDelivered = Boolean(response.ok && result && result.success);
-      } catch (err) {
-        console.warn('Primary Web3Forms JSON submit retry:', err);
+          body: JSON.stringify({
+            access_key: '5eb37e08-5cb2-4141-b524-03a0d790bfc4',
+            subject: emailSubject,
+            from_name: 'Student Support Studio Website',
+            replyto: emailPayload.Student_Gmail,
+            ...emailPayload
+          })
+        }).catch(() => null)
+      );
+
+      // Channel 2: FormSubmit.co Direct AJAX to studentsupportstudio@gmail.com
+      requests.push(
+        fetch('https://formsubmit.co/ajax/studentsupportstudio@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: emailSubject,
+            _template: 'table',
+            _captcha: 'false',
+            _replyto: emailPayload.Student_Gmail,
+            ...emailPayload
+          })
+        }).catch(() => null)
+      );
+
+      await Promise.allSettled(requests);
+    }
+
+    async function finalizePaymentAndDownloadPdf() {
+      const orderIdInputEl = document.getElementById('verifyOrderIdInput');
+      const utrInput = document.getElementById('upiUtrInput');
+      const receiptInput = document.getElementById('paymentScreenshotInput');
+      const errBanner = document.getElementById('utrErrorBanner');
+      const errText = document.getElementById('utrErrorText');
+
+      const enteredOrderId = orderIdInputEl.value.trim().toUpperCase();
+      const expectedOrderId = currentOrderPayload ? currentOrderPayload.orderId : '';
+      const expectedSixDigits = expectedOrderId.replace(/[^0-9]/g, '');
+      const utrVal = utrInput.value.trim();
+
+      orderIdInputEl.classList.remove('input-error');
+      utrInput.classList.remove('input-error');
+      receiptInput.classList.remove('input-error');
+      errBanner.classList.add('hidden');
+
+      if (!/^SSS-[0-9]{6}$/.test(enteredOrderId) || enteredOrderId !== expectedOrderId) {
+        orderIdInputEl.classList.add('input-error');
+        errText.innerHTML = `Invalid Order Number. Your Order Number is <strong>${expectedOrderId}</strong>. If you need help, contact us on Instagram (<a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" class="underline font-bold">@student__support_studio</a>) or Mail ID (<a href="mailto:studentsupportstudio@gmail.com" class="underline font-bold">studentsupportstudio@gmail.com</a>).`;
+        errBanner.classList.remove('hidden');
+        return;
       }
 
-      // Automatic FormData fallback if JSON fetch was blocked by network/CORS
-      if (!emailDelivered) {
-        try {
-          const fallbackForm = new FormData();
-          Object.entries(emailPayload).forEach(([k, v]) => fallbackForm.append(k, String(v)));
-          const fbRes = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: fallbackForm
-          });
-          emailDelivered = fbRes.ok;
-        } catch (fbErr) {
-          console.warn('Web3Forms fallback notice:', fbErr);
-        }
+      if (!/^[0-9]{12}$/.test(utrVal) || /^(\d)\1{11}$/.test(utrVal)) {
+        utrInput.classList.add('input-error');
+        errText.textContent = 'Invalid UTR Transaction ID. Please enter a valid 12-digit UPI UTR number from your receipt photo.';
+        errBanner.classList.remove('hidden');
+        return;
       }
+
+      // Check if this 12-digit UTR was already used for an earlier order
+      const usedUtrRegistry = getLocallyUsedUtrs();
+      const existingUtrRecord = usedUtrRegistry[utrVal];
+
+      if (!selectedPaymentReceiptFile) {
+        receiptInput.classList.add('input-error');
+        errText.textContent = 'Payment receipt photo is mandatory. Please upload your payment receipt screenshot/photo.';
+        errBanner.classList.remove('hidden');
+        return;
+      }
+
+      const confirmBtn = document.getElementById('confirmPaymentBtn');
+      confirmBtn.disabled = true;
+      confirmBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Verifying Order ID, Receipt Photo, UTR &amp; Amount...</span>';
+
+      // Always run OCR extraction if not already populated
+      if ((detectedReceiptAmount === null && detectedReceiptUtrs.length === 0 && detectedReceiptOrderNumbers.length === 0) && selectedPaymentReceiptFile) {
+        const extracted = await extractReceiptDataFromImage(
+          selectedPaymentReceiptFile,
+          currentOrderPayload.advanceAmount
+        );
+        detectedReceiptAmount = extracted.amount;
+        detectedReceiptUtrs = extracted.utrs;
+        detectedReceiptOrderNumbers = extracted.orderNumbers;
+      }
+
+      const reqAdv = currentOrderPayload.advanceAmount;
+      const knownTotal = currentOrderPayload.knownTotalAmount;
+
+      // -1. Check if UTR was already used previously
+      const isDuplicateUtr = Boolean(existingUtrRecord);
+
+      // 0. Strict Order ID check against any 6-digit Order Number printed inside the receipt photo
+      const isPhotoOrderIdMismatch = !isDuplicateUtr && detectedReceiptOrderNumbers.length > 0 && !detectedReceiptOrderNumbers.includes(expectedSixDigits);
+
+      // 1. Strict UTR check against 12-digit UTRs detected inside the receipt photo
+      const isUtrMismatch = !isDuplicateUtr && !isPhotoOrderIdMismatch && detectedReceiptUtrs.length > 0 && !detectedReceiptUtrs.includes(utrVal);
+
+      // 2. Strict Amount check: never auto-confirm if detected amount is less than required advance OR could not be verified
+      const isShortPayment = !isDuplicateUtr && !isPhotoOrderIdMismatch && !isUtrMismatch && detectedReceiptAmount !== null && detectedReceiptAmount < reqAdv;
+      const isUnverifiedReceipt = !isDuplicateUtr && !isPhotoOrderIdMismatch && !isUtrMismatch && detectedReceiptAmount === null;
+
+      let paymentAuditSentence = '';
+      let emailSubject = '';
+      let paidAmountDisplay = '';
+      let pendingAmountDisplay = '';
+      let statusTitleText = '';
+      let statusDescHtml = '';
+
+      if (isDuplicateUtr) {
+        const prevOrder = existingUtrRecord.orderId || 'an earlier order';
+        paidAmountDisplay = `ORDER FAILED — UTR ${utrVal} already used (${prevOrder})`;
+        pendingAmountDisplay = `Order Failed (Duplicate / Already Used UTR Transaction ID)`;
+        paymentAuditSentence = `ORDER FAILED: UTR Transaction ID ${utrVal} was already used for ${prevOrder}. Duplicate receipt rejected. Contact via Instagram (@student__support_studio) or mail (studentsupportstudio@gmail.com).`;
+        emailSubject = `ORDER FAILED - Duplicate / Already Used UTR (${utrVal}) | ${expectedOrderId} (${currentOrderPayload.nameVal})`;
+        statusTitleText = 'Order Failed';
+        statusDescHtml = `Your order has been failed because this 12-digit UTR Transaction ID (<strong>${utrVal}</strong>) has <strong>already been used</strong> for a previous order (<strong>${prevOrder}</strong>). Only a fresh, 1st-time UPI transaction is accepted. Please contact us on Instagram (<a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" class="font-bold text-tealAccent underline">@student__support_studio</a>) or Mail ID (<a href="mailto:studentsupportstudio@gmail.com" class="font-bold text-navy underline">studentsupportstudio@gmail.com</a>).`;
+      } else if (isPhotoOrderIdMismatch) {
+        const photoOrderDisplay = detectedReceiptOrderNumbers.map(n => `SSS-${n}`).join(', ');
+        paidAmountDisplay = `ORDER FAILED — Photo shows ${photoOrderDisplay}, active Order ID is ${expectedOrderId}`;
+        pendingAmountDisplay = `Order Failed (Order ID mismatch with payment photo)`;
+        paymentAuditSentence = `ORDER FAILED: Order ID in uploaded payment photo (${photoOrderDisplay}) does not match active Order ID (${expectedOrderId}). Please contact via Instagram (@student__support_studio) or mail (studentsupportstudio@gmail.com).`;
+        emailSubject = `ORDER FAILED - Order ID Mismatch (Photo shows ${photoOrderDisplay} vs ${expectedOrderId}) | ${currentOrderPayload.nameVal}`;
+        statusTitleText = 'Order Failed';
+        statusDescHtml = `Your order has been failed because the Order ID in the uploaded payment receipt photo (<strong>${photoOrderDisplay}</strong>) does not match your generated Order ID (<strong>${expectedOrderId}</strong>). Please contact us on Instagram (<a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" class="font-bold text-tealAccent underline">@student__support_studio</a>) or Mail ID (<a href="mailto:studentsupportstudio@gmail.com" class="font-bold text-navy underline">studentsupportstudio@gmail.com</a>).`;
+      } else if (isUtrMismatch) {
+        const photoUtrList = detectedReceiptUtrs.join(', ');
+        paidAmountDisplay = detectedReceiptAmount !== null
+          ? `₹${detectedReceiptAmount} shown in photo (ORDER FAILED — UTR MISMATCH)`
+          : `ORDER FAILED — Entered ${utrVal}, Photo shows ${photoUtrList}`;
+        pendingAmountDisplay = `Order Failed (UTR ID mismatch with the photo)`;
+        paymentAuditSentence = `ORDER FAILED: Your order has been failed due to UTR ID mismatch with the photo (Entered ${utrVal} vs Photo ${photoUtrList}). Please contact via Instagram (@student__support_studio) or mail (studentsupportstudio@gmail.com).`;
+        emailSubject = `ORDER FAILED - UTR ID Mismatch With Photo (Entered ${utrVal} vs Photo ${photoUtrList}) | ${currentOrderPayload.orderId} (${currentOrderPayload.nameVal})`;
+        statusTitleText = 'Order Failed';
+        statusDescHtml = `Your order has been failed due to UTR ID mismatch with the photo. Please contact them using this link: <a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" class="font-bold text-tealAccent underline">https://www.instagram.com/student__support_studio/</a> or email <a href="mailto:studentsupportstudio@gmail.com" class="font-bold text-navy underline">studentsupportstudio@gmail.com</a>.`;
+      } else if (isShortPayment) {
+        const remainingAdvanceShortfall = reqAdv - detectedReceiptAmount;
+        const totalPendingAfterPartial = knownTotal !== null
+          ? `₹${knownTotal - detectedReceiptAmount} (includes ₹${remainingAdvanceShortfall} remaining advance shortfall)`
+          : `₹${remainingAdvanceShortfall} remaining advance shortfall + final page balance`;
+        paidAmountDisplay = `₹${detectedReceiptAmount} paid out of ₹${reqAdv} (ORDER ON HOLD)`;
+        pendingAmountDisplay = totalPendingAfterPartial;
+        paymentAuditSentence = `ORDER ON HOLD: Paid only ₹${detectedReceiptAmount} out of ₹${reqAdv} required advance (Shortfall: ₹${remainingAdvanceShortfall}). Please contact them using Instagram (@student__support_studio) or mail ID (studentsupportstudio@gmail.com).`;
+        emailSubject = `ORDER ON HOLD - Paid ₹${detectedReceiptAmount} out of ₹${reqAdv} | ${currentOrderPayload.orderId} (${currentOrderPayload.nameVal})`;
+        statusTitleText = 'Order Placed On Hold';
+        statusDescHtml = `You have paid only <strong>₹${detectedReceiptAmount}</strong> out of the required <strong>₹${reqAdv}</strong> advance, so we have kept your order <strong>ON HOLD</strong>. Please contact us using our Instagram (<a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" class="font-bold text-tealAccent underline">@student__support_studio</a>) or Mail ID (<a href="mailto:studentsupportstudio@gmail.com" class="font-bold text-navy underline">studentsupportstudio@gmail.com</a>) to complete the remaining <strong>₹${remainingAdvanceShortfall}</strong> advance so we can confirm your order.`;
+      } else if (isUnverifiedReceipt) {
+        paidAmountDisplay = `Receipt uploaded — Manual verification required (ORDER ON HOLD)`;
+        pendingAmountDisplay = `Required Advance: ₹${reqAdv}`;
+        paymentAuditSentence = `ORDER ON HOLD: Receipt photo uploaded for ₹${reqAdv} advance (UTR: ${utrVal}), awaiting manual receipt check. Contact via Instagram (@student__support_studio) or mail (studentsupportstudio@gmail.com).`;
+        emailSubject = `ORDER ON HOLD - Manual Receipt Verification Needed | ${currentOrderPayload.orderId} (${currentOrderPayload.nameVal})`;
+        statusTitleText = 'Order Placed On Hold';
+        statusDescHtml = `We received your receipt photo for <strong>${expectedOrderId}</strong>, and our team is verifying your <strong>₹${reqAdv}</strong> advance payment. Please contact us on Instagram (<a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" class="font-bold text-tealAccent underline">@student__support_studio</a>) or Mail ID (<a href="mailto:studentsupportstudio@gmail.com" class="font-bold text-navy underline">studentsupportstudio@gmail.com</a>) for instant confirmation.`;
+      } else {
+        const remainingBalance = knownTotal !== null
+          ? `₹${Math.max(0, knownTotal - reqAdv)}`
+          : `Calculated after final page count (₹200 advance deducted)`;
+        paidAmountDisplay = `₹${reqAdv} paid out of ₹${reqAdv} (Full advance paid)`;
+        pendingAmountDisplay = remainingBalance;
+        paymentAuditSentence = `Full advance paid (₹${reqAdv} paid out of ₹${reqAdv}). Payment successful — please confirm the order.`;
+        emailSubject = `Payment Successful - Please confirm the order | ${currentOrderPayload.orderId} (${currentOrderPayload.nameVal})`;
+        statusTitleText = 'Your Order is Confirmed!';
+        statusDescHtml = `Thank you! Your full advance of <strong>₹${reqAdv}</strong>, fresh 1st-time UTR (<strong>${utrVal}</strong>), and Order ID (<strong>${expectedOrderId}</strong>) have been verified. Our team has received your order details &amp; receipt photo, and your official <strong>Order Form &amp; Payment Receipt PDF</strong> has been downloaded automatically.`;
+      }
+
+      const isConfirmedOrder = !isDuplicateUtr && !isPhotoOrderIdMismatch && !isUtrMismatch && !isShortPayment && !isUnverifiedReceipt;
+
+      // Record this UTR in the used-UTR registry so it cannot be reused again
+      if (!isDuplicateUtr && !isPhotoOrderIdMismatch && !isUtrMismatch) {
+        markUtrAsUsed(utrVal, expectedOrderId);
+      }
+
+      currentOrderPayload.utrNumber = utrVal;
+      currentOrderPayload.receiptFileName = selectedPaymentScreenshotName;
+      currentOrderPayload.paidAmountDisplay = paidAmountDisplay;
+      currentOrderPayload.pendingAmountDisplay = pendingAmountDisplay;
+      currentOrderPayload.paymentAuditSentence = paymentAuditSentence;
+      currentOrderPayload.isConfirmedOrder = isConfirmedOrder;
+
+      confirmBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Uploading Ad-Free File Links &amp; Sending Email...</span>';
+
+      // Upload Receipt Photo + Online PDF/Word + .txt Description to generate ad-free direct raw URLs
+      const receiptDirectLink = await uploadFileForDirectAdFreeLink(
+        selectedPaymentReceiptFile,
+        selectedPaymentScreenshotName
+      );
+
+      let docDirectLink = 'None';
+      if (selectedDocFile) {
+        docDirectLink = await uploadFileForDirectAdFreeLink(selectedDocFile, selectedDocFile.name);
+      }
+
+      let txtDirectLink = 'None';
+      if (selectedTxtFileObj) {
+        txtDirectLink = await uploadFileForDirectAdFreeLink(selectedTxtFileObj, selectedTxtFileObj.name);
+      } else if (currentOrderPayload.txtContent) {
+        const generatedTxtBlob = new Blob([currentOrderPayload.txtContent], { type: 'text/plain;charset=utf-8' });
+        const generatedTxtFile = new File([generatedTxtBlob], `Description_${currentOrderPayload.orderId}.txt`, { type: 'text/plain' });
+        txtDirectLink = await uploadFileForDirectAdFreeLink(generatedTxtFile, `Description_${currentOrderPayload.orderId}.txt`);
+      }
+
+      // Send email to studentsupportstudio@gmail.com
+      const emailPayload = {
+        Order_Status: isDuplicateUtr
+          ? 'ORDER FAILED — Duplicate / Already Used UTR Transaction ID'
+          : (isPhotoOrderIdMismatch
+            ? 'ORDER FAILED — Order ID Mismatch With Photo'
+            : (isUtrMismatch
+              ? 'ORDER FAILED — UTR ID Mismatch With Photo'
+              : ((isShortPayment || isUnverifiedReceipt) ? 'ORDER ON HOLD — Verification / Balance Needed' : 'ORDER CONFIRMED — Full Advance Paid (1st-Time UTR)'))),
+        UTR_Uniqueness_Check: isDuplicateUtr
+          ? `ALREADY USED (Previously used on ${existingUtrRecord.orderId} at ${existingUtrRecord.usedAt})`
+          : '1ST-TIME GENERATION (Fresh UTR)',
+        Payment_Verification_Summary: paymentAuditSentence,
+        Order_ID: currentOrderPayload.orderId,
+        Student_Full_Name: currentOrderPayload.nameVal,
+        WhatsApp_And_Phone_Number: `+91 ${currentOrderPayload.phoneVal}`,
+        Student_Gmail: currentOrderPayload.emailVal,
+        Service_Selected: currentOrderPayload.service,
+        Pages_Or_Package: currentOrderPayload.pageCountLabel,
+        Total_Order_Amount: knownTotal !== null ? `₹${knownTotal}` : 'To be counted upon completion',
+        Required_Advance_Amount: `₹${reqAdv}`,
+        Amount_Paid_Status: paidAmountDisplay,
+        Amount_Pending_Balance: pendingAmountDisplay,
+        Assigned_UPI_Account: currentOrderPayload.assignedUpiId,
+        Entered_12_Digit_UTR: utrVal,
+        Photo_Detected_Order_IDs: detectedReceiptOrderNumbers.length > 0 ? detectedReceiptOrderNumbers.map(n => `SSS-${n}`).join(', ') : 'Not detected in photo',
+        Photo_Detected_UTRs: detectedReceiptUtrs.length > 0 ? detectedReceiptUtrs.join(', ') : 'Not detected in photo',
+        Direct_Receipt_Photo_Link_No_Ads: receiptDirectLink,
+        Direct_PDF_or_Word_Link_No_Ads: docDirectLink,
+        Direct_TXT_File_Link_No_Ads: txtDirectLink,
+        Typed_Online_Instructions: currentOrderPayload.txtContent || 'None',
+        Handover_Date: currentOrderPayload.handoverDate,
+        Delivery_Submission_Date: currentOrderPayload.submissionDate,
+        Offline_City: currentOrderPayload.city,
+        Offline_Area_Locality: currentOrderPayload.area,
+        Offline_Pincode: currentOrderPayload.pincode,
+        Additional_Notes: currentOrderPayload.notesVal || 'None'
+      };
+
+      await sendOrderEmailToStudio(emailSubject, emailPayload);
 
       confirmBtn.disabled = false;
-      confirmBtn.innerHTML = origHtml;
+      confirmBtn.innerHTML = '<i class="fa-solid fa-file-pdf"></i> <span>Confirm Payment &amp; Download PDF Receipt</span>';
 
-      // Mandatory Automatic PDF Download
-      const pdfFilename = triggerMandatoryPdfDownload();
-
-      // Transition to Step 3 Receipt Screen
-      document.getElementById('step2Container').classList.add('hidden');
-      document.getElementById('step3Container').classList.remove('hidden');
-
-      document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-tealLight/70 text-tealDark px-4 py-2 rounded-full text-xs font-bold';
-      document.getElementById('stepBadge3').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm';
+      const statusIcon = document.getElementById('step3StatusIcon');
+      const statusBadge = document.getElementById('step3StatusBadge');
+      const statusTitle = document.getElementById('step3StatusTitle');
+      const statusDesc = document.getElementById('step3StatusDesc');
+      const finalPaidText = document.getElementById('finalPaidText');
+      const finalPdfRow = document.getElementById('finalPdfRow');
+      const downloadPdfAgainBtn = document.getElementById('downloadPdfAgainBtn');
 
       document.getElementById('finalOrderIdText').textContent = currentOrderPayload.orderId;
-      document.getElementById('finalUtrText').textContent = utrVal;
-      document.getElementById('finalPaidText').textContent = `₹${currentOrderPayload.advanceAmount} (Paid to ${currentOrderPayload.routing.upiId})`;
-      document.getElementById('finalReceiptFileText').textContent = selectedPaymentScreenshotName;
-      document.getElementById('finalPdfFilenameText').textContent = pdfFilename;
+      document.getElementById('finalUtrText').textContent = currentOrderPayload.utrNumber;
+      document.getElementById('finalReceiptFileText').textContent = currentOrderPayload.receiptFileName;
 
+      if (isDuplicateUtr || isPhotoOrderIdMismatch || isUtrMismatch) {
+        document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-red-100 text-red-800 px-4 py-2 rounded-full text-xs font-bold';
+        document.getElementById('stepBadge3').className = 'flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm';
+
+        statusIcon.className = 'w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-3xl mx-auto shadow-sm';
+        statusIcon.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>';
+
+        statusBadge.className = 'text-xs font-bold uppercase tracking-widest text-red-600';
+        statusBadge.textContent = isDuplicateUtr
+          ? 'Duplicate UTR • Already Used'
+          : (isPhotoOrderIdMismatch ? 'Order ID Mismatch With Photo' : 'UTR ID Mismatch With Photo');
+
+        statusTitle.className = 'font-heading font-extrabold text-2xl sm:text-3xl text-red-700 mt-1';
+        statusTitle.textContent = statusTitleText;
+        statusDesc.innerHTML = statusDescHtml;
+
+        finalPaidText.className = 'text-red-600 font-bold';
+        finalPaidText.textContent = isDuplicateUtr
+          ? `Failed (UTR Already Used on ${existingUtrRecord.orderId})`
+          : (isPhotoOrderIdMismatch
+            ? `Failed (Photo shows ${detectedReceiptOrderNumbers.map(n => 'SSS-' + n).join(', ')})`
+            : 'Failed (UTR ID Mismatch With Photo)');
+        finalPdfRow.classList.add('hidden');
+        downloadPdfAgainBtn.classList.add('hidden');
+      } else if (isShortPayment || isUnverifiedReceipt) {
+        document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-xs font-bold';
+        document.getElementById('stepBadge3').className = 'flex items-center gap-2 bg-amber-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm';
+
+        statusIcon.className = 'w-16 h-16 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-3xl mx-auto shadow-sm';
+        statusIcon.innerHTML = '<i class="fa-solid fa-pause-circle"></i>';
+
+        statusBadge.className = 'text-xs font-bold uppercase tracking-widest text-amber-700';
+        statusBadge.textContent = 'Order On Hold • Verification Needed';
+
+        statusTitle.className = 'font-heading font-extrabold text-2xl sm:text-3xl text-amber-800 mt-1';
+        statusTitle.textContent = statusTitleText;
+        statusDesc.innerHTML = statusDescHtml;
+
+        finalPaidText.className = 'text-amber-700 font-bold';
+        finalPaidText.textContent = isShortPayment
+          ? `₹${detectedReceiptAmount} Paid out of ₹${reqAdv} (ON HOLD)`
+          : `Pending Receipt Verification (ON HOLD)`;
+        finalPdfRow.classList.add('hidden');
+        downloadPdfAgainBtn.classList.add('hidden');
+      } else {
+        document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-tealLight/60 text-tealDark px-4 py-2 rounded-full text-xs font-bold';
+        document.getElementById('stepBadge3').className = 'flex items-center gap-2 bg-tealAccent text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm';
+
+        statusIcon.className = 'w-16 h-16 rounded-full bg-tealLight text-tealDark flex items-center justify-center text-3xl mx-auto shadow-sm';
+        statusIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+
+        statusBadge.className = 'text-xs font-bold uppercase tracking-widest text-tealAccent';
+        statusBadge.textContent = 'Payment Confirmed & Receipt Sent';
+
+        statusTitle.className = 'font-heading font-extrabold text-2xl sm:text-3xl text-navy mt-1';
+        statusTitle.textContent = statusTitleText;
+        statusDesc.innerHTML = statusDescHtml;
+
+        finalPaidText.className = 'text-tealDark font-bold';
+        finalPaidText.textContent = `₹${reqAdv} Paid out of ₹${reqAdv} (Confirmed)`;
+        finalPdfRow.classList.remove('hidden');
+        downloadPdfAgainBtn.classList.remove('hidden');
+
+        triggerMandatoryPdfDownload();
+      }
+
+      document.getElementById('step2Container').classList.add('hidden');
+      document.getElementById('step3Container').classList.remove('hidden');
       document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Generate & Automatically Download Complete Order Form + Payment Receipt PDF
     function triggerMandatoryPdfDownload() {
-      if (!currentOrderPayload || !window.jspdf) return 'Student_Support_Studio_Order.pdf';
+      if (!currentOrderPayload || !currentOrderPayload.isConfirmedOrder || !window.jspdf) return;
       const { jsPDF } = window.jspdf;
-      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      const doc = new jsPDF();
       const p = currentOrderPayload;
 
-      // Header Banner
       doc.setFillColor(15, 23, 42);
-      doc.rect(0, 0, 210, 36, 'F');
-
+      doc.rect(0, 0, 210, 34, 'F');
       doc.setTextColor(255, 255, 255);
-      doc.setFont('helvetica', 'bold');
       doc.setFontSize(18);
-      doc.text('STUDENT SUPPORT STUDIO', 16, 16);
-
-      doc.setTextColor(94, 234, 212);
-      doc.setFontSize(10);
-      doc.text('Your Academic Work, Made Easier  |  Official Order Form & Payment Receipt', 16, 24);
-
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(8.5);
-      doc.text('Instagram: @student__support_studio  |  Email: studentsupportstudio@gmail.com', 16, 31);
-
-      // Payment Status Pill
-      doc.setFillColor(204, 251, 241);
-      doc.roundedRect(16, 42, 178, 14, 3, 3, 'F');
-      doc.setTextColor(15, 118, 110);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(10.5);
-      doc.text(`PAYMENT SUCCESSFUL — ORDER CONFIRMED  |  Order ID: ${p.orderId}`, 21, 51);
+      doc.text('STUDENT SUPPORT STUDIO', 14, 16);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(94, 234, 212);
+      doc.text('Your Academic Work, Made Easier • Confirmed Order Receipt', 14, 24);
 
-      let y = 66;
-      const addSectionHeader = (title) => {
-        doc.setFillColor(241, 245, 249);
-        doc.rect(16, y - 5, 178, 8, 'F');
-        doc.setTextColor(15, 23, 42);
+      doc.setTextColor(15, 23, 42);
+      doc.setFontSize(11);
+      doc.setFont('helvetica', 'bold');
+      doc.text(`Order ID: ${p.orderId}`, 14, 46);
+      doc.text(`UTR / UPI Ref: ${p.utrNumber}`, 120, 46);
+
+      doc.setDrawColor(203, 213, 225);
+      doc.line(14, 51, 196, 51);
+
+      const rows = [
+        ['Student Name', p.nameVal],
+        ['WhatsApp / Phone', `+91 ${p.phoneVal}`],
+        ['Gmail Address', p.emailVal],
+        ['Service Selected', p.service],
+        ['Pages / Package', p.pageCountLabel],
+        ['Handover Date', p.handoverDate],
+        ['Delivery Date', p.submissionDate],
+        ['Location / City', `${p.city} — ${p.area} (${p.pincode})`],
+        ['Payment Mode', 'Verified UPI QR Code'],
+        ['Advance Paid', p.paidAmountDisplay],
+        ['Pending Balance', p.pendingAmountDisplay],
+        ['Additional Notes', p.notesVal || 'None']
+      ];
+
+      let y = 61;
+      rows.forEach(([label, val]) => {
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(10);
-        doc.text(title, 19, y);
-        y += 8;
-      };
-
-      const addRow = (label, value) => {
-        doc.setFont('helvetica', 'bold');
         doc.setTextColor(71, 85, 105);
-        doc.setFontSize(9.5);
-        doc.text(label + ':', 19, y);
-
+        doc.text(`${label}:`, 14, y);
         doc.setFont('helvetica', 'normal');
         doc.setTextColor(15, 23, 42);
-        const wrapped = doc.splitTextToSize(String(value), 118);
-        doc.text(wrapped, 74, y);
-        y += Math.max(6.5, wrapped.length * 5.2);
-      };
+        const wrapped = doc.splitTextToSize(String(val), 125);
+        doc.text(wrapped, 65, y);
+        y += Math.max(8, wrapped.length * 6);
+      });
 
-      // Section 1: Payment Verification
-      addSectionHeader('1. PAYMENT & TRANSACTION SUMMARY');
-      addRow('Advance Amount Paid', `Rs. ${p.advanceAmount} (Confirmed)`);
-      addRow('UPI Transaction ID (UTR)', p.utrNumber);
-      addRow('Uploaded Payment Receipt', p.receiptFileName || 'Attached');
-      addRow('Paid To UPI ID', p.routing.upiId);
-      addRow('Pricing & Balance Note', p.totalEstimateDisplay);
-      y += 3;
+      doc.line(14, y + 4, 196, y + 4);
+      doc.setFontSize(9);
+      doc.setTextColor(71, 85, 105);
+      doc.text('Support: studentsupportstudio@gmail.com | Instagram: @student__support_studio', 14, y + 12);
 
-      // Section 2: Student Details
-      addSectionHeader('2. STUDENT DETAILS');
-      addRow('Student Name', p.nameVal);
-      addRow('WhatsApp / Phone', p.phoneVal);
-      addRow('Email Address', p.emailVal);
-      y += 3;
-
-      // Section 3: Service & Schedule Details
-      addSectionHeader('3. SERVICE & SCHEDULE DETAILS');
-      addRow('Service Selected', p.serviceVal);
-      addRow('Pages / Package', p.pagesDisplay);
-      if (p.serviceType === 'offline') {
-        addRow('Diagrams Included', p.diagramsDisplay);
-      }
-      addRow('Materials / Books Date', p.handoverDate);
-      addRow('Final Delivery Date', p.submissionDate);
-      y += 3;
-
-      // Section 4: Pickup Location or Online Reference
-      if (p.serviceType === 'offline') {
-        addSectionHeader('4. OFFLINE PICKUP LOCATION (GUNTUR / KADAPA)');
-        addRow('City', p.cityVal);
-        addRow('Area / Locality', p.areaVal);
-        addRow('Pin Code', p.pinVal);
-        addRow('Logistics Policy', 'Exact pickup point shared via WhatsApp/Call. Rapido charges borne by customer.');
-      } else {
-        addSectionHeader('4. ONLINE ASSIGNMENT / PROJECT REFERENCE');
-        addRow('Uploaded PDF / Doc', p.docSummary);
-        addRow('Description (.txt)', p.txtContent.slice(0, 320));
-      }
-      y += 3;
-
-      if (p.notesVal && p.notesVal !== 'None') {
-        addSectionHeader('5. ADDITIONAL INSTRUCTIONS');
-        addRow('Notes', p.notesVal);
-      }
-
-      // Footer
-      doc.setDrawColor(203, 213, 225);
-      doc.line(16, 274, 194, 274);
-      doc.setFont('helvetica', 'italic');
-      doc.setFontSize(8.5);
-      doc.setTextColor(100, 116, 139);
-      doc.text('Generated automatically upon advance payment confirmation. Keep this PDF receipt for delivery reference.', 16, 281);
-
-      const filename = `Student_Support_Studio_${p.orderId}.pdf`;
-      doc.save(filename);
-      return filename;
+      const fileName = `Student_Support_Studio_${p.orderId}.pdf`;
+      document.getElementById('finalPdfFilenameText').textContent = fileName;
+      doc.save(fileName);
     }
 
     function resetToStep1() {
       currentOrderPayload = null;
       selectedPaymentReceiptFile = null;
       selectedPaymentScreenshotName = '';
+      detectedReceiptAmount = null;
+      detectedReceiptUtrs = [];
+      detectedReceiptOrderNumbers = [];
+      document.getElementById('verifyOrderIdInput').value = '';
       document.getElementById('upiUtrInput').value = '';
-      document.getElementById('utrDigitCounter').textContent = '0/12 digits';
       document.getElementById('paymentScreenshotInput').value = '';
-      document.getElementById('paymentScreenshotStatus').textContent = 'Mandatory: Upload payment receipt image (JPG/PNG/WEBP) or PDF (Max 20 MB).';
-      document.getElementById('confirmFullAdvanceCheckbox').checked = false;
       document.getElementById('step1TopNavBar').classList.add('hidden');
-      document.getElementById('step2Container').classList.add('hidden');
-      document.getElementById('step3Container').classList.add('hidden');
-      document.getElementById('step1Container').classList.remove('hidden');
-      document.getElementById('stepBadge1').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm cursor-pointer';
-      document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-white text-slateSoft border border-slate-300 px-4 py-2 rounded-full text-xs font-bold';
-      document.getElementById('stepBadge3').className = 'flex items-center gap-2 bg-white text-slateSoft border border-slate-300 px-4 py-2 rounded-full text-xs font-bold';
+      goToStep1();
     }
+
+    window.addEventListener('DOMContentLoaded', function () {
+      const todayIso = new Date().toISOString().split('T')[0];
+      const handoverEl = document.getElementById('handoverDate');
+      const submissionEl = document.getElementById('submissionDate');
+      if (handoverEl) handoverEl.min = todayIso;
+      if (submissionEl) submissionEl.min = todayIso;
+      updateEstimator();
+      handleServiceChange();
+    });
   </script>
 </body>
 </html>
