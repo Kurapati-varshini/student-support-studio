@@ -985,14 +985,18 @@
             </div>
 
             <div>
-              <label for="studentEmail" class="block text-xs font-bold uppercase tracking-wider text-navy mb-2">
-                Email Address <span class="text-red-500">*</span>
-              </label>
+              <div class="flex items-center justify-between mb-2">
+                <label for="studentEmail" class="block text-xs font-bold uppercase tracking-wider text-navy">
+                  Gmail Address (@gmail.com only) <span class="text-red-500">*</span>
+                </label>
+                <span id="emailStatusBadge" class="text-[11px] font-semibold text-slateSoft">Must end with @gmail.com</span>
+              </div>
               <input
                 type="email"
                 id="studentEmail"
                 required
                 placeholder="abcd@gmail.com"
+                oninput="handleEmailInput(this)"
                 class="w-full rounded-xl border border-slate-300 bg-ivory/60 px-4 py-3 text-sm text-navy focus:bg-white focus:outline-none focus:border-tealAccent transition"
               />
             </div>
@@ -1817,6 +1821,26 @@
         : 'text-[11px] font-semibold text-slateSoft';
     }
 
+    function isValidGmailAddress(email) {
+      return /^[a-zA-Z0-9._%+-]+@gmail\.com$/i.test(email.trim());
+    }
+
+    function handleEmailInput(el) {
+      const badge = document.getElementById('emailStatusBadge');
+      const val = el.value.trim();
+      if (!val) {
+        badge.textContent = 'Must end with @gmail.com';
+        badge.className = 'text-[11px] font-semibold text-slateSoft';
+      } else if (isValidGmailAddress(val)) {
+        badge.innerHTML = '<i class="fa-solid fa-circle-check text-tealAccent mr-1"></i> Valid @gmail.com';
+        badge.className = 'text-[11px] font-bold text-tealDark';
+        el.classList.remove('input-error');
+      } else {
+        badge.textContent = 'Only @gmail.com is allowed';
+        badge.className = 'text-[11px] font-semibold text-red-600';
+      }
+    }
+
     // Online Document Upload (PDF/DOC/DOCX up to 500MB)
     function handleOnlineDocSelect(input) {
       const statusEl = document.getElementById('onlineDocStatus');
@@ -1980,8 +2004,8 @@
       if (!/^[6-9][0-9]{9}$/.test(phoneVal)) {
         return showValidationError(phoneEl, 'Please enter a valid 10-digit WhatsApp / mobile number (e.g., 9876543210).');
       }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailVal)) {
-        return showValidationError(emailEl, 'Please enter a valid email address (e.g., abcd@gmail.com).');
+      if (!isValidGmailAddress(emailVal)) {
+        return showValidationError(emailEl, 'Please enter a valid @gmail.com email address (e.g., abcd@gmail.com). Other email domains cannot proceed.');
       }
 
       // 5. Validate Offline Guntur / Kadapa City + Area + Pincode
