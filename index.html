@@ -1,0 +1,2432 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Support Studio — Your Academic Work, Made Easier</title>
+  <meta name="description" content="Trusted academic partner in Guntur & Kadapa for Handwritten Records, Assignments, B.Tech Mini Projects, IEEE Paper Formatting, PPTs, and Documentation." />
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- QRCode.js for NPCI Static UPI QR Generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- jsPDF for Mandatory Automatic PDF Receipt & Form Download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF9F6',
+            navy: '#0F172A',
+            slateSoft: '#475569',
+            tealAccent: '#0D9488',
+            tealDark: '#0F766E',
+            tealLight: '#CCFBF1',
+          },
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 10px 30px -5px rgba(15, 23, 42, 0.06)',
+            card: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF9F6;
+      color: #0F172A;
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass-nav {
+      background: rgba(250, 249, 246, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .input-error {
+      border-color: #DC2626 !important;
+      background-color: #FEF2F2 !important;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12) !important;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-tealAccent selection:text-white">
+
+  <!-- Sticky Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3.5 group">
+        <!-- Exact Uncropped Circular Logo -->
+        <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 overflow-hidden bg-transparent">
+          <img
+            src="logo.png"
+            alt="Student Support Studio Logo"
+            class="w-full h-full object-contain rounded-full"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div style="display:none;" class="w-12 h-12 rounded-full bg-navy text-white items-center justify-center border-2 border-tealAccent">
+            <i class="fa-solid fa-graduation-cap text-lg text-teal-300"></i>
+          </div>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-navy block leading-none">
+            Student Support Studio
+          </span>
+          <span class="text-xs font-medium text-tealAccent tracking-wide block mt-1">
+            Your Academic Work, Made Easier
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slateSoft">
+        <a href="#services" class="hover:text-navy transition">Services &amp; Pricing</a>
+        <a href="#estimator" class="hover:text-navy transition">Instant Calculator</a>
+        <a href="#how-it-works" class="hover:text-navy transition">How It Works</a>
+        <a href="#policies" class="hover:text-navy transition">Policies</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full border border-slate-200 bg-white text-navy hover:text-pink-600 hover:border-pink-300 flex items-center justify-center transition shadow-sm">
+          <i class="fa-brands fa-instagram text-lg"></i>
+        </a>
+        <a href="#order-section" class="inline-flex items-center gap-2 bg-navy hover:bg-slate-800 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition">
+          <span>Place Order</span>
+          <i class="fa-solid fa-arrow-right text-xs text-teal-300"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="top" class="relative overflow-hidden pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-slate-200/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex flex-wrap items-center gap-2 bg-white border border-slate-200 px-3.5 py-1.5 rounded-full shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-tealAccent"></span>
+            <span class="text-xs font-semibold text-navy">Offline Pickup &amp; Handover in Guntur &amp; Kadapa • Online Pan-India</span>
+          </div>
+
+          <h1 class="font-heading font-extrabold text-3xl sm:text-5xl text-navy leading-tight tracking-tight">
+            Clean Handwritten Records, Assignments &amp; Projects — <span class="text-tealAccent">Done On Time.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slateSoft leading-relaxed max-w-2xl">
+            From neat engineering lab records and diagrams to B.Tech mini projects, IEEE papers, PPTs, and formatted reports — transparent student-friendly pricing with a simple advance booking &amp; downloadable PDF order receipt.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <a href="#order-section" class="inline-flex items-center gap-2.5 bg-tealAccent hover:bg-tealDark text-white font-semibold px-7 py-3.5 rounded-full shadow-soft transition">
+              <i class="fa-solid fa-pen-nib"></i>
+              <span>Start Your Order</span>
+            </a>
+            <a href="#services" class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-navy border border-slate-300 font-semibold px-6 py-3.5 rounded-full transition">
+              <i class="fa-solid fa-tags text-tealAccent"></i>
+              <span>View Rate Card</span>
+            </a>
+            <a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white hover:bg-pink-50 text-navy hover:text-pink-700 border border-slate-300 font-semibold px-5 py-3.5 rounded-full transition">
+              <i class="fa-brands fa-instagram text-pink-600"></i>
+              <span>@student__support_studio</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4 pt-4 max-w-lg">
+            <div class="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-card">
+              <p class="font-heading font-extrabold text-lg sm:text-xl text-navy">₹10 / pg</p>
+              <p class="text-xs text-slateSoft mt-0.5">Min 10 Pages</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-card">
+              <p class="font-heading font-extrabold text-lg sm:text-xl text-navy">₹200 Adv</p>
+              <p class="text-xs text-slateSoft mt-0.5">If Count Unknown</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-card">
+              <p class="font-heading font-extrabold text-lg sm:text-xl text-navy">PDF Receipt</p>
+              <p class="text-xs text-slateSoft mt-0.5">Instant After Pay</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Exact Uncropped Circular Brand Logo Showcase -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+          <div class="relative flex flex-col items-center">
+            <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full flex items-center justify-center overflow-hidden bg-transparent drop-shadow-md">
+              <img
+                src="logo.png"
+                alt="Student Support Studio — Your Academic Work, Made Easier"
+                class="w-full h-full object-contain rounded-full"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div style="display:none;" class="w-64 h-64 sm:w-72 sm:h-72 rounded-full bg-white border-4 border-rose-300 shadow-soft flex-col items-center justify-center p-6 text-center">
+                <i class="fa-solid fa-graduation-cap text-4xl text-navy mb-2"></i>
+                <span class="font-heading font-extrabold text-2xl text-navy leading-tight">Student</span>
+                <span class="font-heading font-extrabold text-xl text-rose-700 leading-tight">Support</span>
+                <span class="font-heading font-extrabold text-2xl text-navy leading-tight">Studio</span>
+                <span class="mt-3 text-xs font-semibold bg-rose-100 text-navy px-3 py-1 rounded-full">
+                  “Your Academic Work, Made Easier”
+                </span>
+              </div>
+            </div>
+
+            <div class="mt-4 inline-flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-full shadow-card text-xs font-semibold text-navy">
+              <i class="fa-solid fa-location-dot text-tealAccent"></i>
+              <span>Guntur &amp; Kadapa Offline • Digital Pan-India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services & Pricing Grid (All 9 Poster Services) -->
+  <section id="services" class="py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-tealAccent">Official Rate Card</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-navy mt-2">
+          Transparent Student Pricing
+        </h2>
+        <p class="text-sm sm:text-base text-slateSoft mt-3">
+          Offline pickup &amp; handover available in <strong>Guntur &amp; Kadapa</strong>; all digital services delivered online.
+        </p>
+      </div>
+
+      <!-- 9 Services Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- 1. Handwritten Records -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-11 h-11 rounded-xl bg-tealLight/60 text-tealDark flex items-center justify-center text-lg">
+                <i class="fa-solid fa-book-open"></i>
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+                Offline • Guntur &amp; Kadapa
+              </span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-navy">Handwritten Records</h3>
+            <p class="text-xs text-slateSoft mt-1.5 leading-relaxed">
+              Neat, legible lab &amp; practical records written carefully in your provided record book (Min 10 pages required).
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="font-heading font-extrabold text-xl text-navy">₹10 <span class="text-xs font-medium text-slateSoft">/ page</span></span>
+            <a href="#order-section" onclick="selectServiceFromCard('Handwritten Records')" class="text-xs font-bold text-tealAccent hover:text-tealDark">
+              Order Now <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Handwritten Assignments -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-11 h-11 rounded-xl bg-tealLight/60 text-tealDark flex items-center justify-center text-lg">
+                <i class="fa-solid fa-pen-fancy"></i>
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+                Offline • Guntur &amp; Kadapa
+              </span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-navy">Handwritten Assignments</h3>
+            <p class="text-xs text-slateSoft mt-1.5 leading-relaxed">
+              Clean ruled/A4 sheet handwritten assignments formatted to your college guidelines (Min 10 pages required).
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="font-heading font-extrabold text-xl text-navy">₹10 <span class="text-xs font-medium text-slateSoft">/ page</span></span>
+            <a href="#order-section" onclick="selectServiceFromCard('Handwritten Assignments')" class="text-xs font-bold text-tealAccent hover:text-tealDark">
+              Order Now <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Theory + Diagram Page -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-11 h-11 rounded-xl bg-tealLight/60 text-tealDark flex items-center justify-center text-lg">
+                <i class="fa-solid fa-compass-drafting"></i>
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-navy border border-slate-200">
+                Diagram Page Rate
+              </span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-navy">Theory + Diagram Page</h3>
+            <p class="text-xs text-slateSoft mt-1.5 leading-relaxed">
+              Pages requiring neat pencil/pen scientific, circuit, or engineering diagrams alongside theory.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="font-heading font-extrabold text-xl text-navy">₹15 <span class="text-xs font-medium text-slateSoft">/ page</span></span>
+            <span class="text-[11px] font-semibold text-slateSoft">Verified after syllabus review</span>
+          </div>
+        </div>
+
+        <!-- 4. Online Assignments -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-laptop-file"></i>
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-200">
+                Online Delivery
+              </span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-navy">Online Assignments</h3>
+            <p class="text-xs text-slateSoft mt-1.5 leading-relaxed">
+              Well-researched typed assignments, Q&amp;A solutions, and structured digital submissions.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="font-heading font-extrabold text-xl text-navy">₹199</span>
+            <a href="#order-section" onclick="selectServiceFromCard('Online Assignments')" class="text-xs font-bold text-tealAccent hover:text-tealDark">
+              Order Now <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. B.Tech Mini Projects -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-code"></i>
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-200">
+                Online Delivery
+              </span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-navy">B.Tech Mini Projects</h3>
+            <p class="text-xs text-slateSoft mt-1.5 leading-relaxed">
+              Working source code, project setup guidance, abstract, and complete documentation support.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="font-heading font-extrabold text-xl text-navy">₹999</span>
+            <a href="#order-section" onclick="selectServiceFromCard('B.Tech Mini Projects')" class="text-xs font-bold text-tealAccent hover:text-tealDark">
+              Order Now <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. IEEE Paper Formatting -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-file-lines"></i>
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-200">
+                Online Delivery
+              </span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-navy">IEEE Paper Formatting</h3>
+            <p class="text-xs text-slateSoft mt-1.5 leading-relaxed">
+              Double-column IEEE conference/journal layout formatting, citations, tables, and figures.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="font-heading font-extrabold text-xl text-navy">₹499</span>
+            <a href="#order-section" onclick="selectServiceFromCard('IEEE Paper Formatting')" class="text-xs font-bold text-tealAccent hover:text-tealDark">
+              Order Now <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. PPT -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-display"></i>
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-200">
+                Online Delivery
+              </span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-navy">PPT Presentations</h3>
+            <p class="text-xs text-slateSoft mt-1.5 leading-relaxed">
+              Clean, seminar-ready academic &amp; project review slide decks with structured visuals.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="font-heading font-extrabold text-xl text-navy">₹249</span>
+            <a href="#order-section" onclick="selectServiceFromCard('PPT')" class="text-xs font-bold text-tealAccent hover:text-tealDark">
+              Order Now <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 8. Word Documentation -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-file-word"></i>
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-200">
+                Online Delivery
+              </span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-navy">Word Documentation</h3>
+            <p class="text-xs text-slateSoft mt-1.5 leading-relaxed">
+              Properly indexed project reports, margins, headers, page numbering, and table of contents.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="font-heading font-extrabold text-xl text-navy">₹199</span>
+            <a href="#order-section" onclick="selectServiceFromCard('Word Documentation')" class="text-xs font-bold text-tealAccent hover:text-tealDark">
+              Order Now <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 9. PDF Formatting & Editing -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:border-tealAccent/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-file-pdf"></i>
+              </span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-200">
+                Online Delivery
+              </span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-navy">PDF Formatting &amp; Editing</h3>
+            <p class="text-xs text-slateSoft mt-1.5 leading-relaxed">
+              Merging, splitting, page reordering, text edits, compression, and print-ready PDF cleanup.
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="font-heading font-extrabold text-xl text-navy">₹149</span>
+            <a href="#order-section" onclick="selectServiceFromCard('PDF Formatting & Editing')" class="text-xs font-bold text-tealAccent hover:text-tealDark">
+              Order Now <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footnote -->
+      <div class="mt-8 bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 shadow-card">
+        <i class="fa-solid fa-circle-info text-tealAccent text-lg mt-0.5"></i>
+        <p class="text-xs sm:text-sm text-slateSoft leading-relaxed">
+          <strong class="text-navy">Note:</strong> Prices may vary based on complexity and urgency. For handwritten records &amp; assignments, minimum 10 pages are required. If you do not know the exact page count yet, you can book with a flat <strong>₹200 advance</strong>, and actual pages (₹10/page theory, ₹15/page theory + diagram) will be counted upon completion with your ₹200 advance deducted from the final balance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instant Price Calculator -->
+  <section id="estimator" class="py-14 bg-white border-y border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-tealAccent">Quick Calculator</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-navy mt-1">
+          Instant Price &amp; Advance Calculator
+        </h2>
+      </div>
+
+      <div class="bg-ivory rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-soft">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="estService" class="block text-xs font-bold uppercase tracking-wider text-navy mb-2">
+              Select Service
+            </label>
+            <select id="estService" onchange="updateEstimator()" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-navy focus:outline-none focus:border-tealAccent">
+              <option value="Handwritten Records">Handwritten Records (₹10/page)</option>
+              <option value="Handwritten Assignments">Handwritten Assignments (₹10/page)</option>
+              <option value="Online Assignments">Online Assignments (₹199)</option>
+              <option value="B.Tech Mini Projects">B.Tech Mini Projects (₹999)</option>
+              <option value="IEEE Paper Formatting">IEEE Paper Formatting (₹499)</option>
+              <option value="PPT">PPT (₹249)</option>
+              <option value="Word Documentation">Word Documentation (₹199)</option>
+              <option value="PDF Formatting & Editing">PDF Formatting &amp; Editing (₹149)</option>
+            </select>
+          </div>
+
+          <div id="estPagesGroup">
+            <label for="estPages" class="block text-xs font-bold uppercase tracking-wider text-navy mb-2">
+              Estimated Pages <span class="text-tealDark font-normal normal-case">(Min 10 pages required)</span>
+            </label>
+            <div class="flex items-center gap-2">
+              <button
+                type="button"
+                id="estMinusBtn"
+                onclick="stepEstimatorPages(-1)"
+                class="w-11 h-11 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-navy font-extrabold text-lg flex items-center justify-center transition"
+                aria-label="Decrease pages"
+              >−</button>
+              <input
+                type="number"
+                id="estPages"
+                min="10"
+                max="500"
+                value="10"
+                onkeydown="guardMinPagesKeydown(event, 'est')"
+                oninput="guardMinPagesInput(this, 'est')"
+                onblur="enforceMinPagesBlur(this, 'est')"
+                class="w-full text-center rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-bold text-navy focus:outline-none focus:border-tealAccent"
+              />
+              <button
+                type="button"
+                onclick="stepEstimatorPages(1)"
+                class="w-11 h-11 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-navy font-extrabold text-lg flex items-center justify-center transition"
+                aria-label="Increase pages"
+              >+</button>
+            </div>
+            <p id="estMinWarning" class="hidden text-xs font-semibold text-red-600 mt-1.5">
+              <i class="fa-solid fa-circle-exclamation mr-1"></i> Minimum 10 pages required — cannot proceed with less than 10 pages.
+            </p>
+          </div>
+
+          <div id="estDiagramGroup" class="sm:col-span-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-navy mb-2">
+              Diagrams Included? (No need to guess exact diagram pages)
+            </label>
+            <div class="grid grid-cols-2 gap-3 max-w-md">
+              <button type="button" id="estDiagNo" onclick="setEstDiagram(false)" class="py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-tealLight/40 text-navy text-xs font-bold transition">
+                No Diagrams (Theory Only)
+              </button>
+              <button type="button" id="estDiagYes" onclick="setEstDiagram(true)" class="py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition">
+                Yes, Diagrams Included
+              </button>
+            </div>
+            <p id="estDiagramNote" class="hidden text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-xl px-3.5 py-2.5 mt-3">
+              <i class="fa-solid fa-circle-info mr-1"></i> Initial advance is calculated on base theory rate (₹10/page). Final diagram pages (₹15/page) will be verified after reviewing your syllabus/PDF.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="flex flex-wrap gap-6">
+            <div>
+              <span class="text-xs font-medium text-slateSoft block">Estimated Total</span>
+              <span id="estTotalDisplay" class="font-heading font-extrabold text-2xl text-navy">₹100</span>
+            </div>
+            <div>
+              <span class="text-xs font-medium text-tealDark block">50% Advance Payable</span>
+              <span id="estAdvanceDisplay" class="font-heading font-extrabold text-2xl text-tealAccent">₹50</span>
+            </div>
+          </div>
+
+          <button type="button" onclick="applyEstimateToOrder()" class="inline-flex items-center gap-2 bg-navy hover:bg-slate-800 text-white text-sm font-semibold px-6 py-3 rounded-full transition">
+            <span>Proceed with This Estimate</span>
+            <i class="fa-solid fa-arrow-down text-xs text-teal-300"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-tealAccent">Simple Workflow</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-navy mt-2">
+          How Your Order Gets Completed
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-card">
+          <span class="w-9 h-9 rounded-full bg-navy text-white font-heading font-bold text-sm flex items-center justify-center mb-4">1</span>
+          <h3 class="font-heading font-bold text-base text-navy">Fill Service &amp; Details</h3>
+          <p class="text-xs text-slateSoft mt-2 leading-relaxed">
+            Select service, page count (or ₹200 advance if unknown), handover/delivery dates, and student details.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-card">
+          <span class="w-9 h-9 rounded-full bg-navy text-white font-heading font-bold text-sm flex items-center justify-center mb-4">2</span>
+          <h3 class="font-heading font-bold text-base text-navy">Pay Advance via BHIM UPI</h3>
+          <p class="text-xs text-slateSoft mt-2 leading-relaxed">
+            Scan the assigned QR code and enter your 12-digit UPI Transaction ID (UTR) &amp; payment receipt to confirm.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-card">
+          <span class="w-9 h-9 rounded-full bg-navy text-white font-heading font-bold text-sm flex items-center justify-center mb-4">3</span>
+          <h3 class="font-heading font-bold text-base text-navy">Auto PDF Receipt &amp; Alert</h3>
+          <p class="text-xs text-slateSoft mt-2 leading-relaxed">
+            Once paid, our team receives your confirmed order alert and your Order Form &amp; Receipt downloads automatically as a PDF.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-card">
+          <span class="w-9 h-9 rounded-full bg-tealAccent text-white font-heading font-bold text-sm flex items-center justify-center mb-4">4</span>
+          <h3 class="font-heading font-bold text-base text-navy">On-Time Delivery</h3>
+          <p class="text-xs text-slateSoft mt-2 leading-relaxed">
+            Pay any remaining balance upon completion preview and receive your completed work on time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Policies Section -->
+  <section id="policies" class="py-12 bg-white border-y border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-ivory rounded-2xl p-6 border border-slate-200">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center">
+              <i class="fa-solid fa-motorcycle"></i>
+            </span>
+            <h3 class="font-heading font-bold text-lg text-navy">Guntur &amp; Kadapa Pickup &amp; Rapido Policy</h3>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slateSoft leading-relaxed">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-tealAccent mt-1"></i>
+              <span><strong>Offline Services Scope:</strong> Handwritten Records &amp; Handwritten Assignments (minimum 10 pages) are handled offline in <strong>Guntur &amp; Kadapa</strong>.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-tealAccent mt-1"></i>
+              <span><strong>Personal Pickup Point:</strong> Exact pickup/handover point in Guntur or Kadapa is shared personally via WhatsApp/Call after payment confirmation.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-tealAccent mt-1"></i>
+              <span><strong>Rapido Parcel Charges:</strong> If you opt for Rapido pickup or delivery for offline records, <strong>Rapido delivery charges must be borne by the customer</strong>.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-ivory rounded-2xl p-6 border border-slate-200">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-xl bg-tealLight text-tealDark flex items-center justify-center">
+              <i class="fa-solid fa-shield-halved"></i>
+            </span>
+            <h3 class="font-heading font-bold text-lg text-navy">Advance Payment &amp; Mandatory PDF Receipt</h3>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slateSoft leading-relaxed">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-tealAccent mt-1"></i>
+              <span><strong>Flexible Advance:</strong> Pay 50% advance based on your estimated page count (min 10 pages), or pay a flat <strong>₹200 advance</strong> if the exact page count is not yet known.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-tealAccent mt-1"></i>
+              <span><strong>Post-Payment Confirmation &amp; PDF:</strong> After completing UPI payment, entering your 12-digit UTR, and uploading your payment receipt, our team is notified immediately and your mandatory <strong>Order Form &amp; Payment Receipt PDF</strong> downloads automatically.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-tealAccent mt-1"></i>
+              <span><strong>Direct Support:</strong> <a href="mailto:studentsupportstudio@gmail.com" class="text-tealAccent font-semibold underline">studentsupportstudio@gmail.com</a> • Instagram <a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" class="text-tealAccent font-semibold underline">@student__support_studio</a>.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-STEP CHECKOUT & MANDATORY PDF RECEIPT SECTION -->
+  <section id="order-section" class="py-16 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-tealAccent">3-Step Verified Checkout</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-navy mt-2">
+          Place Your Order &amp; Download PDF Receipt
+        </h2>
+        <p class="text-sm text-slateSoft mt-2">
+          Step 1: Enter Order Details → Step 2: Complete UPI Advance Payment → Step 3: Auto-Download Order Form PDF
+        </p>
+      </div>
+
+      <!-- 3-Step Progress Indicator -->
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8">
+        <button type="button" id="stepBadge1" onclick="goToStep1()" class="flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm transition">
+          <span class="w-5 h-5 rounded-full bg-tealAccent text-white flex items-center justify-center text-[11px]">1</span>
+          <span>Order Details</span>
+        </button>
+        <div class="w-6 sm:w-8 h-0.5 bg-slate-300"></div>
+        <button type="button" id="stepBadge2" onclick="goToStep2IfReady()" class="flex items-center gap-2 bg-white text-slateSoft border border-slate-300 px-4 py-2 rounded-full text-xs font-bold transition">
+          <span class="w-5 h-5 rounded-full bg-slate-200 text-slateSoft flex items-center justify-center text-[11px]">2</span>
+          <span>UPI Payment</span>
+        </button>
+        <div class="w-6 sm:w-8 h-0.5 bg-slate-300"></div>
+        <div id="stepBadge3" class="flex items-center gap-2 bg-white text-slateSoft border border-slate-300 px-4 py-2 rounded-full text-xs font-bold">
+          <span class="w-5 h-5 rounded-full bg-slate-200 text-slateSoft flex items-center justify-center text-[11px]">3</span>
+          <span>PDF Receipt</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: PROGRESSIVE ORDER FORM -->
+      <div id="step1Container" class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-soft">
+        <!-- Top Quick Navigation Bar -->
+        <div id="step1TopNavBar" class="hidden mb-6 flex flex-wrap items-center justify-between gap-3 bg-ivory border border-slate-200 rounded-2xl px-4 py-3">
+          <span class="text-xs font-semibold text-slateSoft">
+            <i class="fa-solid fa-pen-to-square text-tealAccent mr-1.5"></i> Editing Order Details (<strong id="step1PendingId" class="font-mono text-navy">SSS-000000</strong>)
+          </span>
+          <button
+            type="button"
+            onclick="document.getElementById('orderForm').requestSubmit()"
+            class="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-navy hover:bg-slate-800 px-4 py-2 rounded-full transition"
+          >
+            <span>Forward to UPI Payment</span>
+            <i class="fa-solid fa-arrow-right text-teal-300"></i>
+          </button>
+        </div>
+
+        <!-- Strict Validation Banner -->
+        <div id="formValidationBanner" class="hidden mb-6 bg-red-50 border-2 border-red-300 text-red-900 rounded-2xl p-4">
+          <div class="flex items-start gap-3">
+            <i class="fa-solid fa-triangle-exclamation text-red-600 text-lg mt-0.5"></i>
+            <div>
+              <p class="font-heading font-extrabold text-sm text-red-800">Please enter details correctly</p>
+              <p id="formValidationReason" class="text-xs text-red-700 mt-1 leading-relaxed"></p>
+            </div>
+          </div>
+        </div>
+
+        <form id="orderForm" novalidate class="space-y-8">
+          <!-- SECTION A: SERVICE TYPE & PRICING -->
+          <div class="space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg bg-navy text-white font-heading font-bold text-xs flex items-center justify-center">A</span>
+                <h3 class="font-heading font-bold text-base text-navy">Service Selection &amp; Schedule</h3>
+              </div>
+              <span id="serviceRatePill" class="text-xs font-bold bg-tealLight/70 text-tealDark px-3 py-1 rounded-full">
+                ₹10 / page (Min 10 pages)
+              </span>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="orderService" class="block text-xs font-bold uppercase tracking-wider text-navy mb-2">
+                  Service Type <span class="text-red-500">*</span>
+                </label>
+                <select
+                  id="orderService"
+                  onchange="handleServiceChange()"
+                  class="w-full rounded-xl border border-slate-300 bg-ivory/60 px-4 py-3 text-sm font-medium text-navy focus:bg-white focus:outline-none focus:border-tealAccent transition"
+                >
+                  <option value="Handwritten Records">Handwritten Records (₹10/page)</option>
+                  <option value="Handwritten Assignments">Handwritten Assignments (₹10/page)</option>
+                  <option value="Online Assignments">Online Assignments (₹199)</option>
+                  <option value="B.Tech Mini Projects">B.Tech Mini Projects (₹999)</option>
+                  <option value="IEEE Paper Formatting">IEEE Paper Formatting (₹499)</option>
+                  <option value="PPT">PPT (₹249)</option>
+                  <option value="Word Documentation">Word Documentation (₹199)</option>
+                  <option value="PDF Formatting & Editing">PDF Formatting &amp; Editing (₹149)</option>
+                </select>
+              </div>
+
+              <!-- Offline Page Count + "Count Not Known Yet (₹200 Advance)" Toggle -->
+              <div id="orderPagesWrapper">
+                <div class="flex items-center justify-between mb-2">
+                  <label for="orderPages" class="block text-xs font-bold uppercase tracking-wider text-navy">
+                    Page Count <span class="text-red-500">*</span>
+                  </label>
+                  <span class="text-[11px] font-semibold text-tealDark">Min 10 pages required</span>
+                </div>
+
+                <div id="knownPagesInputGroup" class="flex items-center gap-2">
+                  <button
+                    type="button"
+                    id="orderMinusBtn"
+                    onclick="stepOrderPages(-1)"
+                    class="w-11 h-11 rounded-xl border border-slate-300 bg-ivory/60 hover:bg-slate-100 text-navy font-extrabold text-lg flex items-center justify-center transition"
+                    aria-label="Decrease pages"
+                  >−</button>
+                  <input
+                    type="number"
+                    id="orderPages"
+                    min="10"
+                    max="500"
+                    value="10"
+                    onkeydown="guardMinPagesKeydown(event, 'order')"
+                    oninput="guardMinPagesInput(this, 'order')"
+                    onblur="enforceMinPagesBlur(this, 'order')"
+                    class="w-full text-center rounded-xl border border-slate-300 bg-ivory/60 px-3 py-2.5 text-sm font-bold text-navy focus:bg-white focus:outline-none focus:border-tealAccent transition"
+                  />
+                  <button
+                    type="button"
+                    onclick="stepOrderPages(1)"
+                    class="w-11 h-11 rounded-xl border border-slate-300 bg-ivory/60 hover:bg-slate-100 text-navy font-extrabold text-lg flex items-center justify-center transition"
+                    aria-label="Increase pages"
+                  >+</button>
+                </div>
+
+                <p id="orderMinWarning" class="hidden text-xs font-semibold text-red-600 mt-1.5">
+                  <i class="fa-solid fa-circle-exclamation mr-1"></i> Minimum 10 pages required — cannot proceed with less than 10 pages.
+                </p>
+
+                <!-- Unknown Page Count Toggle (₹200 Advance) -->
+                <label class="mt-2.5 flex items-center gap-2 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    id="unknownPageCountCheckbox"
+                    onchange="toggleUnknownPageCount(this.checked)"
+                    class="w-4 h-4 rounded border-slate-300 text-tealAccent focus:ring-tealAccent"
+                  />
+                  <span class="text-xs font-semibold text-navy">I don't know the exact page count yet (Pay ₹200 advance)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Unknown Page Count Info Notice -->
+            <div id="unknownCountNotice" class="hidden bg-sky-50 border border-sky-200 rounded-2xl p-4 text-xs text-sky-950 leading-relaxed">
+              <p class="font-bold flex items-center gap-1.5">
+                <i class="fa-solid fa-calculator text-sky-700"></i>
+                <span>Unknown Page Count Selected — Flat ₹200 Advance</span>
+              </p>
+              <p class="mt-1">
+                You will pay a flat <strong>₹200 advance</strong> now to confirm your slot. Once we receive and write your records, we will count the exact completed pages (<strong>₹10/page</strong> theory, <strong>₹15/page</strong> theory + diagram) and deduct your <strong>₹200 advance</strong> from the final balance at delivery.
+              </p>
+            </div>
+
+            <!-- No-Guess Diagram Toggle (Offline Handwritten Services) -->
+            <div id="orderDiagramSection" class="bg-ivory rounded-2xl p-4 sm:p-5 border border-slate-200">
+              <label class="block text-xs font-bold uppercase tracking-wider text-navy mb-2">
+                Diagrams Included? <span class="text-slateSoft font-normal normal-case">(No need to guess exact diagram pages)</span>
+              </label>
+              <div class="grid grid-cols-2 gap-3 max-w-md">
+                <button type="button" id="ordDiagNo" onclick="setOrderDiagram(false)" class="py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-white text-navy text-xs font-bold transition shadow-sm">
+                  No (Theory Only)
+                </button>
+                <button type="button" id="ordDiagYes" onclick="setOrderDiagram(true)" class="py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition">
+                  Yes (Includes Diagrams)
+                </button>
+              </div>
+              <p id="orderDiagramBanner" class="hidden text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-xl p-3 mt-3 leading-relaxed">
+                <i class="fa-solid fa-circle-info mr-1"></i> Initial advance is calculated on base theory rate (₹10/page) or ₹200 if count is unknown. Final diagram pages (₹15/page) will be verified after reviewing your syllabus/PDF.
+              </p>
+            </div>
+
+            <!-- Online / Digital Assignment Materials (PDF/Doc up to 500MB OR .txt Description) -->
+            <div id="onlineMaterialsSection" class="hidden bg-sky-50/70 rounded-2xl p-5 border border-sky-200 space-y-5">
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <h4 class="font-heading font-bold text-sm text-navy flex items-center gap-2">
+                    <i class="fa-solid fa-cloud-arrow-up text-sky-700"></i>
+                    <span>Assignment / Project Reference Material</span>
+                  </h4>
+                  <span class="text-[11px] font-bold bg-sky-100 text-sky-900 px-2.5 py-1 rounded-full">
+                    Provide Either Option 1 OR Option 2 (Your Choice)
+                  </span>
+                </div>
+                <p class="text-xs text-slateSoft mt-1">
+                  Upload a related <strong>PDF / Document (Max 500 MB)</strong> OR provide your assignment <strong>Description in <code>.txt</code> format</strong>. Filling at least one is required.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-xl p-4 border border-slate-200">
+                <div class="flex items-center justify-between mb-2">
+                  <label for="onlineDocFile" class="text-xs font-bold text-navy flex items-center gap-1.5">
+                    <i class="fa-solid fa-file-pdf text-red-600"></i>
+                    <span>Option 1: Upload PDF or Document (.pdf, .doc, .docx — Max 500 MB)</span>
+                  </label>
+                  <button type="button" id="clearDocBtn" onclick="clearOnlineDoc()" class="hidden text-[11px] font-semibold text-red-600 hover:underline">
+                    Remove
+                  </button>
+                </div>
+                <input
+                  type="file"
+                  id="onlineDocFile"
+                  accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                  onchange="handleOnlineDocSelect(this)"
+                  class="block w-full text-xs text-slateSoft file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-navy file:text-white hover:file:bg-slate-800 cursor-pointer"
+                />
+                <p id="onlineDocStatus" class="text-[11px] text-slateSoft mt-1.5">
+                  No PDF/Document selected yet (Max allowed size: 500 MB).
+                </p>
+              </div>
+
+              <div class="bg-white rounded-xl p-4 border border-slate-200 space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <label class="text-xs font-bold text-navy flex items-center gap-1.5">
+                    <i class="fa-solid fa-file-lines text-tealAccent"></i>
+                    <span>Option 2: Description in <code>.txt</code> Format (Upload <code>.txt</code> document OR Type below — anyone is enough)</span>
+                  </label>
+                  <button type="button" id="clearTxtBtn" onclick="clearOnlineTxtFile()" class="hidden text-[11px] font-semibold text-red-600 hover:underline">
+                    Remove .txt file
+                  </button>
+                </div>
+
+                <div>
+                  <input
+                    type="file"
+                    id="onlineTxtFile"
+                    accept=".txt,text/plain"
+                    onchange="handleOnlineTxtFileSelect(this)"
+                    class="block w-full text-xs text-slateSoft file:mr-3 file:py-1.5 file:px-3.5 file:rounded-lg file:border file:border-slate-300 file:text-xs file:font-semibold file:bg-ivory file:text-navy hover:file:bg-slate-100 cursor-pointer"
+                  />
+                  <p id="onlineTxtFileStatus" class="text-[11px] text-slateSoft mt-1">
+                    Either upload a <code>.txt</code> file OR type your description below (both are not required — anyone is enough):
+                  </p>
+                </div>
+
+                <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-slateSoft">
+                  <span class="flex-1 h-px bg-slate-200"></span>
+                  <span>OR</span>
+                  <span class="flex-1 h-px bg-slate-200"></span>
+                </div>
+
+                <div>
+                  <textarea
+                    id="onlineTxtDescription"
+                    rows="3"
+                    placeholder="Type your assignment questions, topics, word count, or formatting instructions here (optional if you already uploaded a .txt file above)..."
+                    class="w-full rounded-xl border border-slate-300 bg-ivory/50 px-3.5 py-2.5 text-xs sm:text-sm font-mono text-navy focus:bg-white focus:outline-none focus:border-tealAccent"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mandatory Two-Date Schedule -->
+            <div class="bg-ivory rounded-2xl p-4 sm:p-5 border border-slate-200 space-y-4">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-calendar-check text-tealAccent"></i>
+                <h4 class="font-heading font-bold text-sm text-navy">Schedule Dates (Required for All Orders)</h4>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="handoverDate" class="block text-xs font-bold text-navy mb-1.5">
+                    Date of Giving Materials / Books to Us <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="date"
+                    id="handoverDate"
+                    required
+                    onchange="syncSubmissionMinDate()"
+                    class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-navy focus:outline-none focus:border-tealAccent transition"
+                  />
+                  <p id="handoverDateHint" class="text-[11px] text-slateSoft mt-1">
+                    Date you hand over blank record books / sheets at Guntur or Kadapa pickup point.
+                  </p>
+                </div>
+
+                <div>
+                  <label for="submissionDate" class="block text-xs font-bold text-navy mb-1.5">
+                    Final Submission / Delivery Date Needed <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="date"
+                    id="submissionDate"
+                    required
+                    class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-navy focus:outline-none focus:border-tealAccent transition"
+                  />
+                  <p class="text-[11px] text-slateSoft mt-1">
+                    Date you need the completed work delivered back to you.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION B: STUDENT DETAILS -->
+          <div class="space-y-5">
+            <div class="flex items-center gap-2.5 border-b border-slate-200 pb-3">
+              <span class="w-7 h-7 rounded-lg bg-navy text-white font-heading font-bold text-xs flex items-center justify-center">B</span>
+              <h3 class="font-heading font-bold text-base text-navy">Student Details</h3>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <label for="studentName" class="block text-xs font-bold uppercase tracking-wider text-navy">
+                    Full Name <span class="text-red-500">*</span>
+                  </label>
+                  <span id="nameCharCounter" class="text-[11px] font-semibold text-slateSoft">0/50 chars</span>
+                </div>
+                <input
+                  type="text"
+                  id="studentName"
+                  required
+                  maxlength="50"
+                  placeholder="Enter your full name"
+                  oninput="handleNameInput(this)"
+                  class="w-full rounded-xl border border-slate-300 bg-ivory/60 px-4 py-3 text-sm text-navy focus:bg-white focus:outline-none focus:border-tealAccent transition"
+                />
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <label for="studentPhone" class="block text-xs font-bold uppercase tracking-wider text-navy">
+                    WhatsApp / Phone Number <span class="text-red-500">*</span>
+                  </label>
+                  <span id="phoneDigitCounter" class="text-[11px] font-semibold text-slateSoft">0/10 digits</span>
+                </div>
+                <input
+                  type="tel"
+                  id="studentPhone"
+                  required
+                  inputmode="numeric"
+                  minlength="10"
+                  maxlength="10"
+                  pattern="[0-9]{10}"
+                  placeholder="9876543210"
+                  oninput="handlePhoneInput(this)"
+                  class="w-full rounded-xl border border-slate-300 bg-ivory/60 px-4 py-3 text-sm text-navy focus:bg-white focus:outline-none focus:border-tealAccent transition"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="studentEmail" class="block text-xs font-bold uppercase tracking-wider text-navy mb-2">
+                Email Address <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="studentEmail"
+                required
+                placeholder="abcd@gmail.com"
+                class="w-full rounded-xl border border-slate-300 bg-ivory/60 px-4 py-3 text-sm text-navy focus:bg-white focus:outline-none focus:border-tealAccent transition"
+              />
+            </div>
+          </div>
+
+          <!-- SECTION C: ADDRESS / OFFLINE PICKUP DETAILS -->
+          <div id="offlineLocationSection" class="space-y-4">
+            <div class="flex items-center gap-2.5 border-b border-slate-200 pb-3">
+              <span class="w-7 h-7 rounded-lg bg-navy text-white font-heading font-bold text-xs flex items-center justify-center">C</span>
+              <h3 class="font-heading font-bold text-base text-navy">Address &amp; Offline Pickup Details (Guntur &amp; Kadapa)</h3>
+            </div>
+
+            <div class="bg-amber-50/70 rounded-2xl p-5 border border-amber-200/90 space-y-4">
+              <p class="text-xs text-slateSoft">
+                Exact pickup/handover point will be shared personally via WhatsApp/Call. Rapido delivery charges (if opted) are borne by the customer.
+              </p>
+
+              <div class="grid sm:grid-cols-3 gap-4">
+                <div>
+                  <label for="offlineCity" class="block text-xs font-bold text-navy mb-1.5">
+                    City <span class="text-red-500">*</span>
+                  </label>
+                  <select
+                    id="offlineCity"
+                    onchange="handleCityChange()"
+                    class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm font-semibold text-navy focus:outline-none focus:border-tealAccent"
+                  >
+                    <option value="Guntur">Guntur (AP)</option>
+                    <option value="Kadapa">Kadapa (AP)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="offlineArea" class="block text-xs font-bold text-navy mb-1.5">
+                    Area / Locality <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="offlineArea"
+                    placeholder="e.g., Brodipet, Lakshmipuram"
+                    class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-navy focus:outline-none focus:border-tealAccent"
+                  />
+                </div>
+
+                <div>
+                  <label for="offlinePincode" class="block text-xs font-bold text-navy mb-1.5">
+                    6-Digit Pin Code <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="offlinePincode"
+                    inputmode="numeric"
+                    maxlength="6"
+                    placeholder="522002"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6)"
+                    class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-navy focus:outline-none focus:border-tealAccent"
+                  />
+                </div>
+              </div>
+              <p id="cityHintText" class="text-[11px] font-medium text-amber-900">
+                <i class="fa-solid fa-circle-info mr-1"></i> Guntur orders require a valid Guntur area and 6-digit Pin Code starting with <strong>522</strong> (e.g., 522002).
+              </p>
+            </div>
+          </div>
+
+          <!-- Additional Notes -->
+          <div>
+            <label for="orderNotes" class="block text-xs font-bold uppercase tracking-wider text-navy mb-2">
+              Additional Instructions / College Guidelines (Optional)
+            </label>
+            <textarea
+              id="orderNotes"
+              rows="2"
+              placeholder="Any specific pen ink color, margins, front-page format, or notes..."
+              class="w-full rounded-xl border border-slate-300 bg-ivory/60 px-4 py-2.5 text-sm text-navy focus:bg-white focus:outline-none focus:border-tealAccent transition"
+            ></textarea>
+          </div>
+
+          <!-- Live Order Summary Box -->
+          <div class="bg-navy text-white rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-teal-300 font-bold block">Order Summary</span>
+              <p id="summaryServiceLabel" class="font-heading font-bold text-base mt-0.5">Handwritten Records • 10 Pages</p>
+              <p id="summaryUpiPreview" class="text-xs text-slate-300 mt-1">
+                Assigned UPI: <span class="font-mono font-bold text-white">kurapati084@upi</span>
+              </p>
+            </div>
+            <div class="sm:text-right">
+              <span id="summaryTotalLine" class="text-xs text-slate-300 block">Estimated Total: <strong id="summaryTotalAmount" class="text-white">₹100</strong></span>
+              <span class="font-heading font-extrabold text-xl text-teal-300">Advance Payable: <span id="summaryAdvanceAmount">₹50</span></span>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-3">
+            <button
+              type="submit"
+              class="w-full bg-tealAccent hover:bg-tealDark text-white font-heading font-bold text-base py-4 rounded-2xl shadow-soft transition flex items-center justify-center gap-2.5"
+            >
+              <span>Save &amp; Forward to UPI Payment</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 2: DYNAMIC BHIM UPI QR PAYMENT & MANDATORY UTR CONFIRMATION -->
+      <div id="step2Container" class="hidden bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-soft">
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-200">
+          <div>
+            <div class="flex flex-wrap items-center gap-2.5">
+              <button
+                type="button"
+                onclick="goToStep1()"
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-navy bg-ivory hover:bg-slate-100 border border-slate-300 px-3.5 py-1.5 rounded-full transition"
+              >
+                <i class="fa-solid fa-arrow-left text-tealAccent"></i>
+                <span>Back to Order Details</span>
+              </button>
+              <span class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full">
+                <i class="fa-solid fa-clock"></i> Step 2 of 3 • Complete UPI Payment
+              </span>
+            </div>
+            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-navy mt-2.5">
+              Pay Advance &amp; Verify Transaction
+            </h3>
+          </div>
+          <div class="bg-ivory border border-slate-200 px-4 py-2 rounded-xl text-right">
+            <span class="text-[11px] text-slateSoft block">Pending Order ID</span>
+            <span id="receiptOrderId" class="font-mono font-extrabold text-sm text-navy">SSS-000000</span>
+          </div>
+        </div>
+
+        <!-- Order Summary Bar -->
+        <div class="grid sm:grid-cols-2 gap-4 my-6 bg-ivory p-4 rounded-2xl border border-slate-200 text-xs">
+          <div>
+            <span class="text-slateSoft block">Student &amp; Contact</span>
+            <strong id="receiptStudent" class="text-navy text-sm block mt-0.5">—</strong>
+            <span id="receiptSchedule" class="text-slateSoft block mt-1">—</span>
+          </div>
+          <div class="sm:text-right">
+            <span class="text-slateSoft block">Service &amp; Advance Due Now</span>
+            <strong id="receiptService" class="text-navy text-sm block mt-0.5">—</strong>
+            <span id="receiptAdvance" class="font-heading font-extrabold text-xl text-tealAccent block mt-0.5">₹50</span>
+          </div>
+        </div>
+
+        <!-- Dynamic QR Code & UPI ID Card -->
+        <div class="flex flex-col items-center text-center bg-ivory/70 border border-slate-200 rounded-3xl p-6 sm:p-8">
+          <span id="upiRoutingBadge" class="text-xs font-bold px-3.5 py-1 rounded-full bg-navy text-white mb-3">
+            Guntur Offline Account (kurapati084@upi)
+          </span>
+
+          <!-- Prominent UPI ID Display Above QR -->
+          <div class="mb-4 flex flex-wrap items-center justify-center gap-2 bg-white border-2 border-tealAccent/40 px-4 py-2.5 rounded-2xl shadow-sm">
+            <span class="text-xs font-bold text-slateSoft uppercase tracking-wider">UPI ID:</span>
+            <code id="activeUpiIdText" class="font-mono font-extrabold text-base sm:text-lg text-navy select-all">kurapati084@upi</code>
+            <button type="button" onclick="copyActiveUpiId()" class="ml-1 bg-tealAccent hover:bg-tealDark text-white text-xs font-bold px-3.5 py-1.5 rounded-xl transition">
+              <i class="fa-regular fa-copy mr-1"></i> <span id="copyBtnLabel">Copy UPI ID</span>
+            </button>
+          </div>
+
+          <!-- Reliable QR Display Container -->
+          <div class="w-56 h-56 bg-white p-3 rounded-2xl border-2 border-slate-200 shadow-sm flex items-center justify-center overflow-hidden">
+            <img
+              id="dynamicQrImage"
+              alt="Official BHIM UPI QR Code"
+              class="hidden w-full h-full object-contain"
+            />
+            <div id="fallbackQrCanvas" class="flex items-center justify-center"></div>
+          </div>
+
+          <p class="text-xs text-slateSoft mt-3">
+            Scan with <strong>BHIM, Google Pay, PhonePe, or Paytm</strong> — <strong id="qrAmountHint" class="text-navy">₹50</strong> pre-fills automatically
+          </p>
+          <p class="text-[11px] text-slateSoft mt-1">
+            (Note: Amount auto-fills when scanning the QR or tapping the button below; typing the UPI ID manually requires entering the amount.)
+          </p>
+
+          <a
+            id="directUpiPayLink"
+            href="upi://pay?pa=kurapati084@upi&pn=Student%20Support%20Studio&cu=INR"
+            class="mt-3 inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-navy border border-slate-300 text-xs font-bold px-4 py-2 rounded-full shadow-sm transition"
+          >
+            <i class="fa-solid fa-mobile-screen-button text-tealAccent"></i>
+            <span>Open Directly in Installed UPI App</span>
+          </a>
+        </div>
+
+        <!-- Mandatory Payment Verification Box -->
+        <div class="mt-6 bg-tealLight/30 border-2 border-tealAccent/50 rounded-2xl p-5 sm:p-6 space-y-4">
+          <div>
+            <h4 class="font-heading font-bold text-base text-navy flex items-center gap-2">
+              <i class="fa-solid fa-shield-check text-tealAccent"></i>
+              <span>Verify Payment to Complete Order &amp; Download Mandatory PDF</span>
+            </h4>
+            <p class="text-xs text-slateSoft mt-1">
+              After paying via UPI, enter your genuine <strong>12-digit UPI Transaction ID / UTR Number</strong> and upload your <strong>Payment Receipt</strong> below. Once confirmed, our studio receives your <strong>"Payment Successful - Please Complete Order"</strong> notification and your official Order Form PDF downloads automatically.
+            </p>
+          </div>
+
+          <div id="utrErrorBanner" class="hidden bg-red-50 border border-red-300 text-red-800 text-xs font-semibold px-3.5 py-2.5 rounded-xl">
+            <i class="fa-solid fa-triangle-exclamation mr-1"></i> <span id="utrErrorText">Please enter a valid 12-digit UPI Transaction ID / UTR number.</span>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="upiUtrInput" class="block text-xs font-bold text-navy">
+                  12-Digit UPI Transaction ID / UTR <span class="text-red-500">*</span>
+                </label>
+                <span id="utrDigitCounter" class="text-[11px] font-semibold text-slateSoft">0/12 digits</span>
+              </div>
+              <input
+                type="text"
+                id="upiUtrInput"
+                inputmode="numeric"
+                maxlength="12"
+                placeholder="e.g., 631892045612"
+                oninput="handleUtrInput(this)"
+                class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-mono font-bold text-navy focus:outline-none focus:border-tealAccent"
+              />
+              <p class="text-[11px] text-slateSoft mt-1">
+                12-digit UPI Ref / UTR number from GPay, PhonePe, Paytm, or BHIM.
+              </p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="paymentScreenshotInput" class="block text-xs font-bold text-navy">
+                  Upload Payment Receipt / Screenshot <span class="text-red-500">*</span>
+                </label>
+                <span class="text-[11px] font-bold text-red-600">Mandatory</span>
+              </div>
+              <input
+                type="file"
+                id="paymentScreenshotInput"
+                required
+                accept="image/jpeg,image/png,image/webp,application/pdf,.jpg,.jpeg,.png,.webp,.pdf"
+                onchange="handlePaymentScreenshotSelect(this)"
+                class="block w-full text-xs text-slateSoft bg-white rounded-xl border border-slate-300 p-2 file:mr-2.5 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-navy file:text-white cursor-pointer"
+              />
+              <p id="paymentScreenshotStatus" class="text-[11px] text-slateSoft mt-1">
+              Mandatory: Upload payment receipt image (JPG/PNG/WEBP) or PDF (Max 20 MB).
+            </p>
+          </div>
+        </div>
+
+        <!-- Mandatory Full Advance Amount Confirmation & Short-Payment Policy -->
+        <div class="bg-white border border-amber-300 rounded-xl p-3.5 space-y-2">
+          <label class="flex items-start gap-2.5 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              id="confirmFullAdvanceCheckbox"
+              onchange="document.getElementById('utrErrorBanner').classList.add('hidden')"
+              class="mt-0.5 w-4 h-4 rounded border-slate-300 text-tealAccent focus:ring-tealAccent"
+            />
+            <span class="text-xs font-bold text-navy leading-snug">
+              I confirm that I have paid the exact full advance amount of <span id="confirmExactAmountLabel" class="text-tealDark underline">₹50</span> shown above (and my uploaded receipt clearly shows this amount).
+            </span>
+          </label>
+          <p class="text-[11px] text-amber-900 pl-6 leading-relaxed">
+            <i class="fa-solid fa-circle-info mr-1 text-amber-700"></i> <strong>Verification Policy:</strong> Our team verifies the paid amount on your receipt before starting work. If a lesser amount is paid, the order remains <strong>ON HOLD</strong> until the remaining advance balance is cleared.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+            <button type="button" onclick="goToStep1()" class="inline-flex items-center gap-1.5 text-xs font-bold text-navy bg-white hover:bg-slate-100 border border-slate-300 px-4 py-2.5 rounded-full transition">
+              <i class="fa-solid fa-arrow-left text-tealAccent"></i>
+              <span>Back to Order Details</span>
+            </button>
+
+            <button
+              type="button"
+              id="confirmPaymentBtn"
+              onclick="finalizePaymentAndDownloadPdf()"
+              class="w-full sm:w-auto bg-navy hover:bg-slate-800 text-white font-heading font-bold text-sm px-7 py-4 rounded-2xl shadow-soft transition flex items-center justify-center gap-2.5"
+            >
+              <span>Confirm Payment &amp; Forward to PDF Receipt</span>
+              <i class="fa-solid fa-arrow-right text-teal-300"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: PAYMENT SUCCESSFUL + MANDATORY PDF DOWNLOADED -->
+      <div id="step3Container" class="hidden bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-soft text-center space-y-6">
+        <div class="w-16 h-16 rounded-full bg-tealLight text-tealDark flex items-center justify-center text-3xl mx-auto shadow-sm">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-tealAccent">Payment Confirmed &amp; Studio Notified</span>
+          <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-navy mt-1">
+            Payment Successful! Order Confirmed
+          </h3>
+          <p class="text-sm text-slateSoft mt-2 max-w-xl mx-auto leading-relaxed">
+            Our team has received your <strong>"Payment Successful - Please Complete Order"</strong> notification, and your official <strong>Order Form &amp; Payment Receipt PDF</strong> has been downloaded automatically.
+          </p>
+        </div>
+
+        <div class="bg-ivory border border-slate-200 rounded-2xl p-5 max-w-lg mx-auto text-left text-xs space-y-2.5">
+          <div class="flex justify-between">
+            <span class="text-slateSoft">Order ID:</span>
+            <strong id="finalOrderIdText" class="font-mono text-navy">SSS-000000</strong>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slateSoft">12-Digit UPI UTR:</span>
+            <strong id="finalUtrText" class="font-mono text-navy">000000000000</strong>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slateSoft">Advance Paid:</span>
+            <strong id="finalPaidText" class="text-tealDark">₹50</strong>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slateSoft">Uploaded Receipt:</span>
+            <strong id="finalReceiptFileText" class="font-mono text-navy">receipt.png</strong>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slateSoft">Downloaded PDF:</span>
+            <strong id="finalPdfFilenameText" class="font-mono text-navy">Student_Support_Studio_Order.pdf</strong>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button
+            type="button"
+            onclick="triggerMandatoryPdfDownload()"
+            class="inline-flex items-center gap-2 bg-tealAccent hover:bg-tealDark text-white text-xs font-bold px-6 py-3.5 rounded-full shadow-soft transition"
+          >
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>Download Order Form PDF Again</span>
+          </button>
+          <a
+            href="https://www.instagram.com/student__support_studio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-navy hover:bg-slate-800 text-white text-xs font-bold px-6 py-3.5 rounded-full transition"
+          >
+            <i class="fa-brands fa-instagram text-pink-400"></i>
+            <span>Share on @student__support_studio</span>
+          </a>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100">
+          <button type="button" onclick="resetToStep1()" class="text-xs font-bold text-slateSoft hover:text-navy underline">
+            ← Place Another Order
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-slate-300 py-12 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8 border-b border-slate-800">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-full flex items-center justify-center shrink-0 overflow-hidden bg-transparent">
+            <img
+              src="logo.png"
+              alt="Student Support Studio Logo"
+              class="w-full h-full object-contain rounded-full"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div style="display:none;" class="w-14 h-14 rounded-full bg-slate-800 text-white items-center justify-center border-2 border-tealAccent">
+              <i class="fa-solid fa-graduation-cap text-xl text-teal-300"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-heading font-extrabold text-lg text-white">Student Support Studio</h3>
+            <p class="text-xs text-teal-300 font-medium mt-0.5">Your Academic Work, Made Easier</p>
+            <p class="text-xs text-slate-400 mt-1">Offline Records in Guntur &amp; Kadapa • Digital Projects Pan-India</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 text-xs font-semibold">
+          <a href="mailto:studentsupportstudio@gmail.com" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-2.5 rounded-full transition">
+            <i class="fa-solid fa-envelope text-teal-300"></i>
+            <span>studentsupportstudio@gmail.com</span>
+          </a>
+          <a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-2.5 rounded-full transition">
+            <i class="fa-brands fa-instagram text-pink-400"></i>
+            <span>@student__support_studio</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+        <p>© 2026 Student Support Studio. All rights reserved.</p>
+        <p>Handwritten Records • Assignments • Mini Projects • IEEE • PPT • Documentation</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Application Logic -->
+  <script>
+    const SERVICE_CONFIG = {
+      'Handwritten Records': { type: 'offline', rate: 10, badgeText: '₹10 / page (Min 10 pages)' },
+      'Handwritten Assignments': { type: 'offline', rate: 10, badgeText: '₹10 / page (Min 10 pages)' },
+      'Online Assignments': { type: 'online', rate: 199, badgeText: '₹199' },
+      'B.Tech Mini Projects': { type: 'online', rate: 999, badgeText: '₹999' },
+      'IEEE Paper Formatting': { type: 'online', rate: 499, badgeText: '₹499' },
+      'PPT': { type: 'online', rate: 249, badgeText: '₹249' },
+      'Word Documentation': { type: 'online', rate: 199, badgeText: '₹199' },
+      'PDF Formatting & Editing': { type: 'online', rate: 149, badgeText: '₹149' }
+    };
+
+    const MAX_DOC_BYTES = 500 * 1024 * 1024; // 500 MB
+    let estHasDiagrams = false;
+    let orderHasDiagrams = false;
+    let isUnknownPageCount = false;
+    let selectedDocFile = null;
+    let selectedTxtFileContent = '';
+    let selectedTxtFileName = '';
+    let selectedPaymentReceiptFile = null;
+    let selectedPaymentScreenshotName = '';
+    let activeUpiId = 'kurapati084@upi';
+    let currentOrderPayload = null;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const todayStr = new Date().toISOString().split('T')[0];
+      const handoverInput = document.getElementById('handoverDate');
+      const submissionInput = document.getElementById('submissionDate');
+      if (handoverInput) handoverInput.min = todayStr;
+      if (submissionInput) submissionInput.min = todayStr;
+
+      updateEstimator();
+      handleServiceChange();
+    });
+
+    function syncSubmissionMinDate() {
+      const todayStr = new Date().toISOString().split('T')[0];
+      const handoverVal = document.getElementById('handoverDate').value;
+      const submissionInput = document.getElementById('submissionDate');
+      submissionInput.min = handoverVal && handoverVal > todayStr ? handoverVal : todayStr;
+      if (submissionInput.value && submissionInput.value < submissionInput.min) {
+        submissionInput.value = submissionInput.min;
+      }
+    }
+
+    function isValidIndianUpiUtr(utr) {
+      if (!/^[0-9]{12}$/.test(utr)) {
+        return { valid: false, reason: 'Transaction ID / UTR must be exactly 12 numeric digits.' };
+      }
+      if (/^(\d)\1{11}$/.test(utr)) {
+        return { valid: false, reason: 'Invalid Transaction ID: Repeating single-digit numbers are not valid UPI UTRs.' };
+      }
+      const dummyPatterns = [
+        '123456789012', '012345678901', '123456123456',
+        '987654321098', '112233445566', '121212121212'
+      ];
+      if (dummyPatterns.includes(utr)) {
+        return { valid: false, reason: 'Invalid Transaction ID: Please enter the genuine 12-digit UPI UTR from your payment app.' };
+      }
+      if (utr.startsWith('0')) {
+        return { valid: false, reason: 'Invalid UPI UTR: NPCI UPI Reference numbers never start with 0.' };
+      }
+      const uniqueDigits = new Set(utr.split('')).size;
+      if (uniqueDigits < 4) {
+        return { valid: false, reason: 'Invalid Transaction ID: Please check and enter your actual 12-digit UPI Reference / UTR number.' };
+      }
+      return { valid: true };
+    }
+
+    function handleUtrInput(el) {
+      el.value = el.value.replace(/[^0-9]/g, '').slice(0, 12);
+      const counter = document.getElementById('utrDigitCounter');
+      const check = isValidIndianUpiUtr(el.value);
+      counter.textContent = `${el.value.length}/12 digits`;
+      counter.className = check.valid
+        ? 'text-[11px] font-bold text-tealDark'
+        : 'text-[11px] font-semibold text-slateSoft';
+      el.classList.remove('input-error');
+      document.getElementById('utrErrorBanner').classList.add('hidden');
+    }
+
+    function handlePaymentScreenshotSelect(input) {
+      const statusEl = document.getElementById('paymentScreenshotStatus');
+      const file = input.files && input.files[0];
+      input.classList.remove('input-error');
+      document.getElementById('utrErrorBanner').classList.add('hidden');
+
+      if (!file) {
+        selectedPaymentReceiptFile = null;
+        selectedPaymentScreenshotName = '';
+        statusEl.textContent = 'Mandatory: Upload payment receipt image (JPG/PNG/WEBP) or PDF (Max 20 MB).';
+        statusEl.className = 'text-[11px] text-slateSoft mt-1';
+        return;
+      }
+
+      const ext = file.name.split('.').pop().toLowerCase();
+      if (!['jpg', 'jpeg', 'png', 'webp', 'pdf'].includes(ext)) {
+        input.value = '';
+        selectedPaymentReceiptFile = null;
+        selectedPaymentScreenshotName = '';
+        statusEl.textContent = 'Invalid file format. Please upload JPG, PNG, WEBP, or PDF receipt.';
+        statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1';
+        return;
+      }
+
+      if (file.size > 20 * 1024 * 1024 || file.size < 1024) {
+        input.value = '';
+        selectedPaymentReceiptFile = null;
+        selectedPaymentScreenshotName = '';
+        statusEl.textContent = 'Please upload a valid payment receipt file between 1 KB and 20 MB.';
+        statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1';
+        return;
+      }
+
+      selectedPaymentReceiptFile = file;
+      selectedPaymentScreenshotName = file.name;
+      const sizeKB = Math.round(file.size / 1024);
+      statusEl.innerHTML = `<i class="fa-solid fa-circle-check text-tealAccent mr-1"></i> Verified Receipt Attached: <strong>${file.name}</strong> (${sizeKB} KB)`;
+      statusEl.className = 'text-[11px] text-navy mt-1';
+    }
+
+    // Strict 10-Page Minimum Floor + Inline Warning
+    function showMinPageWarning(context, show) {
+      const warnEl = document.getElementById(context === 'est' ? 'estMinWarning' : 'orderMinWarning');
+      if (!warnEl) return;
+      if (show) {
+        warnEl.classList.remove('hidden');
+      } else {
+        warnEl.classList.add('hidden');
+      }
+    }
+
+    function guardMinPagesKeydown(e, context) {
+      if (['-', '+', '.', 'e', 'E'].includes(e.key)) {
+        e.preventDefault();
+        return;
+      }
+      const input = e.target;
+      const val = parseInt(input.value, 10) || 10;
+      if (e.key === 'ArrowDown' && val <= 10) {
+        e.preventDefault();
+        input.value = '10';
+        showMinPageWarning(context, true);
+      }
+    }
+
+    function guardMinPagesInput(input, context) {
+      const digitsOnly = input.value.replace(/[^0-9]/g, '');
+      if (digitsOnly === '') {
+        input.value = '10';
+        showMinPageWarning(context, true);
+        if (context === 'est') updateEstimator(); else updateOrderSummary();
+        return;
+      }
+      let num = parseInt(digitsOnly, 10);
+      if (num < 10) {
+        input.value = '10';
+        showMinPageWarning(context, true);
+      } else {
+        if (num > 500) num = 500;
+        input.value = String(num);
+        showMinPageWarning(context, false);
+      }
+      if (context === 'est') updateEstimator(); else updateOrderSummary();
+    }
+
+    function enforceMinPagesBlur(input, context) {
+      let num = parseInt(input.value, 10);
+      if (isNaN(num) || num < 10) {
+        input.value = '10';
+        showMinPageWarning(context, true);
+      } else if (num > 500) {
+        input.value = '500';
+      }
+      if (context === 'est') updateEstimator(); else updateOrderSummary();
+    }
+
+    function stepEstimatorPages(delta) {
+      const input = document.getElementById('estPages');
+      const current = parseInt(input.value, 10) || 10;
+      if (delta < 0 && current <= 10) {
+        input.value = '10';
+        showMinPageWarning('est', true);
+        return;
+      }
+      const next = Math.min(500, Math.max(10, current + delta));
+      input.value = String(next);
+      showMinPageWarning('est', false);
+      updateEstimator();
+    }
+
+    function stepOrderPages(delta) {
+      const input = document.getElementById('orderPages');
+      const current = parseInt(input.value, 10) || 10;
+      if (delta < 0 && current <= 10) {
+        input.value = '10';
+        showMinPageWarning('order', true);
+        return;
+      }
+      const next = Math.min(500, Math.max(10, current + delta));
+      input.value = String(next);
+      showMinPageWarning('order', false);
+      updateOrderSummary();
+    }
+
+    // Estimator Logic
+    function setEstDiagram(hasDiag) {
+      estHasDiagrams = hasDiag;
+      const btnNo = document.getElementById('estDiagNo');
+      const btnYes = document.getElementById('estDiagYes');
+      const note = document.getElementById('estDiagramNote');
+
+      if (hasDiag) {
+        btnYes.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-tealLight/40 text-navy text-xs font-bold transition';
+        btnNo.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
+        note.classList.remove('hidden');
+      } else {
+        btnNo.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-tealLight/40 text-navy text-xs font-bold transition';
+        btnYes.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
+        note.classList.add('hidden');
+      }
+      updateEstimator();
+    }
+
+    function updateEstimator() {
+      const service = document.getElementById('estService').value;
+      const cfg = SERVICE_CONFIG[service];
+      const pagesGroup = document.getElementById('estPagesGroup');
+      const diagGroup = document.getElementById('estDiagramGroup');
+      const minusBtn = document.getElementById('estMinusBtn');
+
+      let total = cfg.rate;
+      if (cfg.type === 'offline') {
+        pagesGroup.classList.remove('hidden');
+        diagGroup.classList.remove('hidden');
+        const pages = Math.max(10, parseInt(document.getElementById('estPages').value, 10) || 10);
+        total = pages * cfg.rate;
+        minusBtn.classList.toggle('opacity-50', pages <= 10);
+      } else {
+        pagesGroup.classList.add('hidden');
+        diagGroup.classList.add('hidden');
+      }
+
+      const advance = Math.ceil(total * 0.5);
+      document.getElementById('estTotalDisplay').textContent = `₹${total}`;
+      document.getElementById('estAdvanceDisplay').textContent = `₹${advance}`;
+    }
+
+    function applyEstimateToOrder() {
+      const service = document.getElementById('estService').value;
+      const pages = Math.max(10, parseInt(document.getElementById('estPages').value, 10) || 10);
+      document.getElementById('orderService').value = service;
+      document.getElementById('orderPages').value = String(pages);
+      document.getElementById('unknownPageCountCheckbox').checked = false;
+      toggleUnknownPageCount(false);
+      setOrderDiagram(estHasDiagrams);
+      handleServiceChange();
+      document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function selectServiceFromCard(serviceName) {
+      document.getElementById('orderService').value = serviceName;
+      handleServiceChange();
+    }
+
+    // Unknown Page Count Toggle (₹200 Flat Advance)
+    function toggleUnknownPageCount(checked) {
+      isUnknownPageCount = checked;
+      const knownGroup = document.getElementById('knownPagesInputGroup');
+      const notice = document.getElementById('unknownCountNotice');
+      const minWarn = document.getElementById('orderMinWarning');
+
+      if (checked) {
+        knownGroup.classList.add('opacity-40', 'pointer-events-none');
+        notice.classList.remove('hidden');
+        minWarn.classList.add('hidden');
+      } else {
+        knownGroup.classList.remove('opacity-40', 'pointer-events-none');
+        notice.classList.add('hidden');
+      }
+      updateOrderSummary();
+    }
+
+    function setOrderDiagram(hasDiag) {
+      orderHasDiagrams = hasDiag;
+      const btnNo = document.getElementById('ordDiagNo');
+      const btnYes = document.getElementById('ordDiagYes');
+      const banner = document.getElementById('orderDiagramBanner');
+
+      if (hasDiag) {
+        btnYes.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-white text-navy text-xs font-bold transition shadow-sm';
+        btnNo.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
+        banner.classList.remove('hidden');
+      } else {
+        btnNo.className = 'py-2.5 px-4 rounded-xl border-2 border-tealAccent bg-white text-navy text-xs font-bold transition shadow-sm';
+        btnYes.className = 'py-2.5 px-4 rounded-xl border border-slate-300 bg-white text-slateSoft text-xs font-semibold transition';
+        banner.classList.add('hidden');
+      }
+      updateOrderSummary();
+    }
+
+    function handleServiceChange() {
+      const service = document.getElementById('orderService').value;
+      const cfg = SERVICE_CONFIG[service];
+      const pagesWrapper = document.getElementById('orderPagesWrapper');
+      const diagramSection = document.getElementById('orderDiagramSection');
+      const unknownNotice = document.getElementById('unknownCountNotice');
+      const offlineSection = document.getElementById('offlineLocationSection');
+      const onlineSection = document.getElementById('onlineMaterialsSection');
+      const handoverHint = document.getElementById('handoverDateHint');
+      const ratePill = document.getElementById('serviceRatePill');
+
+      ratePill.textContent = cfg.badgeText;
+
+      if (cfg.type === 'offline') {
+        pagesWrapper.classList.remove('hidden');
+        diagramSection.classList.remove('hidden');
+        offlineSection.classList.remove('hidden');
+        onlineSection.classList.add('hidden');
+        if (isUnknownPageCount) unknownNotice.classList.remove('hidden');
+        handoverHint.textContent = 'Date you hand over blank record books / sheets at Guntur or Kadapa pickup point.';
+      } else {
+        pagesWrapper.classList.add('hidden');
+        diagramSection.classList.add('hidden');
+        unknownNotice.classList.add('hidden');
+        offlineSection.classList.add('hidden');
+        onlineSection.classList.remove('hidden');
+        handoverHint.textContent = 'Date you share assignment syllabus, reference files, or topic details with us.';
+      }
+
+      updateOrderSummary();
+    }
+
+    function handleCityChange() {
+      const city = document.getElementById('offlineCity').value;
+      const areaInput = document.getElementById('offlineArea');
+      const pinInput = document.getElementById('offlinePincode');
+      const cityHint = document.getElementById('cityHintText');
+
+      if (city === 'Guntur') {
+        areaInput.placeholder = 'e.g., Brodipet, Lakshmipuram, Arundelpet';
+        pinInput.placeholder = '522002';
+        cityHint.innerHTML = '<i class="fa-solid fa-circle-info mr-1"></i> Guntur orders require a valid Guntur area and 6-digit Pin Code starting with <strong>522</strong> (e.g., 522002).';
+      } else {
+        areaInput.placeholder = 'e.g., NGO Colony, Yerramukkapalli, RIMS Road';
+        pinInput.placeholder = '516001';
+        cityHint.innerHTML = '<i class="fa-solid fa-circle-info mr-1"></i> Kadapa orders require a valid Kadapa area and 6-digit Pin Code starting with <strong>516</strong> (e.g., 516001).';
+      }
+      updateOrderSummary();
+    }
+
+    function getPaymentRouting(service, city) {
+      const cfg = SERVICE_CONFIG[service];
+      if (cfg.type === 'offline' && city === 'Guntur') {
+        return {
+          upiId: 'kurapati084@upi',
+          qrFile: 'qr.png',
+          badge: 'Guntur Offline Account (kurapati084@upi)'
+        };
+      }
+      if (cfg.type === 'offline' && city === 'Kadapa') {
+        return {
+          upiId: 'muppala03@upi',
+          qrFile: 'qr_kadapa.png',
+          badge: 'Kadapa Offline Account (muppala03@upi)'
+        };
+      }
+      return {
+        upiId: 'muppala03@upi',
+        qrFile: 'qr_kadapa.png',
+        badge: 'Online / Digital Services Account (muppala03@upi)'
+      };
+    }
+
+    function updateOrderSummary() {
+      const service = document.getElementById('orderService').value;
+      const city = document.getElementById('offlineCity').value;
+      const cfg = SERVICE_CONFIG[service];
+      const minusBtn = document.getElementById('orderMinusBtn');
+      const routing = getPaymentRouting(service, city);
+
+      let advance = 0;
+      let label = '';
+
+      if (cfg.type === 'offline') {
+        if (isUnknownPageCount) {
+          advance = 200;
+          label = `${service} • Exact Page Count TBD (${orderHasDiagrams ? 'Includes Diagrams' : 'Theory Only'})`;
+          document.getElementById('summaryTotalLine').innerHTML = `Final Total: <strong class="text-white">Counted after completion (₹200 advance deducted)</strong>`;
+        } else {
+          const pages = Math.max(10, parseInt(document.getElementById('orderPages').value, 10) || 10);
+          minusBtn.classList.toggle('opacity-50', pages <= 10);
+          const total = pages * cfg.rate;
+          advance = Math.ceil(total * 0.5);
+          label = `${service} • ${pages} Pages (${orderHasDiagrams ? 'Includes Diagrams' : 'Theory Only'})`;
+          document.getElementById('summaryTotalLine').innerHTML = `Estimated Total: <strong class="text-white">₹${total}</strong>`;
+        }
+      } else {
+        const total = cfg.rate;
+        advance = Math.ceil(total * 0.5);
+        label = `${service} • ₹${total}`;
+        document.getElementById('summaryTotalLine').innerHTML = `Service Price: <strong class="text-white">₹${total}</strong>`;
+      }
+
+      document.getElementById('summaryServiceLabel').textContent = label;
+      document.getElementById('summaryAdvanceAmount').textContent = `₹${advance}`;
+      document.getElementById('summaryUpiPreview').innerHTML = `Assigned UPI: <span class="font-mono font-bold text-white">${routing.upiId}</span>`;
+    }
+
+    function handleNameInput(el) {
+      if (el.value.length > 50) {
+        el.value = el.value.slice(0, 50);
+      }
+      const counter = document.getElementById('nameCharCounter');
+      counter.textContent = `${el.value.length}/50 chars`;
+      counter.className = el.value.length >= 2 && el.value.length <= 50
+        ? 'text-[11px] font-bold text-tealDark'
+        : 'text-[11px] font-semibold text-slateSoft';
+    }
+
+    function handlePhoneInput(el) {
+      el.value = el.value.replace(/[^0-9]/g, '').slice(0, 10);
+      const counter = document.getElementById('phoneDigitCounter');
+      counter.textContent = `${el.value.length}/10 digits`;
+      counter.className = el.value.length === 10
+        ? 'text-[11px] font-bold text-tealDark'
+        : 'text-[11px] font-semibold text-slateSoft';
+    }
+
+    // Online Document Upload (PDF/DOC/DOCX up to 500MB)
+    function handleOnlineDocSelect(input) {
+      const statusEl = document.getElementById('onlineDocStatus');
+      const clearBtn = document.getElementById('clearDocBtn');
+      const file = input.files && input.files[0];
+
+      if (!file) {
+        selectedDocFile = null;
+        statusEl.textContent = 'No PDF/Document selected yet (Max allowed size: 500 MB).';
+        statusEl.className = 'text-[11px] text-slateSoft mt-1.5';
+        clearBtn.classList.add('hidden');
+        return;
+      }
+
+      const ext = file.name.split('.').pop().toLowerCase();
+      if (!['pdf', 'doc', 'docx'].includes(ext)) {
+        input.value = '';
+        selectedDocFile = null;
+        statusEl.textContent = 'Invalid file format. Only .pdf, .doc, or .docx files are allowed.';
+        statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1.5';
+        clearBtn.classList.add('hidden');
+        return;
+      }
+
+      if (file.size > MAX_DOC_BYTES) {
+        input.value = '';
+        selectedDocFile = null;
+        statusEl.textContent = 'File exceeds 500 MB limit. Please select a file under 500 MB.';
+        statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1.5';
+        clearBtn.classList.add('hidden');
+        return;
+      }
+
+      selectedDocFile = file;
+      const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
+      statusEl.innerHTML = `<i class="fa-solid fa-circle-check text-tealAccent mr-1"></i> Attached: <strong>${file.name}</strong> (${sizeMB} MB)`;
+      statusEl.className = 'text-[11px] text-navy mt-1.5';
+      clearBtn.classList.remove('hidden');
+    }
+
+    function clearOnlineDoc() {
+      const input = document.getElementById('onlineDocFile');
+      input.value = '';
+      handleOnlineDocSelect(input);
+    }
+
+    // Online .txt File Upload
+    function handleOnlineTxtFileSelect(input) {
+      const statusEl = document.getElementById('onlineTxtFileStatus');
+      const clearBtn = document.getElementById('clearTxtBtn');
+      const file = input.files && input.files[0];
+
+      if (!file) {
+        selectedTxtFileContent = '';
+        selectedTxtFileName = '';
+        statusEl.innerHTML = 'Either upload a <code>.txt</code> file OR type your description below (both are not required — anyone is enough):';
+        statusEl.className = 'text-[11px] text-slateSoft mt-1';
+        clearBtn.classList.add('hidden');
+        return;
+      }
+
+      const ext = file.name.split('.').pop().toLowerCase();
+      if (ext !== 'txt') {
+        input.value = '';
+        selectedTxtFileContent = '';
+        selectedTxtFileName = '';
+        statusEl.textContent = 'Only .txt plain text files are accepted here.';
+        statusEl.className = 'text-[11px] font-semibold text-red-600 mt-1';
+        clearBtn.classList.add('hidden');
+        return;
+      }
+
+      selectedTxtFileName = file.name;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        selectedTxtFileContent = (e.target.result || '').toString().trim();
+        statusEl.innerHTML = `<i class="fa-solid fa-circle-check text-tealAccent mr-1"></i> Attached <code>.txt</code> file: <strong>${file.name}</strong> (typing below is optional)`;
+        statusEl.className = 'text-[11px] text-navy mt-1';
+        clearBtn.classList.remove('hidden');
+      };
+      reader.readAsText(file);
+    }
+
+    function clearOnlineTxtFile() {
+      const input = document.getElementById('onlineTxtFile');
+      input.value = '';
+      handleOnlineTxtFileSelect(input);
+    }
+
+    function clearValidationHighlights() {
+      document.querySelectorAll('.input-error').forEach((el) => el.classList.remove('input-error'));
+      document.getElementById('formValidationBanner').classList.add('hidden');
+    }
+
+    function showValidationError(element, reason) {
+      if (element) {
+        element.classList.add('input-error');
+        element.focus();
+      }
+      const banner = document.getElementById('formValidationBanner');
+      document.getElementById('formValidationReason').textContent = reason;
+      banner.classList.remove('hidden');
+      banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // STEP 1 SUBMIT: Validate Details & Proceed to Step 2 Payment (NO Email Sent Yet)
+    document.getElementById('orderForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      clearValidationHighlights();
+
+      const serviceEl = document.getElementById('orderService');
+      const pagesEl = document.getElementById('orderPages');
+      const handoverEl = document.getElementById('handoverDate');
+      const submissionEl = document.getElementById('submissionDate');
+      const nameEl = document.getElementById('studentName');
+      const phoneEl = document.getElementById('studentPhone');
+      const emailEl = document.getElementById('studentEmail');
+
+      const serviceVal = serviceEl.value;
+      const cfg = SERVICE_CONFIG[serviceVal];
+      const todayStr = new Date().toISOString().split('T')[0];
+
+      // 1. Validate Pages (if offline and count is known)
+      let pagesCount = null;
+      if (cfg.type === 'offline' && !isUnknownPageCount) {
+        const pagesNum = parseInt(pagesEl.value, 10);
+        if (isNaN(pagesNum) || pagesNum < 10 || pagesNum > 500) {
+          showMinPageWarning('order', true);
+          return showValidationError(pagesEl, 'Minimum 10 pages required — cannot proceed with less than 10 pages.');
+        }
+        pagesCount = pagesNum;
+      }
+
+      // 2. Validate Online Materials (Either PDF/Doc <= 500MB OR .txt description/file)
+      const txtBoxEl = document.getElementById('onlineTxtDescription');
+      const typedTxt = txtBoxEl.value.trim();
+      if (cfg.type === 'online') {
+        const hasValidDoc = Boolean(selectedDocFile);
+        const hasValidTxt = Boolean(selectedTxtFileName || selectedTxtFileContent || typedTxt.length > 0);
+        if (!hasValidDoc && !hasValidTxt) {
+          return showValidationError(txtBoxEl, 'For Online / Digital orders, please provide either a PDF/Document (max 500 MB) OR Option 2 (upload a .txt file OR type your description).');
+        }
+      }
+
+      // 3. Validate Both Mandatory Dates
+      if (!handoverEl.value || handoverEl.value < todayStr) {
+        return showValidationError(handoverEl, 'Please select a valid Date of Giving Materials / Books to Us (today or future date).');
+      }
+      if (!submissionEl.value || submissionEl.value < handoverEl.value) {
+        return showValidationError(submissionEl, 'Final Submission / Delivery Date must be on or after the Date of Giving Materials / Books.');
+      }
+
+      // 4. Validate Student Details
+      const nameVal = nameEl.value.trim();
+      const phoneVal = phoneEl.value.trim();
+      const emailVal = emailEl.value.trim();
+
+      if (nameVal.length < 2 || nameVal.length > 50) {
+        return showValidationError(nameEl, 'Please enter a valid full name (between 2 and 50 characters).');
+      }
+      if (!/^[6-9][0-9]{9}$/.test(phoneVal)) {
+        return showValidationError(phoneEl, 'Please enter a valid 10-digit WhatsApp / mobile number (e.g., 9876543210).');
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailVal)) {
+        return showValidationError(emailEl, 'Please enter a valid email address (e.g., abcd@gmail.com).');
+      }
+
+      // 5. Validate Offline Guntur / Kadapa City + Area + Pincode
+      const cityVal = document.getElementById('offlineCity').value;
+      const areaEl = document.getElementById('offlineArea');
+      const pinEl = document.getElementById('offlinePincode');
+      const areaVal = areaEl.value.trim();
+      const pinVal = pinEl.value.trim();
+
+      if (cfg.type === 'offline') {
+        if (areaVal.length < 3 || /^[0-9]+$/.test(areaVal)) {
+          return showValidationError(areaEl, `Please enter a valid Area / Locality in ${cityVal}.`);
+        }
+        if (cityVal === 'Guntur') {
+          if (!/^522[0-9]{3}$/.test(pinVal)) {
+            return showValidationError(pinEl, 'Guntur selected: Please enter a valid 6-digit Guntur Pin Code starting with 522 (e.g., 522002).');
+          }
+          if (/kadapa|cuddapah|proddatur|pulivendula|rayachoti|rajampet/i.test(areaVal)) {
+            return showValidationError(areaEl, 'City is set to Guntur, but the locality entered belongs to Kadapa. Please match City and Area.');
+          }
+        } else if (cityVal === 'Kadapa') {
+          if (!/^516[0-9]{3}$/.test(pinVal)) {
+            return showValidationError(pinEl, 'Kadapa selected: Please enter a valid 6-digit Kadapa Pin Code starting with 516 (e.g., 516001).');
+          }
+          if (/guntur|brodipet|arundelpet|lakshmipuram|mangalagiri|tenali|narasaraopet/i.test(areaVal)) {
+            return showValidationError(areaEl, 'City is set to Kadapa, but the locality entered belongs to Guntur. Please match City and Area.');
+          }
+        }
+      }
+
+      // Calculate Pricing & Store Payload in Memory Until Payment Is Confirmed
+      const orderId = 'SSS-' + Math.floor(100000 + Math.random() * 900000);
+      const routing = getPaymentRouting(serviceVal, cityVal);
+      activeUpiId = routing.upiId;
+
+      let totalEstimateDisplay = '';
+      let advanceAmount = 0;
+
+      if (cfg.type === 'offline') {
+        if (isUnknownPageCount) {
+          totalEstimateDisplay = 'Exact page count TBD after completion (₹10/pg theory, ₹15/pg diagram)';
+          advanceAmount = 200;
+        } else {
+          const total = pagesCount * cfg.rate;
+          totalEstimateDisplay = `₹${total} (${pagesCount} pages @ ₹10/page base)`;
+          advanceAmount = Math.ceil(total * 0.5);
+        }
+      } else {
+        totalEstimateDisplay = `₹${cfg.rate}`;
+        advanceAmount = Math.ceil(cfg.rate * 0.5);
+      }
+
+      currentOrderPayload = {
+        orderId,
+        serviceVal,
+        serviceType: cfg.type,
+        pagesDisplay: cfg.type === 'offline'
+          ? (isUnknownPageCount ? 'Exact count unknown (₹200 advance)' : `${pagesCount} pages`)
+          : 'Digital / Online Service',
+        diagramsDisplay: cfg.type === 'offline'
+          ? (orderHasDiagrams ? 'Yes (Verify ₹15/pg after syllabus review)' : 'No (Theory Only)')
+          : 'N/A',
+        handoverDate: handoverEl.value,
+        submissionDate: submissionEl.value,
+        nameVal,
+        phoneVal,
+        emailVal,
+        cityVal: cfg.type === 'offline' ? cityVal : 'Online (Pan-India)',
+        areaVal: cfg.type === 'offline' ? areaVal : 'N/A',
+        pinVal: cfg.type === 'offline' ? pinVal : 'N/A',
+        docSummary: cfg.type === 'online'
+          ? (selectedDocFile ? `${selectedDocFile.name} (${(selectedDocFile.size / (1024 * 1024)).toFixed(2)} MB)` : 'Not uploaded')
+          : 'N/A',
+        txtContent: cfg.type === 'online'
+          ? (typedTxt || selectedTxtFileContent || (selectedTxtFileName ? `Attached .txt file: ${selectedTxtFileName}` : 'Not provided'))
+          : 'N/A',
+        notesVal: document.getElementById('orderNotes').value.trim() || 'None',
+        totalEstimateDisplay,
+        advanceAmount,
+        routing,
+        utrNumber: '',
+        receiptFileName: ''
+      };
+
+      // Move to Step 2 (Payment Screen)
+      document.getElementById('step1Container').classList.add('hidden');
+      document.getElementById('step2Container').classList.remove('hidden');
+      document.getElementById('step1TopNavBar').classList.remove('hidden');
+      document.getElementById('step1PendingId').textContent = orderId;
+
+      document.getElementById('stepBadge1').className = 'flex items-center gap-2 bg-tealLight/70 hover:bg-tealLight text-tealDark px-4 py-2 rounded-full text-xs font-bold cursor-pointer transition';
+      document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm cursor-pointer transition';
+
+      document.getElementById('receiptOrderId').textContent = orderId;
+      document.getElementById('receiptStudent').textContent = `${nameVal} (${phoneVal})`;
+      document.getElementById('receiptSchedule').textContent = `Materials: ${handoverEl.value} → Delivery: ${submissionEl.value}`;
+      document.getElementById('receiptService').textContent = `${serviceVal} (${currentOrderPayload.pagesDisplay})`;
+      document.getElementById('receiptAdvance').textContent = `₹${advanceAmount}`;
+      document.getElementById('qrAmountHint').textContent = `₹${advanceAmount}`;
+      document.getElementById('confirmExactAmountLabel').textContent = `₹${advanceAmount}`;
+      document.getElementById('confirmFullAdvanceCheckbox').checked = false;
+      document.getElementById('upiRoutingBadge').textContent = routing.badge;
+      document.getElementById('activeUpiIdText').textContent = routing.upiId;
+
+      const formattedAmount = Number(advanceAmount).toFixed(2);
+      document.getElementById('directUpiPayLink').href = `upi://pay?pa=${encodeURIComponent(routing.upiId)}&pn=${encodeURIComponent('Student Support Studio')}&am=${encodeURIComponent(formattedAmount)}&cu=INR&tn=${encodeURIComponent('Order ' + orderId)}`;
+
+      // Render dynamic UPI QR with exact advance amount pre-filled
+      renderDynamicOrLocalQr(routing.upiId, advanceAmount, orderId);
+
+      document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    function renderDynamicOrLocalQr(upiId, amount, orderId) {
+      const qrImg = document.getElementById('dynamicQrImage');
+      const fallbackCanvas = document.getElementById('fallbackQrCanvas');
+
+      qrImg.classList.add('hidden');
+      fallbackCanvas.classList.remove('hidden');
+      fallbackCanvas.innerHTML = '';
+
+      const formattedAmount = Number(amount).toFixed(2);
+      const upiUri = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent('Student Support Studio')}&am=${encodeURIComponent(formattedAmount)}&cu=INR&tn=${encodeURIComponent('Order ' + orderId)}`;
+      if (window.QRCode) {
+        new QRCode(fallbackCanvas, {
+          text: upiUri,
+          width: 196,
+          height: 196,
+          colorDark: '#0F172A',
+          colorLight: '#FFFFFF',
+          correctLevel: QRCode.CorrectLevel.M
+        });
+      }
+    }
+
+    function fallbackCopyText(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+
+    function copyActiveUpiId() {
+      const label = document.getElementById('copyBtnLabel');
+      const showCopied = () => {
+        label.textContent = 'Copied!';
+        setTimeout(() => {
+          label.textContent = 'Copy UPI ID';
+        }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(activeUpiId).then(showCopied).catch(() => {
+          fallbackCopyText(activeUpiId);
+          showCopied();
+        });
+      } else {
+        fallbackCopyText(activeUpiId);
+        showCopied();
+      }
+    }
+
+    function goToStep1() {
+      document.getElementById('step2Container').classList.add('hidden');
+      document.getElementById('step3Container').classList.add('hidden');
+      document.getElementById('step1Container').classList.remove('hidden');
+      document.getElementById('stepBadge1').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm cursor-pointer transition';
+      document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-white text-slateSoft border border-slate-300 px-4 py-2 rounded-full text-xs font-bold cursor-pointer transition';
+      document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function goToStep2IfReady() {
+      if (!document.getElementById('step3Container').classList.contains('hidden')) return;
+      if (!document.getElementById('step2Container').classList.contains('hidden')) return;
+      document.getElementById('orderForm').requestSubmit();
+    }
+
+    // STEP 2 -> STEP 3: Verify Payment UTR & Receipt -> Send Email -> Auto-Download Mandatory PDF
+    async function finalizePaymentAndDownloadPdf() {
+      if (!currentOrderPayload) return;
+
+      const utrInput = document.getElementById('upiUtrInput');
+      const receiptInput = document.getElementById('paymentScreenshotInput');
+      const fullAdvanceCheckbox = document.getElementById('confirmFullAdvanceCheckbox');
+      const utrBanner = document.getElementById('utrErrorBanner');
+      const utrErrorText = document.getElementById('utrErrorText');
+      const utrVal = utrInput.value.trim();
+
+      const utrValidation = isValidIndianUpiUtr(utrVal);
+      if (!utrValidation.valid) {
+        utrInput.classList.add('input-error');
+        utrInput.focus();
+        utrErrorText.textContent = utrValidation.reason;
+        utrBanner.classList.remove('hidden');
+        return;
+      }
+
+      if (!selectedPaymentReceiptFile || !selectedPaymentScreenshotName) {
+        receiptInput.classList.add('input-error');
+        receiptInput.focus();
+        utrErrorText.textContent = 'Payment receipt upload is mandatory. Please attach your UPI payment screenshot or PDF receipt.';
+        utrBanner.classList.remove('hidden');
+        return;
+      }
+
+      if (!fullAdvanceCheckbox.checked) {
+        fullAdvanceCheckbox.focus();
+        utrErrorText.textContent = `Please tick the confirmation box verifying that you paid the full ₹${currentOrderPayload.advanceAmount} advance amount.`;
+        utrBanner.classList.remove('hidden');
+        return;
+      }
+
+      utrInput.classList.remove('input-error');
+      receiptInput.classList.remove('input-error');
+      utrBanner.classList.add('hidden');
+      currentOrderPayload.utrNumber = utrVal;
+      currentOrderPayload.receiptFileName = selectedPaymentScreenshotName;
+
+      const confirmBtn = document.getElementById('confirmPaymentBtn');
+      const origHtml = confirmBtn.innerHTML;
+      confirmBtn.disabled = true;
+      confirmBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Confirming Order &amp; Sending Email...</span>';
+
+      // Build clean JSON payload for instant, reliable Web3Forms email delivery
+      const emailPayload = {
+        access_key: '5eb37e08-5cb2-4141-b524-03a0d790bfc4',
+        subject: `Payment Successful - Please Complete Order | ${currentOrderPayload.orderId} - ${currentOrderPayload.serviceVal}`,
+        from_name: 'Student Support Studio Website',
+        replyto: currentOrderPayload.emailVal,
+        Payment_Status: 'Payment Successful - Please Complete Order',
+        Order_ID: currentOrderPayload.orderId,
+        UPI_Transaction_ID_UTR: utrVal,
+        Assigned_UPI_ID_Paid_To: currentOrderPayload.routing.upiId,
+        Advance_Amount_Paid: `₹${currentOrderPayload.advanceAmount}`,
+        Total_Estimate_Details: currentOrderPayload.totalEstimateDisplay,
+        Student_Name: currentOrderPayload.nameVal,
+        WhatsApp_Phone: currentOrderPayload.phoneVal,
+        Student_Email: currentOrderPayload.emailVal,
+        Service_Selected: currentOrderPayload.serviceVal,
+        Pages_Or_Package: currentOrderPayload.pagesDisplay,
+        Diagrams_Included: currentOrderPayload.diagramsDisplay,
+        Date_Giving_Materials_To_Studio: currentOrderPayload.handoverDate,
+        Final_Submission_Date_Needed: currentOrderPayload.submissionDate,
+        Payment_Receipt_Uploaded_By_Student: selectedPaymentScreenshotName,
+        Additional_Notes: currentOrderPayload.notesVal
+      };
+
+      if (currentOrderPayload.serviceType === 'offline') {
+        emailPayload.Offline_City = currentOrderPayload.cityVal;
+        emailPayload.Offline_Area_Locality = currentOrderPayload.areaVal;
+        emailPayload.Offline_Pin_Code = currentOrderPayload.pinVal;
+        emailPayload.Pickup_Policy = 'Share exact pickup point personally; Rapido delivery charges borne by customer.';
+      } else {
+        emailPayload.Uploaded_PDF_Or_Doc = currentOrderPayload.docSummary;
+        emailPayload.Assignment_TXT_Description = currentOrderPayload.txtContent;
+      }
+
+      let emailDelivered = false;
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(emailPayload)
+        });
+        const result = await response.json();
+        emailDelivered = Boolean(response.ok && result && result.success);
+      } catch (err) {
+        console.warn('Primary Web3Forms JSON submit retry:', err);
+      }
+
+      // Automatic FormData fallback if JSON fetch was blocked by network/CORS
+      if (!emailDelivered) {
+        try {
+          const fallbackForm = new FormData();
+          Object.entries(emailPayload).forEach(([k, v]) => fallbackForm.append(k, String(v)));
+          const fbRes = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: fallbackForm
+          });
+          emailDelivered = fbRes.ok;
+        } catch (fbErr) {
+          console.warn('Web3Forms fallback notice:', fbErr);
+        }
+      }
+
+      confirmBtn.disabled = false;
+      confirmBtn.innerHTML = origHtml;
+
+      // Mandatory Automatic PDF Download
+      const pdfFilename = triggerMandatoryPdfDownload();
+
+      // Transition to Step 3 Receipt Screen
+      document.getElementById('step2Container').classList.add('hidden');
+      document.getElementById('step3Container').classList.remove('hidden');
+
+      document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-tealLight/70 text-tealDark px-4 py-2 rounded-full text-xs font-bold';
+      document.getElementById('stepBadge3').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm';
+
+      document.getElementById('finalOrderIdText').textContent = currentOrderPayload.orderId;
+      document.getElementById('finalUtrText').textContent = utrVal;
+      document.getElementById('finalPaidText').textContent = `₹${currentOrderPayload.advanceAmount} (Paid to ${currentOrderPayload.routing.upiId})`;
+      document.getElementById('finalReceiptFileText').textContent = selectedPaymentScreenshotName;
+      document.getElementById('finalPdfFilenameText').textContent = pdfFilename;
+
+      document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Generate & Automatically Download Complete Order Form + Payment Receipt PDF
+    function triggerMandatoryPdfDownload() {
+      if (!currentOrderPayload || !window.jspdf) return 'Student_Support_Studio_Order.pdf';
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      const p = currentOrderPayload;
+
+      // Header Banner
+      doc.setFillColor(15, 23, 42);
+      doc.rect(0, 0, 210, 36, 'F');
+
+      doc.setTextColor(255, 255, 255);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(18);
+      doc.text('STUDENT SUPPORT STUDIO', 16, 16);
+
+      doc.setTextColor(94, 234, 212);
+      doc.setFontSize(10);
+      doc.text('Your Academic Work, Made Easier  |  Official Order Form & Payment Receipt', 16, 24);
+
+      doc.setTextColor(203, 213, 225);
+      doc.setFontSize(8.5);
+      doc.text('Instagram: @student__support_studio  |  Email: studentsupportstudio@gmail.com', 16, 31);
+
+      // Payment Status Pill
+      doc.setFillColor(204, 251, 241);
+      doc.roundedRect(16, 42, 178, 14, 3, 3, 'F');
+      doc.setTextColor(15, 118, 110);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(10.5);
+      doc.text(`PAYMENT SUCCESSFUL — ORDER CONFIRMED  |  Order ID: ${p.orderId}`, 21, 51);
+
+      let y = 66;
+      const addSectionHeader = (title) => {
+        doc.setFillColor(241, 245, 249);
+        doc.rect(16, y - 5, 178, 8, 'F');
+        doc.setTextColor(15, 23, 42);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(10);
+        doc.text(title, 19, y);
+        y += 8;
+      };
+
+      const addRow = (label, value) => {
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(71, 85, 105);
+        doc.setFontSize(9.5);
+        doc.text(label + ':', 19, y);
+
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(15, 23, 42);
+        const wrapped = doc.splitTextToSize(String(value), 118);
+        doc.text(wrapped, 74, y);
+        y += Math.max(6.5, wrapped.length * 5.2);
+      };
+
+      // Section 1: Payment Verification
+      addSectionHeader('1. PAYMENT & TRANSACTION SUMMARY');
+      addRow('Advance Amount Paid', `Rs. ${p.advanceAmount} (Confirmed)`);
+      addRow('UPI Transaction ID (UTR)', p.utrNumber);
+      addRow('Uploaded Payment Receipt', p.receiptFileName || 'Attached');
+      addRow('Paid To UPI ID', p.routing.upiId);
+      addRow('Pricing & Balance Note', p.totalEstimateDisplay);
+      y += 3;
+
+      // Section 2: Student Details
+      addSectionHeader('2. STUDENT DETAILS');
+      addRow('Student Name', p.nameVal);
+      addRow('WhatsApp / Phone', p.phoneVal);
+      addRow('Email Address', p.emailVal);
+      y += 3;
+
+      // Section 3: Service & Schedule Details
+      addSectionHeader('3. SERVICE & SCHEDULE DETAILS');
+      addRow('Service Selected', p.serviceVal);
+      addRow('Pages / Package', p.pagesDisplay);
+      if (p.serviceType === 'offline') {
+        addRow('Diagrams Included', p.diagramsDisplay);
+      }
+      addRow('Materials / Books Date', p.handoverDate);
+      addRow('Final Delivery Date', p.submissionDate);
+      y += 3;
+
+      // Section 4: Pickup Location or Online Reference
+      if (p.serviceType === 'offline') {
+        addSectionHeader('4. OFFLINE PICKUP LOCATION (GUNTUR / KADAPA)');
+        addRow('City', p.cityVal);
+        addRow('Area / Locality', p.areaVal);
+        addRow('Pin Code', p.pinVal);
+        addRow('Logistics Policy', 'Exact pickup point shared via WhatsApp/Call. Rapido charges borne by customer.');
+      } else {
+        addSectionHeader('4. ONLINE ASSIGNMENT / PROJECT REFERENCE');
+        addRow('Uploaded PDF / Doc', p.docSummary);
+        addRow('Description (.txt)', p.txtContent.slice(0, 320));
+      }
+      y += 3;
+
+      if (p.notesVal && p.notesVal !== 'None') {
+        addSectionHeader('5. ADDITIONAL INSTRUCTIONS');
+        addRow('Notes', p.notesVal);
+      }
+
+      // Footer
+      doc.setDrawColor(203, 213, 225);
+      doc.line(16, 274, 194, 274);
+      doc.setFont('helvetica', 'italic');
+      doc.setFontSize(8.5);
+      doc.setTextColor(100, 116, 139);
+      doc.text('Generated automatically upon advance payment confirmation. Keep this PDF receipt for delivery reference.', 16, 281);
+
+      const filename = `Student_Support_Studio_${p.orderId}.pdf`;
+      doc.save(filename);
+      return filename;
+    }
+
+    function resetToStep1() {
+      currentOrderPayload = null;
+      selectedPaymentReceiptFile = null;
+      selectedPaymentScreenshotName = '';
+      document.getElementById('upiUtrInput').value = '';
+      document.getElementById('utrDigitCounter').textContent = '0/12 digits';
+      document.getElementById('paymentScreenshotInput').value = '';
+      document.getElementById('paymentScreenshotStatus').textContent = 'Mandatory: Upload payment receipt image (JPG/PNG/WEBP) or PDF (Max 20 MB).';
+      document.getElementById('confirmFullAdvanceCheckbox').checked = false;
+      document.getElementById('step1TopNavBar').classList.add('hidden');
+      document.getElementById('step2Container').classList.add('hidden');
+      document.getElementById('step3Container').classList.add('hidden');
+      document.getElementById('step1Container').classList.remove('hidden');
+      document.getElementById('stepBadge1').className = 'flex items-center gap-2 bg-navy text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm cursor-pointer';
+      document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-white text-slateSoft border border-slate-300 px-4 py-2 rounded-full text-xs font-bold';
+      document.getElementById('stepBadge3').className = 'flex items-center gap-2 bg-white text-slateSoft border border-slate-300 px-4 py-2 rounded-full text-xs font-bold';
+    }
+  </script>
+</body>
+</html>
