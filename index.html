@@ -928,7 +928,7 @@
     const STUDIO_EMAIL = 'studentsupportstudio@gmail.com';
     const INSTA_URL = 'https://www.instagram.com/student__support_studio/';
     // Optional: paste your Google Apps Script Web App URL here for cross-device duplicate UTR check
-    const UTR_REGISTRY_URL = 'https://script.google.com/macros/s/AKfycby36S9FkFenm14b4XQYtJQXI4CaAXsm4AbCvMGhCjj_cHFmMn96QmvRtWSW6ACe_QFt-A/exec';
+    const UTR_REGISTRY_URL = 'https://script.google.com/macros/s/AKfycbyKY1OCGFyLCK9khC3xSPzGi67LW0ER4pmbFxrQNpcsrBlVM-9Q1nnVTY6jvDJ2Sv7bRQ/exec';
 
     const MAX_DOC_BYTES = 500 * 1024 * 1024;
     let estHasDiagrams = false;
@@ -992,6 +992,19 @@
           body: JSON.stringify({ utr, orderId })
         }), 8000, null);
       } catch (e) {}
+    }
+
+    // Compute SHA-256 digital fingerprint (hash) of the uploaded payment receipt photo
+    async function computePhotoHash(file) {
+      try {
+        const buffer = await file.arrayBuffer();
+        const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        return hashHex;
+      } catch (e) {
+        return 'NO_HASH_' + Date.now();
+      }
     }
 
     function selectServiceFromCard(serviceName) {
@@ -1380,7 +1393,7 @@
           const str = String(n);
           if (str.length >= 2 && '237'.includes(str[0]) && str[1] !== '0') candidates.add(parseInt(str.slice(1), 10));
         };
-        [...textWithoutNoise.matchAll(/(?:₹|Rs\.?|INR)\s*([0-9]{1,5})(?:\.[0-9]{1,2})?/gi)]
+         [...textWithoutNoise.matchAll(/(?:₹|Rs\.?|INR)\s*([0-9]{1,5})(?:\.[0-9]{1,2})?/gi)]
           .forEach(m => addCandidate(parseInt(m[1], 10)));
 
         if (candidates.size === 0) {
@@ -1780,9 +1793,35 @@
       confirmBtn.disabled = true;
       confirmBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Verifying Order ID, Receipt Photo, UTR &amp; Amount...</span>';
 
-      // Duplicate UTR check (local + optional shared Google Sheet registry)
+      // 1. Compute Photo Hash digital fingerprint
+      const photoHashVal = await computePhotoHash(selectedPaymentReceiptFile);
+
+      // 2. Cloud Sheet check for both UTR and Photo Hash
+      let serverDuplicateError = null;
+      if (UTR_REGISTRY_URL) {
+        try {
+          const regRes = await withTimeout(fetch(UTR_REGISTRY_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain' },
+            body: JSON.stringify({
+              orderId: expectedOrderId,
+              utr: utrVal,
+              photoHash: photoHashVal
+            })
+          }), 10000, null);
+
+          if (regRes && regRes.ok) {
+            const regJson = await regRes.json();
+            if (regJson.status === 'error') {
+              serverDuplicateError = regJson;
+            }
+          }
+        } catch (e) {}
+      }
+
       const existingUtrRecord = await checkUtrUsed(utrVal);
-      const isDuplicateUtr = Boolean(existingUtrRecord);
+      const isDuplicateUtr = Boolean(existingUtrRecord) || (serverDuplicateError && serverDuplicateError.reason === 'duplicate_utr');
+      const isDuplicatePhoto = (serverDuplicateError && serverDuplicateError.reason === 'duplicate_photo');
 
       if ((detectedReceiptAmount === null && detectedReceiptUtrs.length === 0 && detectedReceiptOrderNumbers.length === 0) && selectedPaymentReceiptFile) {
         const extracted = await extractReceiptDataFromImage(selectedPaymentReceiptFile, currentOrderPayload.advanceAmount);
@@ -1794,14 +1833,13 @@
       const reqAdv = currentOrderPayload.advanceAmount;
       const knownTotal = currentOrderPayload.knownTotalAmount;
 
-      // Validation order: 1) duplicate UTR  2) Order ID in photo  3) UTR in photo  4) short amount  5) unreadable -> hold  6) confirmed
-      const isPhotoOrderIdMismatch = !isDuplicateUtr && detectedReceiptOrderNumbers.length > 0 && !detectedReceiptOrderNumbers.includes(expectedSixDigits);
-      const isUtrMismatch = !isDuplicateUtr && !isPhotoOrderIdMismatch && detectedReceiptUtrs.length > 0 && !detectedReceiptUtrs.includes(utrVal);
+      // Validation order: 1) duplicate UTR or Photo  2) Order ID in photo  3) UTR in photo  4) short amount  5) unverified -> hold  6) confirmed
+      const isPhotoOrderIdMismatch = !isDuplicateUtr && !isDuplicatePhoto && detectedReceiptOrderNumbers.length > 0 && !detectedReceiptOrderNumbers.includes(expectedSixDigits);
+      const isUtrMismatch = !isDuplicateUtr && !isDuplicatePhoto && !isPhotoOrderIdMismatch && detectedReceiptUtrs.length > 0 && !detectedReceiptUtrs.includes(utrVal);
       const amtCands = detectedAmountCandidates || [];
       const amtAllShort = amtCands.length > 0 && amtCands.every(v => v < reqAdv);
       const amtAllOk = amtCands.length > 0 && amtCands.every(v => v >= reqAdv);
-      const passedIdChecks = !isDuplicateUtr && !isPhotoOrderIdMismatch && !isUtrMismatch;
-      // short = every possible reading is below the advance; unclear/ambiguous reading = manual check (hold)
+      const passedIdChecks = !isDuplicateUtr && !isDuplicatePhoto && !isPhotoOrderIdMismatch && !isUtrMismatch;
       const isShortPayment = passedIdChecks && amtAllShort;
       const isUnverifiedReceipt = passedIdChecks && !amtAllShort && !amtAllOk;
 
@@ -1815,14 +1853,16 @@
       const instaLink = `<a href="${INSTA_URL}" target="_blank" rel="noopener noreferrer" class="font-bold text-tealAccent underline">@student__support_studio</a>`;
       const mailLink = `<a href="mailto:${STUDIO_EMAIL}" class="font-bold text-navy underline">${STUDIO_EMAIL}</a>`;
 
-      if (isDuplicateUtr) {
-        const prevOrder = existingUtrRecord.orderId || 'an earlier order';
-        paidAmountDisplay = `ORDER FAILED — UTR ${utrVal} already used (${prevOrder})`;
-        pendingAmountDisplay = `Order Failed (Duplicate / Already Used UTR Transaction ID)`;
-        paymentAuditSentence = `ORDER FAILED: UTR Transaction ID ${utrVal} was already used for ${prevOrder}. Duplicate receipt rejected. Contact via Instagram (@student__support_studio) or mail (${STUDIO_EMAIL}).`;
-        emailSubject = `ORDER FAILED - Duplicate / Already Used UTR (${utrVal}) | ${expectedOrderId} (${currentOrderPayload.nameVal})`;
+      if (isDuplicateUtr || isDuplicatePhoto) {
+        const prevOrder = (serverDuplicateError && serverDuplicateError.orderId) || (existingUtrRecord ? existingUtrRecord.orderId : 'an earlier order');
+        paidAmountDisplay = isDuplicateUtr ? `ORDER FAILED — UTR ${utrVal} already used (${prevOrder})` : `ORDER FAILED — Same receipt photo already used (${prevOrder})`;
+        pendingAmountDisplay = `Order Failed (Duplicate Receipt / Photo)`;
+        paymentAuditSentence = isDuplicateUtr ? `ORDER FAILED: UTR Transaction ID ${utrVal} was already used for ${prevOrder}.` : `ORDER FAILED: Same receipt photo already used in order ${prevOrder}.`;
+        emailSubject = `ORDER FAILED - Duplicate Receipt Detected | ${expectedOrderId} (${currentOrderPayload.nameVal})`;
         statusTitleText = 'Order Failed';
-        statusDescHtml = `Your order has failed because this 12-digit UTR Transaction ID (<strong>${utrVal}</strong>) has <strong>already been used</strong> for a previous order (<strong>${prevOrder}</strong>). Only a fresh, first-time UPI transaction is accepted. Please contact us on Instagram (${instaLink}) or Mail ID (${mailLink}).`;
+        statusDescHtml = isDuplicateUtr 
+          ? `Your order has failed because this 12-digit UTR Transaction ID (<strong>${utrVal}</strong>) has <strong>already been used</strong> for a previous order (<strong>${prevOrder}</strong>). Only a fresh, first-time UPI transaction is accepted. Please contact us on Instagram (${instaLink}) or Mail ID (${mailLink}).`
+          : `Your order has failed because <strong>this exact payment receipt photo has already been used</strong> for order <strong>${prevOrder}</strong>. Please upload a fresh, un-reused screenshot.`;
       } else if (isPhotoOrderIdMismatch) {
         const photoOrderDisplay = detectedReceiptOrderNumbers.map(n => `SSS-${n}`).join(', ');
         paidAmountDisplay = `ORDER FAILED — Photo shows ${photoOrderDisplay}, active Order ID is ${expectedOrderId}`;
@@ -1871,10 +1911,10 @@
         statusDescHtml = `Thank you! Your full advance of <strong>₹${reqAdv}</strong>, fresh first-time UTR (<strong>${utrVal}</strong>), and Order ID (<strong>${expectedOrderId}</strong>) have been verified. Our team has received your order details &amp; receipt photo, and your official <strong>Order Form &amp; Payment Receipt PDF</strong> has been downloaded automatically.`;
       }
 
-      const isConfirmedOrder = !isDuplicateUtr && !isPhotoOrderIdMismatch && !isUtrMismatch && !isShortPayment && !isUnverifiedReceipt;
+      const isConfirmedOrder = !isDuplicateUtr && !isDuplicatePhoto && !isPhotoOrderIdMismatch && !isUtrMismatch && !isShortPayment && !isUnverifiedReceipt;
 
       // Mark UTR as used for confirmed + hold orders (not for failed ones)
-      if (!isDuplicateUtr && !isPhotoOrderIdMismatch && !isUtrMismatch) {
+      if (!isDuplicateUtr && !isDuplicatePhoto && !isPhotoOrderIdMismatch && !isUtrMismatch) {
         await registerUtr(utrVal, expectedOrderId);
       }
 
@@ -1902,8 +1942,8 @@
       }
 
       const emailPayload = {
-        Order_Status: isDuplicateUtr
-          ? 'ORDER FAILED — Duplicate / Already Used UTR Transaction ID'
+        Order_Status: isDuplicateUtr || isDuplicatePhoto
+          ? 'ORDER FAILED — Duplicate / Already Used Receipt or UTR'
           : (isPhotoOrderIdMismatch
             ? 'ORDER FAILED — Order ID Mismatch With Photo'
             : (isUtrMismatch
@@ -1911,7 +1951,7 @@
               : ((isShortPayment || isUnverifiedReceipt) ? 'ORDER ON HOLD — Verification / Balance Needed' : 'ORDER CONFIRMED — Full Advance Paid (1st-Time UTR)'))),
         UTR_Uniqueness_Check: isDuplicateUtr
           ? `ALREADY USED (Previously used on ${existingUtrRecord.orderId} at ${existingUtrRecord.usedAt})`
-          : '1ST-TIME USE (Fresh UTR)',
+          : (isDuplicatePhoto ? 'ALREADY USED (Duplicate receipt photo hash)' : '1ST-TIME USE (Fresh UTR & Photo)'),
         Payment_Verification_Summary: paymentAuditSentence,
         Order_ID: currentOrderPayload.orderId,
         Student_Full_Name: currentOrderPayload.nameVal,
@@ -1966,7 +2006,7 @@
 
       const mailtoLink = `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(JSON.stringify(emailPayload, null, 2))}`;
 
-      if (isDuplicateUtr || isPhotoOrderIdMismatch || isUtrMismatch) {
+      if (isDuplicateUtr || isDuplicatePhoto || isPhotoOrderIdMismatch || isUtrMismatch) {
         document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-red-100 text-red-800 px-4 py-2 rounded-full text-xs font-bold';
         document.getElementById('stepBadge3').className = 'flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm';
 
@@ -1974,7 +2014,7 @@
         statusIcon.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>';
 
         statusBadge.className = 'text-xs font-bold uppercase tracking-widest text-red-600';
-        statusBadge.textContent = isDuplicateUtr ? 'Duplicate UTR • Already Used' : (isPhotoOrderIdMismatch ? 'Order ID Mismatch With Photo' : 'UTR ID Mismatch With Photo');
+        statusBadge.textContent = isDuplicateUtr ? 'Duplicate UTR • Already Used' : (isDuplicatePhoto ? 'Duplicate Photo • Already Used' : (isPhotoOrderIdMismatch ? 'Order ID Mismatch With Photo' : 'UTR ID Mismatch With Photo'));
 
         statusTitle.className = 'font-heading font-extrabold text-2xl sm:text-3xl text-red-700 mt-1';
         statusTitle.textContent = statusTitleText;
@@ -1983,9 +2023,11 @@
         finalPaidText.className = 'text-red-600 font-bold';
         finalPaidText.textContent = isDuplicateUtr
           ? `Failed (UTR Already Used on ${existingUtrRecord.orderId})`
-          : (isPhotoOrderIdMismatch
-            ? `Failed (Photo shows ${detectedReceiptOrderNumbers.map(n => 'SSS-' + n).join(', ')})`
-            : 'Failed (UTR ID Mismatch With Photo)');
+          : (isDuplicatePhoto
+            ? 'Failed (Same receipt photo already used)'
+            : (isPhotoOrderIdMismatch
+              ? `Failed (Photo shows ${detectedReceiptOrderNumbers.map(n => 'SSS-' + n).join(', ')})`
+              : 'Failed (UTR ID Mismatch With Photo)'));
         finalPdfRow.classList.add('hidden');
         step3ActionButtons.innerHTML = buildActionButtons('fail', mailtoLink, true, false);
       } else if (isShortPayment || isUnverifiedReceipt) {
