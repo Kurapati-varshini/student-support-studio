@@ -40,7 +40,7 @@
   <style>
     body { background-color: #FAF9F6; color: #0F172A; font-family: 'Inter', sans-serif; }
     h1, h2, h3, h4, .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .glass-nav { background: rgba(250, 249, 246, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .glass-nav { background: rgba(250, 249, 246, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     .input-error { border-color: #DC2626 !important; background-color: #FEF2F2 !important; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12) !important; }
   </style>
 </head>
@@ -49,41 +49,54 @@
   <!-- Sticky Navigation Bar -->
   <header class="sticky top-0 z-50 glass-nav border-b border-slate-200/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-3.5 group">
-        <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 overflow-hidden bg-transparent">
+      <a href="#top" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shrink-0 overflow-hidden bg-transparent">
           <img src="logo.png" alt="Student Support Studio Logo" class="w-full h-full object-contain rounded-full"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div style="display:none;" class="w-12 h-12 rounded-full bg-navy text-white items-center justify-center border-2 border-tealAccent">
-            <i class="fa-solid fa-graduation-cap text-lg text-teal-300"></i>
+          <div style="display:none;" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-navy text-white items-center justify-center border-2 border-tealAccent">
+            <i class="fa-solid fa-graduation-cap text-base text-teal-300"></i>
           </div>
         </div>
         <div>
-          <span class="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-navy block leading-none">Student Support Studio</span>
-          <span class="text-xs font-medium text-tealAccent tracking-wide block mt-1">Your Academic Work, Made Easier</span>
+          <span class="font-heading font-extrabold text-base sm:text-xl tracking-tight text-navy block leading-none">Student Support Studio</span>
+          <span class="text-[11px] sm:text-xs font-medium text-tealAccent tracking-wide block mt-1">Your Academic Work, Made Easier</span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slateSoft">
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slateSoft">
         <a href="#services" class="hover:text-navy transition">Services &amp; Pricing</a>
         <a href="#estimator" class="hover:text-navy transition">Instant Calculator</a>
         <a href="#how-it-works" class="hover:text-navy transition">How It Works</a>
         <a href="#policies" class="hover:text-navy transition">Policies</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full border border-slate-200 bg-white text-navy hover:text-pink-600 hover:border-pink-300 flex items-center justify-center transition shadow-sm">
-          <i class="fa-brands fa-instagram text-lg"></i>
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 bg-white text-navy hover:text-pink-600 hover:border-pink-300 flex items-center justify-center transition shadow-sm">
+          <i class="fa-brands fa-instagram text-base sm:text-lg"></i>
         </a>
-        <a href="#order-section" class="inline-flex items-center gap-2 bg-navy hover:bg-slate-800 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition">
+        <a href="#order-section" class="inline-flex items-center gap-1.5 sm:gap-2 bg-navy hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-sm transition">
           <span>Place Order</span>
-          <i class="fa-solid fa-arrow-right text-xs text-teal-300"></i>
+          <i class="fa-solid fa-arrow-right text-[10px] sm:text-xs text-teal-300"></i>
         </a>
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="lg:hidden w-9 h-9 rounded-full border border-slate-200 bg-white text-navy flex items-center justify-center shadow-sm">
+          <i id="mobileMenuIcon" class="fa-solid fa-bars text-base"></i>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileDropdownMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-lg">
+      <a href="#services" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slateSoft hover:text-navy">Services &amp; Pricing</a>
+      <a href="#estimator" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slateSoft hover:text-navy">Instant Calculator</a>
+      <a href="#how-it-works" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slateSoft hover:text-navy">How It Works</a>
+      <a href="#policies" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slateSoft hover:text-navy">Policies</a>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="top" class="relative overflow-hidden pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-slate-200/70">
+  <section id="top" class="relative overflow-hidden pt-10 pb-14 sm:pt-16 sm:pb-24 border-b border-slate-200/70">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         <div class="lg:col-span-7 space-y-6">
@@ -107,38 +120,34 @@
             <a href="#services" class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-navy border border-slate-300 font-semibold px-6 py-3.5 rounded-full transition">
               <i class="fa-solid fa-tags text-tealAccent"></i><span>View Rate Card</span>
             </a>
-            <a href="https://www.instagram.com/student__support_studio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white hover:bg-pink-50 text-navy hover:text-pink-700 border border-slate-300 font-semibold px-5 py-3.5 rounded-full transition">
-              <i class="fa-brands fa-instagram text-pink-600"></i><span>@student__support_studio</span>
-            </a>
           </div>
 
-          <div class="grid grid-cols-3 gap-4 pt-4 max-w-lg">
-            <div class="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-card">
-              <p class="font-heading font-extrabold text-lg sm:text-xl text-navy">₹10 / pg</p>
-              <p class="text-xs text-slateSoft mt-0.5">Min 10 Pages</p>
+          <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-4 max-w-lg">
+            <div class="bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/80 shadow-card">
+              <p class="font-heading font-extrabold text-base sm:text-xl text-navy">₹10 / pg</p>
+              <p class="text-[11px] sm:text-xs text-slateSoft mt-0.5">Min 10 Pages</p>
             </div>
-            <div class="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-card">
-              <p class="font-heading font-extrabold text-lg sm:text-xl text-navy">₹200 Adv</p>
-              <p class="text-xs text-slateSoft mt-0.5">If Count Unknown</p>
+            <div class="bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/80 shadow-card">
+              <p class="font-heading font-extrabold text-base sm:text-xl text-navy">₹200 Adv</p>
+              <p class="text-[11px] sm:text-xs text-slateSoft mt-0.5">If Count Unknown</p>
             </div>
-            <div class="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-card">
-              <p class="font-heading font-extrabold text-lg sm:text-xl text-navy">PDF Receipt</p>
-              <p class="text-xs text-slateSoft mt-0.5">Instant After Pay</p>
+            <div class="bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/80 shadow-card">
+              <p class="font-heading font-extrabold text-base sm:text-xl text-navy">PDF Receipt</p>
+              <p class="text-[11px] sm:text-xs text-slateSoft mt-0.5">Instant After Pay</p>
             </div>
           </div>
         </div>
 
         <div class="lg:col-span-5 flex flex-col items-center justify-center">
           <div class="relative flex flex-col items-center">
-            <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full flex items-center justify-center overflow-hidden bg-transparent drop-shadow-md">
-              <img src="logo.png" alt="Student Support Studio — Your Academic Work, Made Easier" class="w-full h-full object-contain rounded-full"
+            <div class="w-60 h-60 sm:w-72 sm:h-72 rounded-full flex items-center justify-center overflow-hidden bg-transparent drop-shadow-md">
+              <img src="logo.png" alt="Student Support Studio Logo" class="w-full h-full object-contain rounded-full"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div style="display:none;" class="w-64 h-64 sm:w-72 sm:h-72 rounded-full bg-white border-4 border-rose-300 shadow-soft flex-col items-center justify-center p-6 text-center">
+              <div style="display:none;" class="w-60 h-60 sm:w-72 sm:h-72 rounded-full bg-white border-4 border-rose-300 shadow-soft flex-col items-center justify-center p-6 text-center">
                 <i class="fa-solid fa-graduation-cap text-4xl text-navy mb-2"></i>
                 <span class="font-heading font-extrabold text-2xl text-navy leading-tight">Student</span>
                 <span class="font-heading font-extrabold text-xl text-rose-700 leading-tight">Support</span>
                 <span class="font-heading font-extrabold text-2xl text-navy leading-tight">Studio</span>
-                <span class="mt-3 text-xs font-semibold bg-rose-100 text-navy px-3 py-1 rounded-full">“Your Academic Work, Made Easier”</span>
               </div>
             </div>
             <div class="mt-4 inline-flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-full shadow-card text-xs font-semibold text-navy">
@@ -307,13 +316,6 @@
           </div>
         </div>
       </div>
-
-      <div class="mt-8 bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 shadow-card">
-        <i class="fa-solid fa-circle-info text-tealAccent text-lg mt-0.5"></i>
-        <p class="text-xs sm:text-sm text-slateSoft leading-relaxed">
-          <strong class="text-navy">Note:</strong> Prices may vary based on complexity and urgency. For handwritten records &amp; assignments, minimum 10 pages are required. If you do not know the exact page count yet, you can book with a flat <strong>₹200 advance</strong>, and actual pages (₹10/page theory, ₹15/page theory + diagram) will be counted upon completion with your ₹200 advance deducted from the final balance.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -346,7 +348,7 @@
               Estimated Pages <span class="text-tealDark font-normal normal-case">(Min 10 pages required)</span>
             </label>
             <div class="flex items-center gap-2">
-              <button type="button" id="estMinusBtn" onclick="stepEstimatorPages(-1)" class="w-11 h-11 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-navy font-extrabold text-lg flex items-center justify-center transition" aria-label="Decrease pages">−</button>
+              <button type="button" onclick="stepEstimatorPages(-1)" class="w-11 h-11 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-navy font-extrabold text-lg flex items-center justify-center transition" aria-label="Decrease pages">−</button>
               <input type="number" id="estPages" min="10" max="500" value="10"
                 onkeydown="guardMinPagesKeydown(event, 'est')" oninput="guardMinPagesInput(this, 'est')" onblur="enforceMinPagesBlur(this, 'est')"
                 class="w-full text-center rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-bold text-navy focus:outline-none focus:border-tealAccent" />
@@ -536,7 +538,7 @@
                 </div>
 
                 <div id="knownPagesInputGroup" class="flex items-center gap-2">
-                  <button type="button" id="orderMinusBtn" onclick="stepOrderPages(-1)" class="w-11 h-11 rounded-xl border border-slate-300 bg-ivory/60 hover:bg-slate-100 text-navy font-extrabold text-lg flex items-center justify-center transition" aria-label="Decrease pages">−</button>
+                  <button type="button" onclick="stepOrderPages(-1)" class="w-11 h-11 rounded-xl border border-slate-300 bg-ivory/60 hover:bg-slate-100 text-navy font-extrabold text-lg flex items-center justify-center transition" aria-label="Decrease pages">−</button>
                   <input type="number" id="orderPages" min="10" max="500" value="10"
                     onkeydown="guardMinPagesKeydown(event, 'order')" oninput="guardMinPagesInput(this, 'order')" onblur="enforceMinPagesBlur(this, 'order')"
                     class="w-full text-center rounded-xl border border-slate-300 bg-ivory/60 px-3 py-2.5 text-sm font-bold text-navy focus:bg-white focus:outline-none focus:border-tealAccent transition" />
@@ -927,7 +929,6 @@
 
     const STUDIO_EMAIL = 'studentsupportstudio@gmail.com';
     const INSTA_URL = 'https://www.instagram.com/student__support_studio/';
-    // Optional: paste your Google Apps Script Web App URL here for cross-device duplicate UTR check
     const UTR_REGISTRY_URL = 'https://script.google.com/macros/s/AKfycbyKY1OCGFyLCK9khC3xSPzGi67LW0ER4pmbFxrQNpcsrBlVM-9Q1nnVTY6jvDJ2Sv7bRQ/exec';
 
     const MAX_DOC_BYTES = 500 * 1024 * 1024;
@@ -947,6 +948,19 @@
     let activeUpiId = 'kurapati084@upi';
     let currentOrderPayload = null;
     const USED_UTR_STORAGE_KEY = 'sss_used_utr_registry_v1';
+
+    // Toggle Mobile Menu Function
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileDropdownMenu');
+      const icon = document.getElementById('mobileMenuIcon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.className = 'fa-solid fa-xmark text-base';
+      } else {
+        menu.classList.add('hidden');
+        icon.className = 'fa-solid fa-bars text-base';
+      }
+    }
 
     function withTimeout(promise, ms, fallback) {
       return Promise.race([promise, new Promise(r => setTimeout(() => r(fallback), ms))]);
@@ -992,19 +1006,6 @@
           body: JSON.stringify({ utr, orderId })
         }), 8000, null);
       } catch (e) {}
-    }
-
-    // Compute SHA-256 digital fingerprint (hash) of the uploaded payment receipt photo
-    async function computePhotoHash(file) {
-      try {
-        const buffer = await file.arrayBuffer();
-        const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        return hashHex;
-      } catch (e) {
-        return 'NO_HASH_' + Date.now();
-      }
     }
 
     function selectServiceFromCard(serviceName) {
@@ -1251,7 +1252,7 @@
       input.value = input.value.replace(/[^0-9]/g, '').slice(0, 12);
       document.getElementById('utrDigitCounter').textContent = `${input.value.length}/12 digits`;
     }
-
+    
     function syncSubmissionMinDate() {
       const handoverEl = document.getElementById('handoverDate');
       const subEl = document.getElementById('submissionDate');
@@ -1356,7 +1357,6 @@
       });
     }
 
-    // Extract paid amount, 12-digit UTR, AND 6-digit Order Number from uploaded receipt photo
     async function extractReceiptDataFromImage(file, expectedAdvance) {
       if (!window.Tesseract || !file) return { amount: null, amounts: [], utrs: [], orderNumbers: [] };
       try {
@@ -1384,8 +1384,6 @@
           .replace(/\b[0-9]{1,2}:[0-9]{2}\s*(?:am|pm)?\b/gi, ' ')
           .replace(/(?:Bank\s+of\s+India|Bank|Account|A\/c|XXXX+)\s*[0-9]{4}\b/gi, ' ');
 
-        // Amount candidates: OCR often misreads the ₹ glyph as 2/3/7 ("₹1" -> "31"),
-        // so for such numbers we ALSO consider the value without that leading digit.
         const candidates = new Set();
         const addCandidate = (n) => {
           if (isNaN(n) || n < 1 || n > 50000) return;
@@ -1393,7 +1391,7 @@
           const str = String(n);
           if (str.length >= 2 && '237'.includes(str[0]) && str[1] !== '0') candidates.add(parseInt(str.slice(1), 10));
         };
-         [...textWithoutNoise.matchAll(/(?:₹|Rs\.?|INR)\s*([0-9]{1,5})(?:\.[0-9]{1,2})?/gi)]
+        [...textWithoutNoise.matchAll(/(?:₹|Rs\.?|INR)\s*([0-9]{1,5})(?:\.[0-9]{1,2})?/gi)]
           .forEach(m => addCandidate(parseInt(m[1], 10)));
 
         if (candidates.size === 0) {
@@ -1518,6 +1516,18 @@
         });
       }
     }
+
+    // Preserve Step 2 state when user returns from UPI App (visibilitychange / focus event)
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden && currentOrderPayload) {
+        // User came back from PhonePe/GPay app to browser. Ensure Step 2 stays visible with active QR code & UTR inputs.
+        const step2 = document.getElementById('step2Container');
+        if (step2 && !step2.classList.contains('hidden')) {
+          const upiUri = `upi://pay?pa=${encodeURIComponent(currentOrderPayload.assignedUpiId)}&pn=${encodeURIComponent('Student Support Studio')}&am=${currentOrderPayload.advanceAmount.toFixed(2)}&cu=INR&tn=${encodeURIComponent('Order ' + currentOrderPayload.orderId)}`;
+          renderDynamicOrLocalQr(upiUri);
+        }
+      }
+    });
 
     window.addEventListener('DOMContentLoaded', function () {
       const todayIso = new Date().toISOString().split('T')[0];
@@ -1672,7 +1682,6 @@
       }
     });
 
-    // Upload file to a direct no-ads host. catbox = permanent link; tmpfiles = ~1 hour backup.
     async function uploadFileForDirectAdFreeLink(fileObj, fallbackLabel) {
       if (!fileObj) return 'None';
       try {
@@ -1697,10 +1706,8 @@
       return `${fileObj.name} (link upload failed — see email attachment or ask student to send on Instagram)`;
     }
 
-    // Send email: FormSubmit (with real attachments up to ~4.5 MB) + Web3Forms backup. Returns true if any succeeded.
     async function sendOrderEmailToStudio(subject, payload, attachments = []) {
       let ok = false;
-
       try {
         const fd = new FormData();
         fd.append('_subject', subject);
@@ -1793,35 +1800,8 @@
       confirmBtn.disabled = true;
       confirmBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Verifying Order ID, Receipt Photo, UTR &amp; Amount...</span>';
 
-      // 1. Compute Photo Hash digital fingerprint
-      const photoHashVal = await computePhotoHash(selectedPaymentReceiptFile);
-
-      // 2. Cloud Sheet check for both UTR and Photo Hash
-      let serverDuplicateError = null;
-      if (UTR_REGISTRY_URL) {
-        try {
-          const regRes = await withTimeout(fetch(UTR_REGISTRY_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'text/plain' },
-            body: JSON.stringify({
-              orderId: expectedOrderId,
-              utr: utrVal,
-              photoHash: photoHashVal
-            })
-          }), 10000, null);
-
-          if (regRes && regRes.ok) {
-            const regJson = await regRes.json();
-            if (regJson.status === 'error') {
-              serverDuplicateError = regJson;
-            }
-          }
-        } catch (e) {}
-      }
-
       const existingUtrRecord = await checkUtrUsed(utrVal);
-      const isDuplicateUtr = Boolean(existingUtrRecord) || (serverDuplicateError && serverDuplicateError.reason === 'duplicate_utr');
-      const isDuplicatePhoto = (serverDuplicateError && serverDuplicateError.reason === 'duplicate_photo');
+      const isDuplicateUtr = Boolean(existingUtrRecord);
 
       if ((detectedReceiptAmount === null && detectedReceiptUtrs.length === 0 && detectedReceiptOrderNumbers.length === 0) && selectedPaymentReceiptFile) {
         const extracted = await extractReceiptDataFromImage(selectedPaymentReceiptFile, currentOrderPayload.advanceAmount);
@@ -1833,13 +1813,12 @@
       const reqAdv = currentOrderPayload.advanceAmount;
       const knownTotal = currentOrderPayload.knownTotalAmount;
 
-      // Validation order: 1) duplicate UTR or Photo  2) Order ID in photo  3) UTR in photo  4) short amount  5) unverified -> hold  6) confirmed
-      const isPhotoOrderIdMismatch = !isDuplicateUtr && !isDuplicatePhoto && detectedReceiptOrderNumbers.length > 0 && !detectedReceiptOrderNumbers.includes(expectedSixDigits);
-      const isUtrMismatch = !isDuplicateUtr && !isDuplicatePhoto && !isPhotoOrderIdMismatch && detectedReceiptUtrs.length > 0 && !detectedReceiptUtrs.includes(utrVal);
+      const isPhotoOrderIdMismatch = !isDuplicateUtr && detectedReceiptOrderNumbers.length > 0 && !detectedReceiptOrderNumbers.includes(expectedSixDigits);
+      const isUtrMismatch = !isDuplicateUtr && !isPhotoOrderIdMismatch && detectedReceiptUtrs.length > 0 && !detectedReceiptUtrs.includes(utrVal);
       const amtCands = detectedAmountCandidates || [];
       const amtAllShort = amtCands.length > 0 && amtCands.every(v => v < reqAdv);
       const amtAllOk = amtCands.length > 0 && amtCands.every(v => v >= reqAdv);
-      const passedIdChecks = !isDuplicateUtr && !isDuplicatePhoto && !isPhotoOrderIdMismatch && !isUtrMismatch;
+      const passedIdChecks = !isDuplicateUtr && !isPhotoOrderIdMismatch && !isUtrMismatch;
       const isShortPayment = passedIdChecks && amtAllShort;
       const isUnverifiedReceipt = passedIdChecks && !amtAllShort && !amtAllOk;
 
@@ -1853,16 +1832,14 @@
       const instaLink = `<a href="${INSTA_URL}" target="_blank" rel="noopener noreferrer" class="font-bold text-tealAccent underline">@student__support_studio</a>`;
       const mailLink = `<a href="mailto:${STUDIO_EMAIL}" class="font-bold text-navy underline">${STUDIO_EMAIL}</a>`;
 
-      if (isDuplicateUtr || isDuplicatePhoto) {
-        const prevOrder = (serverDuplicateError && serverDuplicateError.orderId) || (existingUtrRecord ? existingUtrRecord.orderId : 'an earlier order');
-        paidAmountDisplay = isDuplicateUtr ? `ORDER FAILED — UTR ${utrVal} already used (${prevOrder})` : `ORDER FAILED — Same receipt photo already used (${prevOrder})`;
-        pendingAmountDisplay = `Order Failed (Duplicate Receipt / Photo)`;
-        paymentAuditSentence = isDuplicateUtr ? `ORDER FAILED: UTR Transaction ID ${utrVal} was already used for ${prevOrder}.` : `ORDER FAILED: Same receipt photo already used in order ${prevOrder}.`;
-        emailSubject = `ORDER FAILED - Duplicate Receipt Detected | ${expectedOrderId} (${currentOrderPayload.nameVal})`;
+      if (isDuplicateUtr) {
+        const prevOrder = existingUtrRecord.orderId || 'an earlier order';
+        paidAmountDisplay = `ORDER FAILED — UTR ${utrVal} already used (${prevOrder})`;
+        pendingAmountDisplay = `Order Failed (Duplicate / Already Used UTR Transaction ID)`;
+        paymentAuditSentence = `ORDER FAILED: UTR Transaction ID ${utrVal} was already used for ${prevOrder}. Duplicate receipt rejected. Contact via Instagram (@student__support_studio) or mail (${STUDIO_EMAIL}).`;
+        emailSubject = `ORDER FAILED - Duplicate / Already Used UTR (${utrVal}) | ${expectedOrderId} (${currentOrderPayload.nameVal})`;
         statusTitleText = 'Order Failed';
-        statusDescHtml = isDuplicateUtr 
-          ? `Your order has failed because this 12-digit UTR Transaction ID (<strong>${utrVal}</strong>) has <strong>already been used</strong> for a previous order (<strong>${prevOrder}</strong>). Only a fresh, first-time UPI transaction is accepted. Please contact us on Instagram (${instaLink}) or Mail ID (${mailLink}).`
-          : `Your order has failed because <strong>this exact payment receipt photo has already been used</strong> for order <strong>${prevOrder}</strong>. Please upload a fresh, un-reused screenshot.`;
+        statusDescHtml = `Your order has failed because this 12-digit UTR Transaction ID (<strong>${utrVal}</strong>) has <strong>already been used</strong> for a previous order (<strong>${prevOrder}</strong>). Only a fresh, first-time UPI transaction is accepted. Please contact us on Instagram (${instaLink}) or Mail ID (${mailLink}).`;
       } else if (isPhotoOrderIdMismatch) {
         const photoOrderDisplay = detectedReceiptOrderNumbers.map(n => `SSS-${n}`).join(', ');
         paidAmountDisplay = `ORDER FAILED — Photo shows ${photoOrderDisplay}, active Order ID is ${expectedOrderId}`;
@@ -1911,10 +1888,9 @@
         statusDescHtml = `Thank you! Your full advance of <strong>₹${reqAdv}</strong>, fresh first-time UTR (<strong>${utrVal}</strong>), and Order ID (<strong>${expectedOrderId}</strong>) have been verified. Our team has received your order details &amp; receipt photo, and your official <strong>Order Form &amp; Payment Receipt PDF</strong> has been downloaded automatically.`;
       }
 
-      const isConfirmedOrder = !isDuplicateUtr && !isDuplicatePhoto && !isPhotoOrderIdMismatch && !isUtrMismatch && !isShortPayment && !isUnverifiedReceipt;
+      const isConfirmedOrder = !isDuplicateUtr && !isPhotoOrderIdMismatch && !isUtrMismatch && !isShortPayment && !isUnverifiedReceipt;
 
-      // Mark UTR as used for confirmed + hold orders (not for failed ones)
-      if (!isDuplicateUtr && !isDuplicatePhoto && !isPhotoOrderIdMismatch && !isUtrMismatch) {
+      if (!isDuplicateUtr && !isPhotoOrderIdMismatch && !isUtrMismatch) {
         await registerUtr(utrVal, expectedOrderId);
       }
 
@@ -1942,8 +1918,8 @@
       }
 
       const emailPayload = {
-        Order_Status: isDuplicateUtr || isDuplicatePhoto
-          ? 'ORDER FAILED — Duplicate / Already Used Receipt or UTR'
+        Order_Status: isDuplicateUtr
+          ? 'ORDER FAILED — Duplicate / Already Used UTR Transaction ID'
           : (isPhotoOrderIdMismatch
             ? 'ORDER FAILED — Order ID Mismatch With Photo'
             : (isUtrMismatch
@@ -1951,7 +1927,7 @@
               : ((isShortPayment || isUnverifiedReceipt) ? 'ORDER ON HOLD — Verification / Balance Needed' : 'ORDER CONFIRMED — Full Advance Paid (1st-Time UTR)'))),
         UTR_Uniqueness_Check: isDuplicateUtr
           ? `ALREADY USED (Previously used on ${existingUtrRecord.orderId} at ${existingUtrRecord.usedAt})`
-          : (isDuplicatePhoto ? 'ALREADY USED (Duplicate receipt photo hash)' : '1ST-TIME USE (Fresh UTR & Photo)'),
+          : '1ST-TIME USE (Fresh UTR)',
         Payment_Verification_Summary: paymentAuditSentence,
         Order_ID: currentOrderPayload.orderId,
         Student_Full_Name: currentOrderPayload.nameVal,
@@ -2006,7 +1982,7 @@
 
       const mailtoLink = `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(JSON.stringify(emailPayload, null, 2))}`;
 
-      if (isDuplicateUtr || isDuplicatePhoto || isPhotoOrderIdMismatch || isUtrMismatch) {
+      if (isDuplicateUtr || isPhotoOrderIdMismatch || isUtrMismatch) {
         document.getElementById('stepBadge2').className = 'flex items-center gap-2 bg-red-100 text-red-800 px-4 py-2 rounded-full text-xs font-bold';
         document.getElementById('stepBadge3').className = 'flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-sm';
 
@@ -2014,7 +1990,7 @@
         statusIcon.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>';
 
         statusBadge.className = 'text-xs font-bold uppercase tracking-widest text-red-600';
-        statusBadge.textContent = isDuplicateUtr ? 'Duplicate UTR • Already Used' : (isDuplicatePhoto ? 'Duplicate Photo • Already Used' : (isPhotoOrderIdMismatch ? 'Order ID Mismatch With Photo' : 'UTR ID Mismatch With Photo'));
+        statusBadge.textContent = isDuplicateUtr ? 'Duplicate UTR • Already Used' : (isPhotoOrderIdMismatch ? 'Order ID Mismatch With Photo' : 'UTR ID Mismatch With Photo');
 
         statusTitle.className = 'font-heading font-extrabold text-2xl sm:text-3xl text-red-700 mt-1';
         statusTitle.textContent = statusTitleText;
@@ -2023,11 +1999,9 @@
         finalPaidText.className = 'text-red-600 font-bold';
         finalPaidText.textContent = isDuplicateUtr
           ? `Failed (UTR Already Used on ${existingUtrRecord.orderId})`
-          : (isDuplicatePhoto
-            ? 'Failed (Same receipt photo already used)'
-            : (isPhotoOrderIdMismatch
-              ? `Failed (Photo shows ${detectedReceiptOrderNumbers.map(n => 'SSS-' + n).join(', ')})`
-              : 'Failed (UTR ID Mismatch With Photo)'));
+          : (isPhotoOrderIdMismatch
+            ? `Failed (Photo shows ${detectedReceiptOrderNumbers.map(n => 'SSS-' + n).join(', ')})`
+            : 'Failed (UTR ID Mismatch With Photo)');
         finalPdfRow.classList.add('hidden');
         step3ActionButtons.innerHTML = buildActionButtons('fail', mailtoLink, true, false);
       } else if (isShortPayment || isUnverifiedReceipt) {
@@ -2067,7 +2041,6 @@
         finalPaidText.className = 'text-tealDark font-bold';
         finalPaidText.textContent = `₹${reqAdv} Paid out of ₹${reqAdv} (Confirmed)`;
         finalPdfRow.classList.remove('hidden');
-        // Mailto fallback shown for confirmed orders too, if the automatic email failed
         step3ActionButtons.innerHTML = buildActionButtons('ok', mailtoLink, !mailOk, true);
 
         triggerMandatoryPdfDownload();
